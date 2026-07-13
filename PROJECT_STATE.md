@@ -41,6 +41,7 @@ No event-pipeline implementation is required before this checkpoint.
 - Scenario labs run in namespaces, Docker, and VMs; processing, detection, reporting, and evaluation use one shared Core path.
 - Environment-sensitive milestones follow lead-then-converge: namespaces first, then Docker and VM comparison.
 - Dynamic malware analysis remains prohibited until a separate charter satisfies the maturity gate with benign substitutes first.
+- Substantial AI-assisted sessions use the active collaboration protocol and indexed worklogs; learner ownership and current evidence remain controlling.
 
 ## Verified workstation facts
 
@@ -48,31 +49,37 @@ No event-pipeline implementation is required before this checkpoint.
 - 20 logical CPU threads, approximately 50 GiB RAM, and ample available disk
 - Python 3.12 and Git available
 - `ip`, `ss`, `tcpdump`, SSH client/server binaries, systemd, and journaling available
-- Unprivileged user and network namespaces available
-- Docker Desktop installed on Windows but not active or integrated with this WSL distribution at last inspection
-- Windows reports a hypervisor present; no ready VM workflow has been confirmed
-- WSL SSH service disabled and inactive; host keys not yet prepared
+- Rootless user and network namespace creation verified with `unshare`
+- Docker Desktop installed on Windows but stopped; its WSL distribution is stopped and integration is unavailable to Ubuntu
+- Hyper-V services and cmdlets available; two internal switches exist, but no lab VM has been created
+- WSL SSH service disabled and inactive; host-key files exist, while root-level validation and lab configuration remain pending
 - Privileged setup requires deliberate password entry
 
 Reinspect these facts before relying on them for implementation; environment state can change.
 
 ## Active blockers and risks
 
-- Docker WSL integration is not yet verified.
-- Hyper-V or an alternative local VM manager is not yet confirmed ready.
-- SSH identities, host keys, authentication policy, logging, and cleanup are not yet designed.
+- Docker Desktop must be started and its Ubuntu WSL integration verified.
+- Hyper-V is available, but a Linux lab image and VM have not been selected or created.
+- SSH identities, authentication policy, root-level configuration validation, logging, and cleanup are not yet designed.
 - A fresh Codex CLI run discovers the root `AGENTS.md`, but its read-only shell sandbox cannot execute until `bubblewrap` is available; this does not block the current desktop workflow.
 - Lab endpoints must not become unintentionally reachable from external or ordinary host networks.
 - Parallel environment learning can multiply setup work; keep scenario semantics and the evidence checklist shared.
 
 ## Immediate next actions
 
-1. Reinspect Docker Desktop and Windows virtualization state.
-2. Choose and verify the local VM path, preferring Hyper-V when available.
-3. Define the canonical SSH actors, target, cases, safety boundary, observations, and cleanup.
-4. Build and explain the namespace variant.
-5. Reproduce the experiment in Docker and VMs.
+1. Complete the short foundations checkpoint using the verified workstation state.
+2. Define the canonical SSH actors, target, cases, safety boundary, observations, and cleanup.
+3. Build and explain the namespace variant.
+4. Start Docker Desktop and verify Ubuntu WSL integration before reproducing the experiment there.
+5. Select a Linux image, create the Hyper-V lab VM, and reproduce the experiment.
 6. Record the comparison before designing the shared Core pipeline.
+
+## AI collaboration handoff
+
+- The [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>) defines roles, guided discovery, direct execution, evidence discipline, and session handoff.
+- [Worklogs](docs/worklogs/README.md) provide detailed session continuity without turning this file into a diary.
+- The setup decision and implementation evidence are recorded in the [initial AI collaboration worklog](docs/worklogs/2026-07-13-1925-ai-collaboration-setup.md).
 
 ## Authoritative references
 
