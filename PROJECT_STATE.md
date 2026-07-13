@@ -24,6 +24,8 @@ No event-pipeline implementation is required before this checkpoint.
 
 ## Learner working profile
 
+The detailed evidence-aware baseline and its maintenance contract are in the [Learner Profile](docs/learning/LEARNER_PROFILE.md).
+
 - Early-intermediate starting point across Linux, networking, Python, and testing
 - More than 11 focused hours available per week
 - Guided discovery for foundational learning

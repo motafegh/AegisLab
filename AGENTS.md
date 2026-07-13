@@ -29,7 +29,8 @@ Higher-level agent instructions and safety policies always remain controlling. D
 4. Use its document map to load only the normative parts relevant to the task.
 5. For Core work, read the Core Charter and the relevant section of the Journey Plan.
 6. For substantial teaching or project work, read the [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>), the [worklog policy](docs/worklogs/README.md), and only the latest relevant worklog needed for continuity.
-7. Inspect discoverable repository or environment facts before asking the user.
+7. For substantial teaching or learning evaluation, read the [Learner Profile](docs/learning/LEARNER_PROFILE.md) and update it only from meaningful evidence.
+8. Inspect discoverable repository or environment facts before asking the user.
 
 Do not load every project document or historical worklog by default. Do not treat stale narrative as stronger evidence than the current workspace or system.
 
@@ -86,6 +87,7 @@ Do not load every project document or historical worklog by default. Do not trea
 | First bounded vertical slice | [Core Charter](<docs/plans/AegisLab — Core Charter v1.0.md>) |
 | Current implementation sequence | [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>) |
 | AI roles, teaching, ownership, and handoff | [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>) |
+| Current demonstrated knowledge, assistance, and gaps | [Learner Profile](docs/learning/LEARNER_PROFILE.md) |
 | Session continuity and history | [Worklogs](docs/worklogs/README.md) |
 | Current handoff and next checkpoint | [Project State](PROJECT_STATE.md) |
 
