@@ -79,6 +79,7 @@ Newest records appear first.
 
 | Started | Worklog | Status | Outcome |
 |---|---|---|---|
+| 2026-07-14 20:30 +02:00 | [Networking to namespaces](2026-07-14-2245-networking-to-namespaces.md) | paused | Built and verified a two-endpoint namespace network; study and assessment are required before SSH |
 | 2026-07-13 19:48 +03:30 | [SSH foundations bridge](2026-07-13-1948-ssh-foundations-bridge.md) | active | Bridging demonstrated HTTP networking knowledge into the first SSH Core concepts |
 | 2026-07-13 19:44 +03:30 | [Learner profile integration](2026-07-13-1944-learner-profile-integration.md) | completed | Imported, routed, and verified the maintained evidence-aware learner profile |
 | 2026-07-13 19:25 +03:30 | [AI collaboration setup](2026-07-13-1925-ai-collaboration-setup.md) | completed | Added and verified the collaboration protocol and durable worklog system |
