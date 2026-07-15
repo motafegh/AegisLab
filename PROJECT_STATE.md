@@ -1,104 +1,133 @@
 # AegisLab Project State
 
-**Last meaningful update:** 2026-07-14
-**Current stage:** Accepted Project Definition v1.0; first Core networking foundations built, study and assessment pending before SSH
-**Authority:** Non-normative handoff; current evidence and canonical documents override this file
+**Last meaningful update:** 2026-07-15  
+**Current stage:** Core first learning slice — namespace SSH observability  
+**Authority:** Non-normative handoff; current inspected evidence and canonical documents override this file
 
 ## Current objective
 
-Begin the practical AegisLab journey with one canonical two-endpoint SSH experiment reproduced across Linux network namespaces, Docker containers, and virtual machines.
+Finish and explain the namespace variant of the canonical two-endpoint SSH experiment before moving to Docker and virtual machines.
 
-The namespace variant leads. Docker and VM variants must converge on the same scenario semantics and evidence checklist before the first learning slice closes.
+The immediate mechanism is one authenticated SSH transport from `aegis-test` to `aegis-peer`, correlated across:
 
-The current stop line is before SSH configuration: the learner must first study and demonstrate the interface, routing, ARP/MAC, namespace, veth, and basic-connectivity model established in the first namespace networking session.
+```text
+client debug output
+        ↕
+server sshd logs
+        ↕
+process relationships
+        ↕
+LISTEN and ESTABLISHED sockets
+        ↕
+selected network observations
+```
+
+The namespace variant leads. Docker and VM variants must later reproduce the same scenario semantics and evidence checklist before the first learning slice closes.
+
+## Current position in the journey
+
+```text
+Project definition and Core Charter                         accepted
+Namespace networking substrate                              built with guidance
+SSH identities, authorization, and bounded configuration    built and explained
+Namespace-bound SSH listener                                verified
+Successful public-key authentication                        verified
+First-use and repeat server-host verification               verified
+Valid but unauthorized key rejection                        verified
+Long-lived authenticated SSH transport                      established
+Live process/socket/log/network correlation                 active next step
+Canonical normal-login and repeated-failure scenario        pending
+Docker reproduction                                         pending
+VM reproduction                                             pending
+Cross-environment comparison                                pending
+Shared evidence and detection pipeline                      intentionally later
+```
+
+See the [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>) for milestone gates and the [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>) for the governing sequence.
+
+## Current observed environment and experiment evidence
+
+- WSL2 with Ubuntu 24.04; OpenSSH client/server, `ip`, `ss`, `tcpdump`, systemd, and journaling are available.
+- The ordinary WSL SSH service remained inactive; the experiment uses a lab-specific `sshd` process and configuration.
+- `aegis-test` owns `veth-test` at `10.10.0.1/24`.
+- `aegis-peer` owns `veth-peer` at `10.10.0.2/24`.
+- Both namespaces have directly connected `10.10.0.0/24` routes and successful ICMP exchange.
+- The lab server uses a temporary Ed25519 host identity and binds only to `10.10.0.2:22`.
+- `ss` showed `10.10.0.2:22` in `LISTEN`, owned by `sshd`.
+- The intended client key authenticated successfully as `motafeq` using public-key authentication.
+- A first connection manually verified the server fingerprint and stored it in a lab-specific `known_hosts`; a second connection matched it automatically.
+- `ForceCommand /usr/bin/id` produced bounded successful-session evidence and showed that the namespaces share the WSL user database.
+- A separate valid but unauthorized key reached and verified the same server but failed with `Permission denied (publickey)`.
+- A long-lived `ssh -N -T` transport authenticated successfully. The server reported client endpoint `10.10.0.1:54606`, server endpoint `10.10.0.2:22`, and an authenticated user child PID.
+
+All namespace names, addresses, PIDs, ports, `/tmp` files, keys, fingerprints, and running processes are runtime-specific and temporary. Reinspect them before relying on this snapshot.
+
+## Important design decisions now established
+
+- Do not start or modify the ordinary WSL SSH service for this experiment.
+- Bind the lab server only to the address owned by `aegis-peer`.
+- Keep lab identities, authorization, configuration, and client trust state separate from normal host SSH state.
+- Treat the current `ForceCommand /usr/bin/id` configuration as instructional scaffolding, not the final canonical normal-login case.
+- Keep public-key authentication as the first controlled authentication mechanism; passwords and root login remain disabled.
+- Network namespaces provide network isolation, not separate filesystems, users, hostnames, or kernels.
+- Manual understanding and evidence correlation precede scenario automation.
+- The same canonical scenario meaning must be preserved in namespaces, Docker, and VMs.
 
 ## Next checkpoint
 
-The next checkpoint is complete when:
+The namespace observability checkpoint is complete when the learner can correlate and explain:
 
-- The learner studies the [Networking to Network Namespaces Foundations Study Guide](docs/learning/study-guides/2026-07-14-networking-to-namespaces-foundations.md)
-- The learner passes a focused explanation, output-interpretation, practical-reconstruction, and bounded-failure assessment
-- Docker Desktop integration with the Ubuntu WSL distribution is confirmed
-- A usable Windows VM path is confirmed
-- The canonical SSH experiment and cross-environment evidence checklist are defined
-- The namespace variant runs and produces understood process, socket, host-log, and packet observations
-- Docker and VM variants reproduce the scenario and their differences are explained
+- the client and server views of one `ESTABLISHED` TCP four-tuple;
+- the listening `sshd`, connection-handling process, and authenticated child relationship;
+- successful and failed client output against the corresponding server logs;
+- what host evidence proves versus what socket or packet evidence proves;
+- connection establishment and closure using a narrow packet capture;
+- the limitations created by SSH encryption and namespace-only isolation.
 
-No event-pipeline implementation is required before this checkpoint.
+The namespace scenario checkpoint then additionally requires:
 
-## Learner working profile
+- a controlled normal authentication case;
+- a documented repeated-failure case with explicit attempt count and time bounds;
+- start/end markers and separately maintained expected truth;
+- one bounded failure predicted, introduced, diagnosed, and repaired;
+- cleanup and reconstruction instructions;
+- a concise evidence checklist ready for Docker and VM reproduction.
 
-The detailed evidence-aware baseline and its maintenance contract are in the [Learner Profile](docs/learning/LEARNER_PROFILE.md).
+## Active blockers and gaps
 
-- Early-intermediate starting point across Linux, networking, Python, and testing
-- More than 11 focused hours available per week
-- Guided discovery for foundational learning
-- Deep independent capability prioritized over speed, feature count, or presentation polish
-- AI may teach, structure experiments, review, challenge, and debug; foundational ownership must return to the learner
-- The namespace networking experiment was completed with step-by-step guidance; durable evidence levels remain unchanged until the next-session assessment
-
-## Active project decisions
-
-- AegisLab develops an anchored hybrid AI Security Automation Engineer profile.
-- Network defense, detection platforms, secure distributed systems, and evidence engineering form the foundation.
-- Applied security ML should reach strong practical competence.
-- DFIR and threat hunting receive deliberate depth and form the first major post-Core expansion.
-- Secure evidence-grounded AI investigation remains the integrating specialization.
-- The SSH authentication-abuse scenario is the Core evergreen reference scenario.
-- Scenario labs run in namespaces, Docker, and VMs; processing, detection, reporting, and evaluation use one shared Core path.
-- Environment-sensitive milestones follow lead-then-converge: namespaces first, then Docker and VM comparison.
-- Dynamic malware analysis remains prohibited until a separate charter satisfies the maturity gate with benign substitutes first.
-- Substantial AI-assisted sessions use the active collaboration protocol and indexed worklogs; learner ownership and current evidence remain controlling.
-- SSH implementation will not begin until the networking-to-namespaces assessment gate is passed.
-
-## Verified workstation and namespace facts
-
-- WSL2 with Ubuntu 24.04
-- 20 logical CPU threads, approximately 50 GiB RAM, and ample available disk
-- Python 3.12 and Git available
-- `ip`, `ss`, `tcpdump`, SSH client/server binaries, systemd, and journaling available
-- Rootless user and network namespace creation verified with `unshare`
-- Docker Desktop installed on Windows but stopped; its WSL distribution is stopped and integration is unavailable to Ubuntu
-- Hyper-V services and cmdlets available; two internal switches exist, but no lab VM has been created
-- WSL SSH service disabled and inactive; host-key files exist, while root-level validation and lab configuration remain pending
-- Privileged setup requires deliberate password entry
-- Named network namespaces `aegis-test` and `aegis-peer` were created
-- `aegis-test` was configured with `veth-test` at `10.10.0.1/24`
-- `aegis-peer` was configured with `veth-peer` at `10.10.0.2/24`
-- Each namespace received a directly connected `10.10.0.0/24` route
-- Three ICMP Echo requests from `aegis-test` to `aegis-peer` received three replies with zero observed packet loss
-- Neighbor mappings matched the previously observed peer veth MAC addresses
-
-The namespace state is temporary and may change or disappear after restart. Reinspect every fact before relying on it.
-
-## Active blockers and risks
-
-- Stable recall and independent reconstruction of the networking-to-namespace mechanism have not yet been demonstrated.
-- Docker Desktop must be started and its Ubuntu WSL integration verified.
-- Hyper-V is available, but a Linux lab image and VM have not been selected or created.
-- SSH identities, authentication policy, root-level configuration validation, logging, and cleanup are not yet designed.
-- A fresh Codex CLI run discovers the root `AGENTS.md`, but its read-only shell sandbox cannot execute until `bubblewrap` is available; this does not block the current desktop workflow.
-- Lab endpoints must not become unintentionally reachable from external or ordinary host networks.
-- Parallel environment learning can multiply setup work; keep scenario semantics and the evidence checklist shared.
+- Live `ESTABLISHED` socket and process-tree evidence has not yet been captured and interpreted.
+- Successful and failed attempts have not yet been fully correlated with preserved server-side authentication records.
+- Selected SSH packets have not yet been captured for this namespace scenario.
+- The final normal-login semantics and repeated-failure contract are not yet defined.
+- The current configuration uses a documented `StrictModes no` exception because authorization state is under `/tmp`; this must not silently become a production recommendation.
+- Stable independent reconstruction and diagnosis have not yet been demonstrated; current evidence is guided practice.
+- Docker Desktop must be started and integrated with the Ubuntu WSL distribution.
+- A usable local Linux VM workflow must be selected and verified; Hyper-V remains the default candidate when suitable.
 
 ## Immediate next actions
 
-1. Study the networking-to-namespaces guide before the next working session.
-2. Reinspect whether `aegis-test`, `aegis-peer`, their addresses, routes, and veth link still exist.
-3. Evaluate the learner's mental model, fresh output interpretation, practical reconstruction, and one bounded failure.
-4. Introduce SSH client/server, port `22`, host identity, user authentication, and encrypted-session concepts only after the gate passes.
-5. Define the canonical SSH actors, target, cases, safety boundary, observations, and cleanup.
-6. Build and explain the namespace SSH variant.
-7. Start Docker Desktop and verify Ubuntu WSL integration before reproducing the experiment there.
-8. Select a Linux image, create the Hyper-V lab VM, and reproduce the experiment.
-9. Record the comparison before designing the shared Core pipeline.
+1. While the authenticated `ssh -N -T` connection remains open, inspect both namespace socket tables and the SSH process tree.
+2. Relate the socket endpoints and PIDs to the client debug trace and foreground `sshd` log.
+3. Close the connection deliberately and observe process/socket teardown.
+4. Capture one narrow SSH connection at the network level and explain the visibility boundary.
+5. Define the canonical normal-authentication and repeated-failure cases, truth record, markers, abort conditions, and cleanup.
+6. Run the complete namespace evidence checklist and one deliberate bounded failure.
+7. Close and index the namespace worklog, update the current learning state, and then begin Docker integration.
 
-## AI collaboration handoff
+## Learning and collaboration state
 
-- The [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>) defines roles, guided discovery, direct execution, evidence discipline, and session handoff.
-- [Worklogs](docs/worklogs/README.md) provide detailed session continuity without turning this file into a diary.
-- The current session evidence and assistance record are in [Networking to namespaces](docs/worklogs/2026-07-14-2245-networking-to-namespaces.md).
-- The learner-facing review and next-session gate are in the [Networking to Network Namespaces Foundations Study Guide](docs/learning/study-guides/2026-07-14-networking-to-namespaces-foundations.md).
+- The versioned teaching contract is [Learning Preferences](LEARNING-PREFERENCES.md).
+- Current demonstrated evidence, assistance, and gaps are summarized in [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md).
+- The historical imported foundation profile remains in [Learner Profile](docs/learning/LEARNER_PROFILE.md).
+- Guided discovery remains the default for foundational work: orient, teach the minimum complete concept, predict, act, observe, interpret, correct, and record.
+- Successful execution is not treated as stable recall or practical independence.
+
+## Planning and idea control
+
+- [Core Charter](<docs/plans/AegisLab — Core Charter v1.0.md>) defines the bounded Core.
+- [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>) defines the governing sequence.
+- [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>) translates the plan into current milestone gates and artifacts.
+- [Deferred Ideas and Review Triggers](<docs/plans/AegisLab — Deferred Ideas and Review Triggers.md>) preserves useful ideas without allowing scope creep.
 
 ## Authoritative references
 
@@ -106,12 +135,12 @@ The namespace state is temporary and may change or disappear after restart. Rein
 - [Core Charter v1.0](<docs/plans/AegisLab — Core Charter v1.0.md>)
 - [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>)
 - [Governance, Safety, and Boundaries](docs/definition/governance-safety-and-boundaries.md)
+- [Active namespace SSH worklog](docs/worklogs/2026-07-14-1505-namespace-ssh-foundations.md)
 
 ## Maintenance contract
 
-- Update this file only after a meaningful decision, environment change, blocker change, or completed learning slice.
-- Keep it below 200 lines by removing stale state or moving durable knowledge to the correct canonical or supporting document.
+- Update this file only after a meaningful decision, environment change, blocker change, or completed learning checkpoint.
+- Keep it below 200 lines by moving durable detail to focused documents.
 - Do not use it as a session diary, backlog, Git-status snapshot, or substitute for direct inspection.
-- Do not store secrets, credentials, malicious samples, personal data, or unverified claims.
-- Link to authoritative decisions rather than duplicating their full rationale.
+- Do not store secrets, credentials, private keys, malicious samples, personal data, or unverified claims.
 - If this file conflicts with current evidence or a canonical document, correct it as part of the active work.
