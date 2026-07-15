@@ -1,8 +1,10 @@
 # AegisLab — Initial Journey Plan
 
-**Status:** Active working plan
-**Purpose:** Preserve the sequence from the accepted project definition to the first bounded implementation journey
-**Canonical definition:** [AegisLab — Project Definition v1.0](<../AegisLab — Project Definition v1.0.md>)
+**Status:** Active working plan  
+**Purpose:** Preserve the sequence from the accepted project definition to the first bounded implementation journey  
+**Canonical definition:** [AegisLab — Project Definition v1.0](<../AegisLab — Project Definition v1.0.md>)  
+**Execution companion:** [AegisLab — Core Execution Map](<AegisLab — Core Execution Map.md>)  
+**Deferred-idea control:** [AegisLab — Deferred Ideas and Review Triggers](<AegisLab — Deferred Ideas and Review Triggers.md>)
 
 ---
 
@@ -13,6 +15,8 @@ The project definition and Core Charter are accepted. Understanding will be cons
 The operating principle is:
 
 > Define enough to act safely and coherently, build one bounded slice, then consolidate knowledge before expanding.
+
+The Core Execution Map translates this governing sequence into current milestone gates and required evidence. It is supporting guidance rather than a replacement for this plan.
 
 ## 1. Starting position
 
@@ -35,9 +39,11 @@ The initial inspection established:
 - Administrative commands requiring deliberate password entry
 - Docker Desktop installed on Windows but not yet active or integrated with this WSL distribution
 - A Windows hypervisor present, but no confirmed ready-to-use Hyper-V, VirtualBox, VMware, or Multipass workflow
-- The WSL SSH service disabled and inactive, with host keys not yet prepared
+- The ordinary WSL SSH service disabled and inactive
 
 No new infrastructure purchase or public-cloud environment is required for Core.
+
+Environment and runtime facts are volatile. `PROJECT_STATE.md` and direct inspection determine their current value.
 
 ## 3. Immediate environment prerequisites
 
@@ -50,6 +56,8 @@ Before closing the first learning slice:
 5. Ensure none of the laboratory targets expose SSH unintentionally to external or ordinary host networks.
 
 Environment setup must be documented as observed behavior, not treated as invisible prerequisite work.
+
+These prerequisites are not required to begin the namespace lead. Docker and VM readiness become blocking only before their respective reproduction milestones.
 
 ## 4. Canonical SSH experiment
 
@@ -64,6 +72,7 @@ It will define:
 - Expected process, socket, host-log, and network observations
 - One cross-environment evidence checklist
 - Safety boundaries, authorized addresses and targets, abort conditions, and cleanup
+- Separately maintained expected truth that is not inferred solely from sensor output
 
 The scenario meaning and expected behavior remain constant across environments. Only environment-specific setup, network attachment, sensor access, and cleanup may vary.
 
@@ -78,6 +87,7 @@ The namespace implementation leads:
 5. Observe process state, socket state, host authentication records, and packets.
 6. Explain TCP and SSH behavior and distinguish the performed actions from each observation.
 7. Break one bounded part of the path and diagnose it from evidence.
+8. Clean up and reconstruct the environment safely.
 
 Then converge:
 
@@ -114,6 +124,8 @@ After the manual cross-environment experiment is understood, create a small vers
 - Expected host and network evidence
 - Start and end markers
 - Evidence checklist and comparison record
+- Run identity and an inventory of preserved evidence
+- Separately maintained experimental truth and known limitations
 
 The scenario is run manually first. Automation follows only after its mechanics and environment differences can be explained.
 
@@ -153,6 +165,8 @@ For each important slice, the learner must progressively be able to:
 - Record what is understood and what remains unclear
 
 Successful command output alone does not close a slice. AI assistance may unblock work, but important behavior must later be explained and modified without step-by-step generated instructions.
+
+The current evidence state is maintained separately in [Current Learning State](../learning/CURRENT_LEARNING_STATE.md); this plan should not become a learner-progress diary.
 
 ## 10. First post-Core expansion: DFIR and threat hunting
 
@@ -195,14 +209,42 @@ Strictly gated dynamic malware analysis, only if still justified
 
 This ordering may change when demonstrated prerequisites or limitations justify a deliberate revision. ML requires meaningful data and baselines; agents require real evidence, incidents, and tools; dynamic malware analysis requires mature isolation and safety controls.
 
-## 12. Documentation boundary and next active session
+## 12. Documentation boundary
 
-No separate learning protocol, detailed architecture, event schema, forensic procedure, threat model, or large roadmap is required before the first experiment. Each supporting document should appear when an active design or learning need makes its decisions concrete.
+No separate detailed architecture, event schema, forensic procedure, threat model, or large implementation specification is required before the first experiment creates a concrete need.
 
-The next active session is practical:
+Supporting documents should appear only when they own a durable responsibility, prevent a demonstrated continuity problem, or make an active decision testable.
 
-1. Confirm Docker Desktop WSL integration and the Windows VM path.
-2. Define the canonical two-endpoint SSH experiment and evidence checklist.
-3. Build and observe the namespace variant.
-4. Reproduce it in Docker and virtual machines.
-5. Record the comparison before beginning the shared Core pipeline.
+The active supporting controls are:
+
+- [Core Execution Map](<AegisLab — Core Execution Map.md>) for milestone gates, evidence, and transitions;
+- [Deferred Ideas and Review Triggers](<AegisLab — Deferred Ideas and Review Triggers.md>) for preserving useful ideas without scope drift;
+- [Project State](../../PROJECT_STATE.md) for the current handoff;
+- [Current Learning State](../learning/CURRENT_LEARNING_STATE.md) for current evidence and ownership gaps;
+- worklogs and study guides for session continuity and consolidated learning.
+
+## 13. Current active sequence
+
+The namespace networking substrate and SSH control path are operational with guidance. The active milestone is namespace SSH observability.
+
+The immediate sequence is:
+
+1. Correlate the live authenticated SSH transport across client output, server logs, process relationships, and both socket-table perspectives.
+2. Close the transport deliberately and observe process and socket teardown.
+3. Capture one narrow SSH connection and explain what packet evidence reveals or cannot reveal after encryption begins.
+4. Define and run the canonical normal-authentication and repeated-failure cases with explicit truth, time bounds, markers, abort conditions, and cleanup.
+5. Introduce, diagnose, repair, and revalidate one bounded failure.
+6. Demonstrate reduced-prompt explanation or reconstruction sufficient for transfer.
+7. Enable and verify Docker Desktop WSL integration, then reproduce the same scenario and evidence checklist.
+8. Select and verify the local Linux VM path, reproduce the scenario, and complete the three-environment comparison.
+9. Close the first learning slice before beginning the shared Core evidence pipeline.
+
+This section states the current transition, not a permanent schedule. `PROJECT_STATE.md` and direct evidence should update it when the milestone changes.
+
+## 14. Maintenance contract
+
+- Preserve the dependency and lead-then-converge sequence.
+- Update the current active sequence when the milestone materially changes; keep detailed chronology in worklogs.
+- Do not add later technologies merely to make the roadmap appear more ambitious.
+- Move activated ideas from the deferred register into a bounded specification or ADR only when their trigger is satisfied.
+- Keep learner-ownership gates honest and evidence-based.
