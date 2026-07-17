@@ -23,7 +23,7 @@ The Core Execution Map translates this governing sequence into current milestone
 The current working assumptions are:
 
 - The learner begins at an early-intermediate level across Linux, networking, Python, and testing.
-- The learner expects to dedicate more than 11 focused hours per week.
+- The learner's target capacity is 3 focused hours per day on 5 days per week, for 15 focused hours per week.
 - Guided discovery is the default: the learner predicts and attempts first; AI teaches, structures experiments, reviews, challenges, and helps debug from evidence.
 - Deep independent capability takes priority over speed, feature count, or presentation polish.
 
