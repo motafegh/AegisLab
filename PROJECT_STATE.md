@@ -1,6 +1,6 @@
 # AegisLab Project State
 
-**Last meaningful update:** 2026-07-16  
+**Last meaningful update:** 2026-07-17  
 **Current stage:** Core first learning slice — namespace SSH scenario definition  
 **Authority:** Non-normative handoff; current inspected evidence and canonical documents override this file
 
@@ -38,6 +38,7 @@ SSH process-tree and network-namespace PID correlation      verified
 Connection teardown across sockets and processes            verified
 TCP establishment and FIN teardown packet evidence          verified
 SSH network visibility boundary                             explained
+Full namespace SSH reconstruction runbook                   versioned
 Server-log lifecycle correlation                            active next step
 Canonical normal-login and repeated-failure scenario        pending
 Docker reproduction                                         pending
@@ -127,6 +128,7 @@ Packet evidence did not reveal the authenticated username, accepted key, authent
 - Treat `StrictModes no` as a temporary `/tmp` exception, never as a production recommendation.
 - Network namespaces isolate networking, not the filesystem, users, PID namespace, hostname, or kernel.
 - Manual evidence understanding precedes scenario automation.
+- Use the versioned reconstruction runbook after a restart; inspect first and rebuild only missing layers.
 
 ## Remaining namespace checkpoint work
 
@@ -143,7 +145,7 @@ Packet evidence did not reveal the authenticated username, accepted key, authent
 ## Resume sequence
 
 1. Inspect whether the namespaces, `/tmp` lab material, and foreground `sshd` survived.
-2. Rebuild only missing runtime layers.
+2. Use the [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md) to rebuild only missing runtime layers.
 3. Start the foreground lab `sshd` if it is not running.
 4. Review the server log lines for the captured `10.10.0.1:57880` connection through disconnect.
 5. Map each server log statement to client, socket, process, and packet evidence.
@@ -164,6 +166,7 @@ Packet evidence did not reveal the authenticated username, accepted key, authent
 - [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>)
 - [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>)
 - [Learning Preferences](LEARNING-PREFERENCES.md)
+- [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md)
 - [Namespace SSH Foundations Worklog](docs/worklogs/2026-07-14-1505-namespace-ssh-foundations.md)
 - [Namespace SSH Observability Handoff](docs/worklogs/2026-07-16-namespace-ssh-observability-handoff.md)
 
