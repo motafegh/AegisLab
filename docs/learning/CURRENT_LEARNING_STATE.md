@@ -1,27 +1,37 @@
 # AegisLab Current Learning State
 
-**Last meaningful update:** 2026-07-15  
+**Last meaningful update:** 2026-07-17  
 **Status:** Active evidence-aware learning handoff  
 **Authority:** Non-normative; current observed performance and canonical project documents override this file  
 **Historical baseline:** [Learner Profile](LEARNER_PROFILE.md)
 
 ## Purpose
 
-This file gives a concise current view of demonstrated learning, assistance level, active misconceptions or gaps, and the next ownership gate.
+This file gives a concise current view of demonstrated learning, assistance level, active gaps, and the next ownership gate.
 
-It exists because the detailed Learner Profile contains an imported historical baseline that should remain preserved, while active project work needs a shorter and more frequently maintained record.
-
-Do not treat successful commands or polished documentation as evidence of independent mastery.
+Do not treat successful commands, polished documentation, or one guided reconstruction as evidence of independent mastery.
 
 ## Current project-learning phase
 
 ```text
 AegisLab Core first learning slice
         ↓
-namespace SSH observability
+namespace SSH observability closure
+        ↓
+canonical namespace scenario definition
 ```
 
-The learner has built and used the namespace SSH control path with substantial guided teaching. The current task is to correlate one authenticated connection across client output, server logs, process relationships, socket state, and selected packet evidence.
+The learner has built, rebuilt, and observed the namespace SSH control path with substantial guided teaching. Process, socket, namespace-membership, packet-establishment, and teardown correlation have been completed. The immediate unfinished M3 work is preserved server-log lifecycle correlation; M4 scenario definition follows.
+
+## Primary study material
+
+Use the [Study Guide Index](study-guides/README.md) and its layered study editions as the primary study path:
+
+1. networking and namespace foundations;
+2. SSH identities and Linux permissions;
+3. namespace SSH configuration and authentication.
+
+The original dated guides remain unchanged as full references and historical evidence. They are not the default linear reading path.
 
 ## Current demonstrated evidence
 
@@ -29,53 +39,54 @@ The learner has built and used the namespace SSH control path with substantial g
 
 The learner has personally:
 
-- created and rebuilt `aegis-test` and `aegis-peer` after a restart;
+- created and rebuilt `aegis-test` and `aegis-peer` after restart;
 - created and moved a veth pair;
 - assigned `10.10.0.1/24` and `10.10.0.2/24`;
 - brought loopback and veth interfaces up;
 - inspected connected routes;
+- diagnosed a missing-address case from `Network is unreachable`;
 - verified ICMP connectivity;
-- explained that namespaces isolate networking rather than complete machines.
+- explained that network namespaces isolate networking rather than complete machines.
 
 Current evidence level:
 
 ```text
-practiced with guidance
-basic reconstruction completed with a supplied sequence
-independent reconstruction not yet demonstrated
+reconstructed repeatedly using supplied documentation
+one real changed case diagnosed with guidance
+independent reconstruction from requirements not yet demonstrated
 ```
 
 ### Linux ownership and permissions
 
 The learner has personally created and inspected:
 
-- a root-controlled server directory;
-- a learner-controlled client directory;
-- mode `711`, `700`, `600`, `644`, and `755` examples;
-- a user-owned authorization path;
-- the relationship between process identity, owner, group, and permission bits.
-
-A misconception appeared when the phrase “ownership boundary” was not understood. It was repaired using concrete process/file access examples.
+- root-controlled server storage;
+- learner-controlled client and authorization storage;
+- modes `711`, `700`, `600`, `644`, and `755`;
+- parent-directory traversal behavior;
+- process identity versus file ownership;
+- an unset `LAB_ROOT` path failure and its repair.
 
 Current evidence level:
 
 ```text
-concept explained and practiced with guidance
-terminology and transfer still need reinforcement
+concept explained and practiced
+real permission/path issues interpreted
+terminology and design transfer still need reinforcement
 ```
 
-### SSH identity and trust directions
+### SSH identities and trust directions
 
 The learner has generated and inspected:
 
 - a server Ed25519 host key pair;
 - an authorized client Ed25519 key pair;
 - a separate unauthorized test key pair;
-- public-key fingerprints;
+- current public-key fingerprints;
 - `authorized_keys`;
 - a lab-specific `known_hosts`.
 
-The learner has been taught the distinction:
+Taught distinction:
 
 ```text
 server host key
@@ -99,19 +110,20 @@ The learner has personally:
 
 - created a lab-specific `sshd_config`;
 - bound `sshd` to `10.10.0.2:22`;
-- selected the lab host key and authorization file;
-- disabled passwords, keyboard-interactive authentication, root login, forwarding, and tunneling features;
+- selected lab host-key and authorization paths;
+- disabled password, keyboard-interactive, root-login, forwarding, and tunneling paths;
 - used `ForceCommand /usr/bin/id` as bounded instructional scaffolding;
 - validated configuration with `sshd -t`;
-- observed and repaired the missing `/run/sshd` prerequisite;
+- diagnosed and repaired the missing `/run/sshd` prerequisite;
 - started foreground `sshd` inside `aegis-peer`;
-- observed the listener using `ss -ltnp`.
+- observed the listener with `ss -ltnp`.
 
 Current evidence level:
 
 ```text
-built and diagnosed with substantial guidance
-not yet independently configurable or reproducible
+built and rebuilt with substantial guidance
+safe reconstruction runbook exists
+independent configuration from requirements remains unproven
 ```
 
 ### Successful and failed authentication
@@ -123,38 +135,77 @@ The learner has observed and interpreted:
 - successful public-key authentication;
 - execution of `/usr/bin/id` as `motafeq`;
 - normal exit status `0`;
-- a valid but unauthorized key reaching the same server and failing with `Permission denied (publickey)`;
-- the difference between reachability, service availability, server identity, authorization, and authenticated execution;
+- a valid but unauthorized key failing with `Permission denied (publickey)` after TCP and host verification;
 - a long-lived authenticated `ssh -N -T` transport.
 
 Current evidence level:
 
 ```text
 strong guided practical evidence
-cross-layer correlation and independent diagnosis still pending
+layer distinctions understood in observed cases
+independent modified-case design remains pending
+```
+
+### Process, socket, and namespace correlation
+
+The learner has observed and interpreted:
+
+- both perspectives of one `ESTABLISHED` TCP four-tuple;
+- the listener `sshd` process;
+- privileged per-connection `sshd`;
+- authenticated user-side `sshd` child;
+- the actual client `ssh` process and its wrappers;
+- network-namespace PID membership using `ip netns pids`;
+- the fact that host `ps` sees all PIDs because no PID namespace was created;
+- listener lifetime versus per-connection process lifetime.
+
+Current evidence level:
+
+```text
+completed with guided interpretation
+cross-source model demonstrated
+reduced-prompt explanation still required
+```
+
+### Packet evidence and teardown
+
+The learner has observed and interpreted:
+
+- SYN, SYN-ACK, and ACK establishment;
+- cleartext SSH identification strings;
+- encrypted bidirectional traffic with visible metadata;
+- client FIN followed by server FIN;
+- disappearance of both ESTABLISHED sockets;
+- exit of per-connection server processes;
+- survival of the listener after connection closure;
+- the boundary between packet metadata and encrypted SSH content.
+
+Current evidence level:
+
+```text
+packet and host-state lifecycle correlated with guidance
+server-log lifecycle correlation remains unfinished
 ```
 
 ## Honest current depth summary
 
 | Area | Current evidence | Important limitation |
 |---|---|---|
-| Interface, address, route, namespace model | Practiced with guidance; partial reconstruction | Needs changed-case reconstruction and diagnosis |
-| Process, listener, socket ownership | Practiced with guidance | Live SSH parent/child and ESTABLISHED correlation pending |
-| Linux permission model | Practiced with correction | Ownership terminology and design transfer still developing |
-| SSH host identity | Observed and correctly matched | Needs unaided explanation and mismatch diagnosis |
-| SSH client authorization | Successful and negative cases observed | Needs independent design and modified case |
-| `sshd` configuration | Built with step-by-step guidance | Cannot yet recreate safely from requirements alone |
-| Client/server log interpretation | Developing | Full server-side success/failure correlation pending |
-| Packet evidence for SSH | Not yet completed in this slice | Needs capture and visibility-limit explanation |
+| Interface, address, route, namespace model | Rebuilt repeatedly with documentation | Needs independent changed-case reconstruction |
+| Linux permission model | Practiced through real failures | Needs terminology and design transfer |
+| SSH host and client identities | Correctly generated and distinguished | Needs stable unaided explanation |
+| SSH authorization and trust files | Successful and negative cases observed | Needs independent modified-case design |
+| `sshd` configuration | Rebuilt and validated with runbook | Cannot yet derive safely from requirements alone |
+| Process/socket correlation | Completed with guidance | Needs reduced-prompt teach-back |
+| Packet lifecycle and visibility | Completed with guidance | Needs correlation with preserved server logs |
+| Canonical scenario design | Not yet completed | Must define truth, markers, counts, bounds, and cleanup |
 | Technical reporting | Strong assisted artifacts | Independent concise reporting still developing |
 
 No area above is claimed as full practical independence.
 
-## Learning-process evidence
+## Learning-process controls
 
-The learner repeatedly asks why a mechanism or security boundary exists before accepting commands. This is productive and should remain part of the workflow.
-
-The teaching process must therefore enforce:
+The teaching process must continue to enforce:
 
 ```text
 problem and responsibility
@@ -170,48 +221,49 @@ output interpretation
 next justified action
 ```
 
-Observed process failures to avoid:
+Avoid:
 
-- introducing key-generation or configuration commands before the required mental model;
-- providing large future command sequences when one current action is sufficient;
-- using a security term such as “ownership boundary” without concrete actors and access decisions;
-- treating a successful command as evidence of stable understanding;
-- allowing generated documentation to substitute for the learner’s own later explanation.
+- large unexplained command sequences during live teaching;
+- treating the full historical guides as mandatory linear reading;
+- using a security term without concrete actors and access decisions;
+- treating a successful command as stable understanding;
+- allowing documentation to replace the learner's own explanation;
+- memorizing runtime-specific fingerprints, PIDs, ports, or indexes.
 
-The governing teaching contract is [Learning Preferences](../../LEARNING-PREFERENCES.md).
+The governing contract is [Learning Preferences](../../LEARNING-PREFERENCES.md).
 
 ## Active learning gaps
 
-The next required gaps are:
-
-1. Correlate client and server views of one live `ESTABLISHED` TCP connection.
-2. Explain listener, pre-authentication process, authenticated child, and client process relationships.
-3. Correlate successful and failed client output with server authentication logs.
-4. Capture selected SSH packets and explain what encryption hides and what metadata remains visible.
-5. Replace the bounded forced-command scaffold with the canonical normal-authentication case.
-6. Define and execute a repeated-failure case with explicit truth and time bounds.
-7. Predict, introduce, diagnose, and repair one changed bounded failure.
-8. Reconstruct a meaningful part of the namespace SSH lab with reduced prompting.
-9. Transfer the scenario to Docker and then VMs without changing its meaning.
+1. Correlate successful connection and teardown with complete foreground `sshd` log lines.
+2. Explain the completed process/socket/packet lifecycle with materially reduced prompting.
+3. Define the canonical normal-authentication case.
+4. Define a fixed-count, time-bounded repeated unauthorized-key case.
+5. Add explicit start/end markers and separately maintained expected truth.
+6. Define abort conditions and cleanup.
+7. Predict, introduce, diagnose, repair, and revalidate one bounded failure.
+8. Reconstruct the core namespace scenario with reduced guidance.
+9. Create the layered M3 observability study edition after server-log correlation closes the unit.
+10. Transfer the stable scenario to Docker and then VMs without changing its meaning.
 
 ## Next ownership gate
 
-Before the namespace variant is considered understood enough to transfer, the learner should be able to:
+Before the namespace variant is understood enough to transfer, the learner should be able to:
 
 - draw the two endpoints and one SSH TCP four-tuple;
-- explain the role of `ssh`, listener `sshd`, connection-handling `sshd`, host key, client key, `known_hosts`, and `authorized_keys`;
-- identify what a selected client log, server log, socket line, and packet observation proves and does not prove;
+- explain `ssh`, listener `sshd`, per-connection `sshd`, host key, client key, `known_hosts`, and `authorized_keys`;
+- identify what selected client, server-log, socket, process, and packet evidence proves and does not prove;
 - predict one changed case before execution;
 - diagnose one deliberately broken layer from evidence;
-- run or reconstruct the core scenario with materially less step-by-step instruction;
+- run or reconstruct the scenario with materially less step-by-step instruction;
 - state the security and isolation limitations of the namespace variant.
 
-Passing this gate does not require memorizing every option. It requires a correct mental model, safe operation, evidence-based reasoning, and responsible recovery of details.
+Passing does not require memorizing every option. It requires a correct mental model, safe operation, evidence-based reasoning, and responsible recovery of details.
 
 ## Maintenance contract
 
 - Update after meaningful demonstrated learning, a corrected misconception, a changed assistance level, or a new gap.
 - Keep chronology in worklogs; keep this file concise and current.
 - Preserve the detailed imported baseline in `LEARNER_PROFILE.md`.
+- Preserve full historical study guides; use layered editions for primary study.
 - Separate taught, guided practice, stable recall, independent application, diagnosis, and transfer.
 - Never store credentials, private keys, passwords, sensitive personal data, malicious samples, or unbounded raw logs.
