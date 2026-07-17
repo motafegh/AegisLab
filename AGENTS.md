@@ -30,7 +30,7 @@ Higher-level agent instructions and safety policies always remain controlling. D
 5. For Core work, read the Core Charter and the relevant section of the Journey Plan.
 6. For milestone planning or transition work, read the [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>); consult the [Deferred Ideas and Review Triggers](<docs/plans/AegisLab — Deferred Ideas and Review Triggers.md>) only when a trigger or scope question is active.
 7. For substantial teaching or project work, read the [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>), the [worklog policy](docs/worklogs/README.md), and only the latest relevant worklog needed for continuity.
-8. For substantial teaching or learning evaluation, read the root [Learning Preferences](LEARNING-PREFERENCES.md) and [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md). Use the detailed [Learner Profile](docs/learning/LEARNER_PROFILE.md) when historical evidence or deeper context is needed.
+8. For substantial teaching or learning evaluation, read the root [Learning Preferences](LEARNING-PREFERENCES.md), [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md), and [Study Guide Index](docs/learning/study-guides/README.md). Use layered study editions as the primary learning path and full dated guides as references. Use the detailed [Learner Profile](docs/learning/LEARNER_PROFILE.md) when historical evidence or deeper context is needed.
 9. Inspect discoverable repository or environment facts before asking the user.
 
 Do not load every project document or historical worklog by default. Do not treat stale narrative as stronger evidence than the current workspace or system.
@@ -40,6 +40,7 @@ Do not load every project document or historical worklog by default. Do not trea
 - Classify substantial work by primary role and working posture using the AI Collaboration Protocol.
 - For foundational networking, security, systems, and evidence-learning slices, use guided discovery. Ask the learner to predict or explain, let them perform important safe steps, then teach, review, challenge, and debug from observed evidence.
 - Follow the versioned Learning Preferences: first principles, dependency order, minimum complete chunks, one practical action at a time, explicit command purpose, and post-output evidence interpretation.
+- Use layered study editions for required learning, active recall, changed cases, and mastery gates. Use full historical guides only for deeper reference, original evidence, or troubleshooting history.
 - For routine repository maintenance, mechanical refactors, documentation upkeep, and explicitly delegated implementation, act directly and verify the result.
 - After delegated foundational work, return ownership through learner explanation, modification, testing, diagnosis, or transfer.
 - When asked only to review, explain, or diagnose, remain non-mutating unless a change is also requested.
@@ -103,6 +104,7 @@ Do not load every project document or historical worklog by default. Do not trea
 | Parked improvements and entry conditions | [Deferred Ideas and Review Triggers](<docs/plans/AegisLab — Deferred Ideas and Review Triggers.md>) |
 | Teaching contract | [Learning Preferences](LEARNING-PREFERENCES.md) |
 | Current demonstrated knowledge and gaps | [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md) |
+| Primary layered study path and full references | [Study Guide Index](docs/learning/study-guides/README.md) |
 | Historical detailed learning baseline | [Learner Profile](docs/learning/LEARNER_PROFILE.md) |
 | AI roles, teaching, ownership, and handoff | [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>) |
 | Session continuity and history | [Worklogs](docs/worklogs/README.md) |
@@ -113,6 +115,7 @@ Do not load every project document or historical worklog by default. Do not trea
 - Put normative changes in the relevant definition part; keep the entrypoint concise.
 - Put implementation details in active supporting documents after experiments make them concrete.
 - Prefer named relative links over numeric section references and link instead of duplicating statements.
+- Preserve full historical study guides. Add or revise layered editions when the required study path, active recall, or mastery gates need improvement.
 - Leave `docs/proposals/` unchanged unless the user explicitly requests historical corrections.
 - Update `PROJECT_STATE.md` only after a meaningful decision, environment change, blocker change, or completed learning checkpoint; do not turn it into a session diary.
 - Keep both `AGENTS.md` and `PROJECT_STATE.md` below 200 lines. Compress or move history before crossing the limit.
