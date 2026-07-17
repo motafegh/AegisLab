@@ -39,6 +39,7 @@ Connection teardown across sockets and processes            verified
 TCP establishment and FIN teardown packet evidence          verified
 SSH network visibility boundary                             explained
 Full namespace SSH reconstruction runbook                   versioned
+Layered M1–M2 study editions                                versioned
 Server-log lifecycle correlation                            active next step
 Canonical normal-login and repeated-failure scenario        pending
 Docker reproduction                                         pending
@@ -129,35 +130,40 @@ Packet evidence did not reveal the authenticated username, accepted key, authent
 - Network namespaces isolate networking, not the filesystem, users, PID namespace, hostname, or kernel.
 - Manual evidence understanding precedes scenario automation.
 - Use the versioned reconstruction runbook after a restart; inspect first and rebuild only missing layers.
+- Preserve the detailed dated study guides as historical references; use the layered editions as the primary study path.
 
 ## Remaining namespace checkpoint work
 
 - Correlate the most recent successful connection and teardown with foreground `sshd` log lines.
 - Correlate successful and failed client events with preserved server authentication evidence.
+- Complete reduced-prompt explanation and changed-case checks from the layered editions.
 - Define the canonical normal-authentication case.
 - Define a fixed-count, time-bounded repeated-failure case.
 - Add explicit start/end markers and separately maintained expected truth.
 - Define abort conditions and cleanup.
 - Introduce, diagnose, repair, and revalidate one bounded failure.
 - Demonstrate reconstruction and explanation with reduced prompting.
+- Create the M3 SSH observability layered edition after server-log correlation closes the unit.
 - Produce the concise evidence checklist to reproduce in Docker and VMs.
 
 ## Resume sequence
 
 1. Inspect whether the namespaces, `/tmp` lab material, and foreground `sshd` survived.
 2. Use the [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md) to rebuild only missing runtime layers.
-3. Start the foreground lab `sshd` if it is not running.
-4. Review the server log lines for the captured `10.10.0.1:57880` connection through disconnect.
-5. Map each server log statement to client, socket, process, and packet evidence.
-6. Define the canonical normal and repeated-failure experiment contract before generating new attempts.
-7. Run the bounded cases with truth records, timestamps, abort conditions, and cleanup.
+3. Use the [Study Guide Index](docs/learning/study-guides/README.md) for required review rather than reading the full dated guides linearly.
+4. Start the foreground lab `sshd` if it is not running.
+5. Review the server log lines for the captured `10.10.0.1:57880` connection through disconnect.
+6. Map each server log statement to client, socket, process, and packet evidence.
+7. Define the canonical normal and repeated-failure experiment contract before generating new attempts.
+8. Run the bounded cases with truth records, timestamps, abort conditions, and cleanup.
 
 ## Learning and collaboration state
 
 - The versioned teaching contract is [Learning Preferences](LEARNING-PREFERENCES.md).
 - Current demonstrated evidence, assistance, and gaps are summarized in [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md).
+- The primary study route is the [Study Guide Index](docs/learning/study-guides/README.md) and its layered editions.
 - Guided discovery remains the default: orient, teach the minimum complete concept, predict, act, observe, interpret, correct, and record.
-- Today’s reconstruction and correlation were completed with stepwise guidance; this is demonstrated guided practice, not yet stable independent reconstruction.
+- Reconstruction and correlation were completed with stepwise guidance; this is demonstrated guided practice, not yet stable independent reconstruction.
 
 ## Authoritative references
 
@@ -166,6 +172,7 @@ Packet evidence did not reveal the authenticated username, accepted key, authent
 - [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>)
 - [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>)
 - [Learning Preferences](LEARNING-PREFERENCES.md)
+- [Study Guide Index](docs/learning/study-guides/README.md)
 - [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md)
 - [Namespace SSH Foundations Worklog](docs/worklogs/2026-07-14-1505-namespace-ssh-foundations.md)
 - [Namespace SSH Observability Handoff](docs/worklogs/2026-07-16-namespace-ssh-observability-handoff.md)
