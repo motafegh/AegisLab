@@ -10,11 +10,11 @@ Worklogs are non-normative historical evidence. Current inspection, the canonica
 
 Create one for nearly every substantial repository-focused working or teaching session, including:
 
-- Repository or environment changes
-- Experiments, implementation, design, or debugging
-- Important reviews or decisions
-- Foundational teaching and evaluated learning
-- Work that another session may need to resume
+- repository or environment changes;
+- experiments, implementation, design, or debugging;
+- important reviews or decisions;
+- foundational teaching and evaluated learning;
+- work another session may need to resume.
 
 Skip greetings, isolated factual answers, and trivial interactions that create no useful project knowledge, evidence, action, decision, or handoff context.
 
@@ -24,19 +24,19 @@ One file represents one substantial session. If work continues later, create a n
 
 Use `YYYY-MM-DD-HHMM-short-title.md`. Use the local date and time for the recorded timezone and keep the title short, specific, and lowercase with hyphens.
 
-Allowed status values are:
+Allowed status values:
 
-- `active` — the session is currently progressing
-- `paused` — the session ended with expected continuation work
-- `completed` — the session reached its stated outcome
-- `abandoned` — the session stopped and will not continue as planned
+- `active` — the session is currently progressing;
+- `paused` — the session ended with expected continuation work;
+- `completed` — the session reached its stated outcome;
+- `abandoned` — the session stopped and will not continue as planned.
 
 ## Live structure
 
 Start from [TEMPLATE.md](TEMPLATE.md). Each active log has two complementary layers:
 
-- A concise, mutable **Live snapshot** for fast resumption
-- A chronological **Checkpoint timeline** preserving the meaningful path taken
+- a concise, mutable **Live snapshot** for fast resumption;
+- a chronological **Checkpoint timeline** preserving the meaningful path taken.
 
 Create and index the record after the session is known to be substantial. Write a minimal plan before material implementation or experimentation. Update the log automatically after meaningful evidence, decisions, blockers, solutions, scope changes, verification, and before a known pause or handoff.
 
@@ -44,15 +44,15 @@ Create and index the record after the session is known to be substantial. Write 
 
 Record enough for a competent later reader to reconstruct what mattered without replaying the conversation. Increase detail for:
 
-- Foundational learning and learner-owned decisions
-- Security-sensitive, privileged, or consequential actions
-- Experiments and difficult-to-reproduce results
-- Failures, conflicting observations, and rejected hypotheses
-- Changes to scope, architecture, safety, or project direction
+- foundational learning and learner-owned decisions;
+- security-sensitive, privileged, or consequential actions;
+- experiments and difficult-to-reproduce results;
+- failures, conflicting observations, and rejected hypotheses;
+- changes to scope, architecture, safety, or project direction.
 
 Keep routine actions terse. Do not record greetings, repetitive narration, obvious tool mechanics, or transcript-level chatter.
 
-Worklogs contain concise rationale and observable evidence, not hidden chain-of-thought. Summarize long command output and reference safe artifacts or paths when useful.
+Worklogs contain concise rationale and observable evidence, not hidden chain-of-thought. Summarize long output and reference safe artifacts or paths when useful.
 
 ## Evidence and content safety
 
@@ -66,10 +66,10 @@ Worklogs contain concise rationale and observable evidence, not hidden chain-of-
 
 At session end:
 
-1. Complete the verification and final handoff sections.
-2. Set `Ended` and change the status to `completed`, `paused`, or `abandoned`.
-3. Update the index outcome below.
-4. Update `PROJECT_STATE.md` only if the session caused a meaningful decision, environment change, blocker change, or completed learning slice.
+1. complete verification and final handoff;
+2. set `Ended` and change status to `completed`, `paused`, or `abandoned`;
+3. update the index outcome below;
+4. update `PROJECT_STATE.md` only when the session caused a meaningful decision, environment change, blocker change, or completed learning slice.
 
 Active logs may be freely maintained. After closure, formatting, wording, and link repairs are allowed when they preserve meaning. Record changed conclusions, material factual corrections, or later-discovered limitations as dated entries under **Corrections** so the original reasoning history remains visible.
 
@@ -79,7 +79,11 @@ Newest records appear first.
 
 | Started | Worklog | Status | Outcome |
 |---|---|---|---|
-| 2026-07-14 20:30 +02:00 | [Networking to namespaces](2026-07-14-2245-networking-to-namespaces.md) | paused | Built and verified a two-endpoint namespace network; study and assessment are required before SSH |
+| 2026-07-18 16:40 +02:00 | [M5 Docker planning and learning controls](2026-07-18-1640-m5-docker-planning.md) | completed | Versioned the complete M5 route, exact-position playbook, learning-depth controls, and active repository handoff |
+| 2026-07-18 | [Namespace SSH authentication lifecycle closure](2026-07-18-namespace-ssh-auth-lifecycle-closure.md) | completed | Correlated successful and failed authentication, process/socket state, server logs, and clean teardown as the guided Docker baseline |
+| 2026-07-16 | [Namespace SSH observability handoff](2026-07-16-namespace-ssh-observability-handoff.md) | paused | Preserved process, socket, namespace, packet-establishment, and teardown evidence for continuation |
+| 2026-07-14 20:30 +02:00 | [Networking to namespaces](2026-07-14-2245-networking-to-namespaces.md) | paused | Built and verified a two-endpoint namespace network; study and assessment were required before SSH |
+| 2026-07-14 15:05 +02:00 | [Namespace SSH foundations](2026-07-14-1505-namespace-ssh-foundations.md) | paused | Began the controlled namespace SSH client/server experiment and preserved the guided implementation route |
 | 2026-07-13 19:48 +03:30 | [SSH foundations bridge](2026-07-13-1948-ssh-foundations-bridge.md) | active | Bridging demonstrated HTTP networking knowledge into the first SSH Core concepts |
 | 2026-07-13 19:44 +03:30 | [Learner profile integration](2026-07-13-1944-learner-profile-integration.md) | completed | Imported, routed, and verified the maintained evidence-aware learner profile |
 | 2026-07-13 19:25 +03:30 | [AI collaboration setup](2026-07-13-1925-ai-collaboration-setup.md) | completed | Added and verified the collaboration protocol and durable worklog system |
