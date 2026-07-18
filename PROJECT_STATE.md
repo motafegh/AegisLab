@@ -1,185 +1,191 @@
 # AegisLab Project State
 
-**Last meaningful update:** 2026-07-17  
-**Current stage:** Core first learning slice — namespace SSH scenario definition  
-**Authority:** Non-normative handoff; current inspected evidence and canonical documents override this file
+**Last meaningful update:** 2026-07-18  
+**Current stage:** Core first learning slice — M5 Docker operating model and adapter preparation  
+**Authority:** Non-normative handoff; explicit user direction, current inspected evidence, and canonical documents override this file
 
 ## Current objective
 
-Finish the namespace form of the canonical two-endpoint SSH experiment before moving to Docker or virtual machines.
+Build the Docker adapter deliberately rather than translating namespace commands mechanically.
 
-The observability mechanism is now understood across:
+The active route is:
 
 ```text
-client debug output
-        ↕
-server sshd logs
-        ↕
-process relationships
-        ↕
-LISTEN and ESTABLISHED sockets
-        ↕
-selected packet evidence
+Phase 0  Docker object, process, network, and lifecycle model
+        ↓
+Phase 1  client/server adapter design and security boundaries
+        ↓
+Phase 2  safe server image
+        ↓
+Phase 3  manual Docker network and two-container topology
+        ↓
+Phase 4  authorized SSH success and unauthorized-key failure
+        ↓
+Phase 5  Docker-specific observability
+        ↓
+Phase 6  lifecycle, persistence, and one controlled fault
+        ↓
+Phase 7  Compose reproducibility
+        ↓
+Phase 8  namespace-versus-Docker comparison
 ```
 
-The immediate next work is to correlate preserved foreground server logs, then define and run the bounded normal-authentication and repeated-failure cases with explicit truth and timing.
+Use the [M5 Docker Learning and Execution Plan](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) for complete scope, learning depth, phases, and gates. Use the [M5 Docker Session Playbook](<docs/plans/AegisLab — M5 Docker Session Playbook.md>) for the exact current step and next action.
 
-## Current position in the journey
+## Transition decision
+
+The namespace SSH guided baseline was completed across successful authentication, controlled unauthorized-key failure, client/server log correlation, process/socket/namespace evidence, and teardown.
+
+The learner explicitly chose to defer remaining formal M4 work because it was judged redundant for current learning value and directed progression to M5.
+
+Record the decision accurately:
+
+```text
+remaining formal M4 scenario-contract work
+→ deferred
+→ not claimed complete
+
+M5 Docker learning and reproduction
+→ active
+```
+
+M5 preserves the demonstrated baseline:
+
+- authorized public-key authentication succeeds;
+- a valid but unauthorized key reaches SSH authentication and fails;
+- server trust and client authorization remain distinct;
+- a live connection can be observed;
+- connection-specific state disappears after client teardown;
+- the reusable server remains until deliberately stopped.
+
+Formal fixed-count repeated failures, time bounds, start/end markers, separately maintained truth, and threshold cases remain deferred until a later detector/evaluation requirement makes them material.
+
+## Current position
 
 ```text
 Project definition and Core Charter                         accepted
-Namespace networking substrate                              rebuilt and verified
-SSH identities, authorization, and bounded configuration    rebuilt and verified
-Namespace-bound SSH listener                                verified
-Successful public-key authentication                        verified
-Valid but unauthorized key rejection                        verified previously
-Both ESTABLISHED socket perspectives                        verified
-SSH process-tree and network-namespace PID correlation      verified
-Connection teardown across sockets and processes            verified
-TCP establishment and FIN teardown packet evidence          verified
-SSH network visibility boundary                             explained
-Full namespace SSH reconstruction runbook                   versioned
-Layered M1–M2 study editions                                versioned
-Server-log lifecycle correlation                            active next step
-Canonical normal-login and repeated-failure scenario        pending
-Docker reproduction                                         pending
-VM reproduction                                             pending
-Cross-environment comparison                                pending
-Shared evidence and detection pipeline                      intentionally later
+Namespace networking and SSH control path                   guided baseline completed
+Success/failure/log/process/socket/teardown correlation      guided baseline completed
+Remaining formal M4 experiment-contract work                explicitly deferred
+M5 Docker plan and session playbook                         versioned
+Docker Phase 0 baseline inspection                          active
+Docker adapter design                                       pending
+Docker implementation                                       pending
+Docker SSH reproduction                                     pending
+Docker observability and controlled failure                  pending
+Compose reproducibility                                     pending
+Namespace-versus-Docker comparison                          pending
+VM reproduction                                             later
+Shared evidence/detection pipeline                          intentionally later
 ```
 
-See the [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>) for milestone gates and the [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>) for the governing sequence.
+## Current environment evidence
 
-## Latest runtime snapshot
+### WSL
 
-The 2026-07-16 runtime was rebuilt after WSL had removed all prior temporary state.
+- Ubuntu runs under WSL2.
+- A WSL network/resolver failure temporarily left only loopback and no usable route.
+- `wsl --shutdown` followed by reopening WSL restored interfaces, routing, DNS, ICMP, and GitHub access.
+- The previous namespace runtime disappeared after WSL shutdown, as expected for volatile lab state.
 
-- `aegis-test` owns `veth-test` at `10.10.0.1/24`.
-- `aegis-peer` owns `veth-peer` at `10.10.0.2/24`.
-- Both namespaces have directly connected `10.10.0.0/24` routes and successful ICMP exchange.
-- Temporary lab state is under `/tmp/aegislab-namespace-ssh`.
-- The lab-specific `sshd` binds only to `10.10.0.2:22` and uses foreground logging.
-- The ordinary WSL SSH service was not started or modified.
-- The latest listener PID was `157590`; it remained after the client connection closed.
-- No established SSH connection remained at the pause point.
-- No per-connection `sshd` processes remained at the pause point.
+### Repository
 
-Current runtime fingerprints:
+- The learner pulled `main` through commit `27833bc` before the new M5 planning commits were created remotely.
+- Before implementation, pull the latest `main` only after checking `git status --short`.
+- No Docker adapter implementation, Dockerfile, or Compose file existed at M5 entry.
+
+### Docker
+
+Observed current control plane:
 
 ```text
-server host key:
-SHA256:W4wUFw9uwvVnz7NrDfCLgWt+Um+N5NeK5hAHdUTU7xs
-
-authorized client key:
-SHA256:cZ3muVbww315suKD8+fpNBMRQJZTp64YpNPBALN6osY
-
-unauthorized test key:
-SHA256:rA1BVogOYbSx7j5IJ312AyNgWtcxaQ69DOc5QuVGmxg
+Docker client:       29.6.1
+Docker Desktop:      4.80.0
+Docker Engine:       29.6.1
+API:                 1.55
+context:             default
+OS/architecture:     linux/amd64
 ```
 
-All namespace names, addresses, interface indexes, PIDs, ports, fingerprints, `/tmp` files, and processes are runtime-specific. Reinspect them after any pause or restart.
+Object inventory at M5 entry:
 
-## Latest completed evidence
+- no running containers;
+- unrelated stopped containers named `kali`, `juiceshop`, `webgoat`, and `dvwa`;
+- unrelated local images, including `alpine:latest`;
+- standard networks `bridge`, `host`, and `none`;
+- unrelated custom networks:
+  - `lab-net-nat` — `172.18.0.0/16`, non-internal;
+  - `lab-net-internal` — `172.19.0.0/16`, internal;
+- default bridge subnet `172.17.0.0/16`;
+- no AegisLab Docker network created yet.
 
-One authenticated `ssh -N -T` connection used:
+Unrelated Docker objects must remain untouched and must not become hidden project dependencies.
 
-```text
-client: 10.10.0.1:50420, ssh PID 158898
-server: 10.10.0.2:22, sshd PIDs 158899 and 159032
-listener: sshd PID 157590
-```
+## Current learning objective
 
-Process ancestry was verified:
+Phase 0 establishes a working Docker model before SSH implementation.
 
-```text
-sshd listener 157590
-└── sshd: motafeq [priv] 158899
-    └── sshd: motafeq 159032
-```
+Required D2 concepts:
 
-Namespace membership was verified:
+- image versus container versus running process;
+- container writable state and lifecycle;
+- container versus VM shared-kernel boundary;
+- Docker-managed process and network namespace behavior;
+- what stop, start, remove, and recreate change.
 
-- `aegis-peer`: PIDs `157590`, `158899`, and `159032`.
-- `aegis-test`: client wrapper PIDs `158896`, `158897`, and actual `ssh` PID `158898`.
+Required D1 concepts:
 
-After stopping only the client:
+- Docker client versus daemon;
+- Docker Desktop/WSL boundary;
+- current object inventory and safe ownership.
 
-- both ESTABLISHED socket tables became empty;
-- per-connection server PIDs `158899` and `159032` exited;
-- listener PID `157590` and `LISTEN 10.10.0.2:22` remained.
+Advanced cgroup, storage-driver, Docker Desktop VM, and bridge/firewall internals remain deferred unless a real blocker requires them.
 
-A later captured connection used `10.10.0.1:57880 ↔ 10.10.0.2:22` and showed:
+## Exact next action
 
-- SYN, SYN-ACK, ACK TCP establishment;
-- cleartext SSH identification strings before encryption;
-- bidirectional encrypted SSH traffic whose endpoints, timing, flags, and lengths remained visible;
-- client FIN followed by server FIN during orderly teardown;
-- no kernel capture drops.
+1. Pull the latest M5 planning commits after confirming a safe worktree.
+2. Read the M5 playbook locally.
+3. Continue at **Phase 0, Step 0.2**.
+4. Predict image/container/process state for one named disposable AegisLab container.
+5. Run and inspect only that disposable object.
+6. Do not create the final SSH network, Dockerfile, keys, or Compose project before Phase 0 and Phase 1 gates.
 
-Packet evidence did not reveal the authenticated username, accepted key, authentication result, command, or encrypted payload contents.
+## Teaching and collaboration controls
 
-## Important design decisions
+- Scale explanation depth to novelty, risk, confusion, and required concept depth.
+- Do not apply full flag-by-flag explanations to every simple command.
+- Keep the active problem and question visible before collecting evidence.
+- Group read-only commands when they answer one coherent question.
+- Use one action at a time for state changes, security boundaries, or diagnosis.
+- Re-expose concepts progressively rather than repeating identical lectures.
+- Assess through prediction, comparison, changed cases, diagnosis, and reduced-prompt reconstruction—not trivia.
+- Stop collecting evidence when additional views no longer change the model or decision.
+- Keep guided practice, stable recall, diagnosis, transfer, and independence distinct.
 
-- Do not start or modify the ordinary WSL SSH service.
-- Bind the lab server only to `10.10.0.2`.
-- Keep host keys, client credentials, authorization, configuration, and `known_hosts` lab-specific.
-- Do not commit private keys or copy temporary `/tmp` identity material into the repository.
-- Keep public-key authentication as the initial mechanism; passwords and root login remain disabled.
-- Treat `ForceCommand /usr/bin/id` as instructional scaffolding, not final normal-login semantics.
-- Treat `StrictModes no` as a temporary `/tmp` exception, never as a production recommendation.
-- Network namespaces isolate networking, not the filesystem, users, PID namespace, hostname, or kernel.
-- Manual evidence understanding precedes scenario automation.
-- Use the versioned reconstruction runbook after a restart; inspect first and rebuild only missing layers.
-- Preserve the detailed dated study guides as historical references; use the layered editions as the primary study path.
+## Safety decisions
 
-## Remaining namespace checkpoint work
+- Do not publish the Docker SSH port to the host during the initial adapter.
+- Do not modify the ordinary WSL SSH service.
+- Never commit or embed private keys in Git or image layers.
+- Use only AegisLab-owned containers, networks, volumes, files, and names for implementation and cleanup.
+- Reinspect state after WSL, Docker Desktop, container, image, or network lifecycle changes.
+- Explain blast radius and cleanup before destructive Docker actions.
 
-- Correlate the most recent successful connection and teardown with foreground `sshd` log lines.
-- Correlate successful and failed client events with preserved server authentication evidence.
-- Complete reduced-prompt explanation and changed-case checks from the layered editions.
-- Define the canonical normal-authentication case.
-- Define a fixed-count, time-bounded repeated-failure case.
-- Add explicit start/end markers and separately maintained expected truth.
-- Define abort conditions and cleanup.
-- Introduce, diagnose, repair, and revalidate one bounded failure.
-- Demonstrate reconstruction and explanation with reduced prompting.
-- Create the M3 SSH observability layered edition after server-log correlation closes the unit.
-- Produce the concise evidence checklist to reproduce in Docker and VMs.
+## Active references
 
-## Resume sequence
-
-1. Inspect whether the namespaces, `/tmp` lab material, and foreground `sshd` survived.
-2. Use the [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md) to rebuild only missing runtime layers.
-3. Use the [Study Guide Index](docs/learning/study-guides/README.md) for required review rather than reading the full dated guides linearly.
-4. Start the foreground lab `sshd` if it is not running.
-5. Review the server log lines for the captured `10.10.0.1:57880` connection through disconnect.
-6. Map each server log statement to client, socket, process, and packet evidence.
-7. Define the canonical normal and repeated-failure experiment contract before generating new attempts.
-8. Run the bounded cases with truth records, timestamps, abort conditions, and cleanup.
-
-## Learning and collaboration state
-
-- The versioned teaching contract is [Learning Preferences](LEARNING-PREFERENCES.md).
-- Current demonstrated evidence, assistance, and gaps are summarized in [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md).
-- The primary study route is the [Study Guide Index](docs/learning/study-guides/README.md) and its layered editions.
-- Guided discovery remains the default: orient, teach the minimum complete concept, predict, act, observe, interpret, correct, and record.
-- Reconstruction and correlation were completed with stepwise guidance; this is demonstrated guided practice, not yet stable independent reconstruction.
-
-## Authoritative references
-
-- [Project Definition v1.0](<docs/AegisLab — Project Definition v1.0.md>)
-- [Core Charter v1.0](<docs/plans/AegisLab — Core Charter v1.0.md>)
+- [Project Definition](<docs/AegisLab — Project Definition v1.0.md>)
+- [Core Charter](<docs/plans/AegisLab — Core Charter v1.0.md>)
 - [Initial Journey Plan](<docs/plans/AegisLab — Initial Journey Plan.md>)
 - [Core Execution Map](<docs/plans/AegisLab — Core Execution Map.md>)
+- [M5 Docker Learning and Execution Plan](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>)
+- [M5 Docker Session Playbook](<docs/plans/AegisLab — M5 Docker Session Playbook.md>)
 - [Learning Preferences](LEARNING-PREFERENCES.md)
-- [Study Guide Index](docs/learning/study-guides/README.md)
-- [Namespace SSH Lab Reconstruction Runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md)
-- [Namespace SSH Foundations Worklog](docs/worklogs/2026-07-14-1505-namespace-ssh-foundations.md)
-- [Namespace SSH Observability Handoff](docs/worklogs/2026-07-16-namespace-ssh-observability-handoff.md)
+- [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md)
+- [Namespace SSH lifecycle closure worklog](docs/worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md)
 
 ## Maintenance contract
 
-- Update this file only after a meaningful decision, environment change, blocker change, or completed learning checkpoint.
-- Keep it below 200 lines by moving durable detail to focused documents.
-- Do not store secrets, credentials, private keys, malicious samples, personal data, or unverified claims.
-- If this file conflicts with current evidence or a canonical document, correct it as part of the active work.
+- Update only after a meaningful decision, environment change, blocker change, phase transition, or completed learning checkpoint.
+- Keep this file below 200 lines by moving detail to focused plans and worklogs.
+- Do not store secrets, credentials, private keys, sensitive data, or unverified claims.
+- Correct stale runtime facts rather than carrying them forward.
