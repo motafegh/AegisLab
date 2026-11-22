@@ -1,6 +1,6 @@
 # AegisLab — M5 Docker Learning and Execution Plan
 
-**Status:** Active supporting plan  
+**Status:** Historical M5 learning plan; displaced as active next work on 2026-11-22 by [Capability Execution Map v2](<AegisLab — Capability Execution Map v2.md>). Docker work remains later opt-in; no Docker SSH adapter was implemented.
 **Started:** 2026-07-18  
 **Milestone:** M5 — Docker adapter reproduction and Docker-specific learning  
 **Authority:** Non-normative active plan; explicit user direction, current evidence, the Project Definition, Core Charter, Initial Journey Plan, and safety boundaries remain controlling  

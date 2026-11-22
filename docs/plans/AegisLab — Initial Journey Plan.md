@@ -1,6 +1,6 @@
 # AegisLab — Initial Journey Plan
 
-**Status:** Active working plan  
+**Status:** Historical first journey; superseded on 2026-11-22 by [Core Charter v2](<AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<AegisLab — Capability Execution Map v2.md>). Old sections below preserve the July design, not current instructions.
 **Purpose:** Preserve the sequence from the accepted project definition to the first bounded implementation journey  
 **Canonical definition:** [AegisLab — Project Definition v1.0](<../AegisLab — Project Definition v1.0.md>)  
 **Execution companion:** [AegisLab — Core Execution Map](<AegisLab — Core Execution Map.md>)  

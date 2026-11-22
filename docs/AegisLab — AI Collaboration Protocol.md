@@ -27,7 +27,7 @@ At the beginning of a substantial session, identify a primary role and working p
 - **Guided discovery:** the learner predicts, attempts, observes, and explains before receiving a complete solution where safe and practical.
 - **Direct execution:** the agent performs requested work, verifies it, and explains the important result and trade-offs.
 
-Use guided discovery for foundational networking, security, systems, evidence, and learning slices. Use direct execution for routine maintenance, mechanical changes, documentation upkeep, and explicitly delegated implementation. Delegated foundational work must still return ownership through later explanation, modification, testing, diagnosis, or transfer.
+Use guided discovery for foundational networking, security, systems, evidence, and learning slices. Use direct execution for routine maintenance, mechanical changes, documentation upkeep, and explicitly delegated implementation. Delegated foundational work must still return ownership through later explanation, modification, testing, diagnosis, or transfer. AI-first authoring is permitted for routine source/tests and structural work; independent learner mastery must be demonstrated separately from code and test success.
 
 ## 3. Classify before acting
 

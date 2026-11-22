@@ -1,6 +1,6 @@
 # AegisLab — Deferred Ideas and Review Triggers
 
-**Status:** Active parking and review register  
+**Status:** Historical v1 parking register; its old AI/agent-after-Core and Docker/VM triggers do not govern v2. Use [Core Charter v2](<AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<AegisLab — Capability Execution Map v2.md>) for current scope; other ideas remain references only.
 **Last meaningful update:** 2026-07-15  
 **Authority:** Non-normative; no item here enters scope without satisfying its trigger and the governing Charter or a later bounded charter
 

@@ -41,7 +41,7 @@ Read only the parts relevant to the current task after reading this entrypoint.
 | [Learning and Technology Strategy](definition/learning-and-technology-strategy.md) | Learning domains, ownership model, technology adoption, and external alignment | Teaching method, technology choice, ML, agents, or standards |
 | [Success and Evolution](definition/success-and-evolution.md) | Success criteria, supporting documents, and Stage 0 completion | Acceptance criteria, capability snapshots, portfolio evidence, or project evolution |
 
-The accepted [Core Charter](<plans/AegisLab — Core Charter v1.0.md>) and active [Initial Journey Plan](<plans/AegisLab — Initial Journey Plan.md>) govern the first implementation journey. They are operational supporting documents, not replacements for this definition.
+The accepted [Core Charter v2](<plans/AegisLab — Core Charter v2.0.md>) and active [Capability Execution Map v2](<plans/AegisLab — Capability Execution Map v2.md>) govern the first implementation journey; [Charter v1](<plans/AegisLab — Core Charter v1.0.md>) and the [Initial Journey Plan](<plans/AegisLab — Initial Journey Plan.md>) are retained as history. These are operational supporting documents, not replacements for this definition.
 
 ## Normative relationship
 

@@ -118,7 +118,7 @@ Software operation is necessary, but the learner's ability to reason about, diag
 
 ## Supporting documents
 
-This project definition should remain the stable center of AegisLab. The accepted Core Charter and active Initial Journey Plan govern the first bounded journey. Additional detailed supporting documents will be created only when needed.
+This project definition should remain the stable center of AegisLab. The accepted [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>) govern the first bounded journey; the initial journey plan is retained for historical context. Additional detailed supporting documents will be created only when needed.
 
 Likely future documents include:
 

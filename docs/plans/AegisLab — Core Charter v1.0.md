@@ -1,7 +1,7 @@
 # AegisLab — Core Charter
 
 **Version:** 1.0
-**Status:** Accepted and active
+**Status:** Historical: accepted v1, superseded for active execution on 2026-11-22 by [Core Charter v2.0](<AegisLab — Core Charter v2.0.md>); retain v1 requirements as the original design, not current gates.
 **Scope:** First bounded vertical slice
 **Working profile:** Early-intermediate starting point; 11+ focused hours per week; guided discovery
 

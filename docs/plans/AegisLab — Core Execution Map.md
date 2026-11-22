@@ -1,6 +1,6 @@
 # AegisLab — Core Execution Map
 
-**Status:** Active supporting execution map  
+**Status:** Historical M0–M17 map; superseded for active execution on 2026-11-22 by [Capability Execution Map v2](<AegisLab — Capability Execution Map v2.md>). M5 below was the July handoff, not the current next action.
 **Last meaningful update:** 2026-07-18  
 **Authority:** Non-normative; the Project Definition, Core Charter, Initial Journey Plan, explicit user direction, and current evidence remain controlling
 

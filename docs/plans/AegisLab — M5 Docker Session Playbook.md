@@ -1,6 +1,6 @@
 # AegisLab — M5 Docker Session Playbook
 
-**Status:** Active mutable playbook  
+**Status:** Historical frozen July M5 position, NOT active. Current gates: [Capability Execution Map v2](<AegisLab — Capability Execution Map v2.md>). Old current-step language below is historical only.
 **Last updated:** 2026-07-18  
 **Active milestone:** M5 — Docker adapter reproduction  
 **Current phase:** Phase 0 — Docker operating model and current environment  
