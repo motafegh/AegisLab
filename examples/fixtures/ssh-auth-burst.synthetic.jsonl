@@ -1,0 +1,4 @@
+{"observed_at":"2026-11-22T10:00:00Z","message":"sshd[201]: Failed publickey for labuser from 10.10.0.1 port 51001 ssh2"}
+{"observed_at":"2026-11-22T10:00:30Z","message":"sshd[204]: Failed publickey for labuser from 10.10.0.1 port 51002 ssh2"}
+{"observed_at":"2026-11-22T10:01:20Z","message":"sshd[208]: Failed publickey for labuser from 10.10.0.1 port 51003 ssh2"}
+{"observed_at":"2026-11-22T10:01:30Z","message":"sshd[209]: Accepted publickey for labuser from 10.10.0.1 port 51004 ssh2"}

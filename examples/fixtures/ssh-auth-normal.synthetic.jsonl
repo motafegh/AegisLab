@@ -1,0 +1,2 @@
+{"observed_at":"2026-11-22T10:00:00Z","message":"sshd[310]: Accepted publickey for labuser from 10.10.0.1 port 52001 ssh2"}
+{"observed_at":"2026-11-22T10:00:30Z","message":"sshd[311]: Failed publickey for labuser from 10.10.0.1 port 52002 ssh2"}
