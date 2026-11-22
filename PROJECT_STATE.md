@@ -16,6 +16,7 @@ Owner authorized the [2026-11-22 AI-first evolution](docs/proposals/2026-11-22-a
 - Initial 2026-11-22 local WSL worktree was clean at `b5f0234`; remote `main` had one proposal commit `939225a`. Local was safely fast-forwarded to that commit.
 - At inspection, `/tmp/aegislab-namespace-ssh` was **absent**. July worklog preserves summarized observations, **not importable raw sshd log lines**. There is no attested retained source suitable for claiming a live raw-log detection. Begin Stage B with labeled public-safe **synthetic** fixtures; fresh authorized sensor evidence belongs to Stage D.
 - No privileged SSH or Docker operations were authorized or performed in this evolution work.
+- **Stage C transport readiness (read-only):** local model catalog responded at `http://127.0.0.1:18080/v1/models` from Windows and WSL. WSL's existing `http_proxy=http://127.0.0.1:8080` intercepted the default request and produced an empty reply; a direct WSL `curl --noproxy 127.0.0.1` request succeeded. This confirms only model-list endpoint connectivity, **not** a loaded model, successful inference or AI evaluation. Future local client must bypass ambient HTTP proxy explicitly without broadening listener/network exposure.
 
 ## Current capability and next execution
 
