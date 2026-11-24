@@ -44,6 +44,10 @@ Stages may be deliberately reordered if a verified prerequisite or flaw requires
 | F | repeatable local run, one diagnosed failure and restart/replay proof, operating notes | no production SLO inference from homelab |
 | G | new authorized event family with contrasted scenarios, error analysis and comparative operator task | no claim of independently demonstrated demand or mastery without evidence |
 
+## Active stage detail
+
+See [Stage C execution plan](STAGE-C-EXECUTION.md) for C1-C8 milestones and the current candidate contract. The [learning ledger](../learning/LEARNING_LEDGER.md) tracks depth and recall across stages; it does not replace these gates.
+
 ## Per-stage checkpoint record
 
 1. **System works now:** exact command and source artifact / observable result.

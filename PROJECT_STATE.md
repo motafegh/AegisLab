@@ -1,6 +1,6 @@
 # AegisLab Project State
 
-**Updated:** 2026-11-22 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
+**Updated:** 2026-11-24 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
 **Active authority:** [Project Definition](<docs/AegisLab — Project Definition v1.0.md>), [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>), [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>).
 **Prior route:** [Charter v1](<docs/plans/AegisLab — Core Charter v1.0.md>), [M0–M17 Map](<docs/plans/AegisLab — Core Execution Map.md>) and [M5 Docker planning](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) are preserved history, **not active next steps**.
 
@@ -18,15 +18,21 @@ Owner authorized the [2026-11-22 AI-first evolution](docs/proposals/2026-11-22-a
 - No privileged SSH or Docker operations were authorized or performed in this evolution work.
 - **Stage C transport readiness (read-only):** local model catalog responded at `http://127.0.0.1:18080/v1/models` from Windows and WSL. WSL's existing `http_proxy=http://127.0.0.1:8080` intercepted the default request and produced an empty reply; a direct WSL `curl --noproxy 127.0.0.1` request succeeded. This confirms only model-list endpoint connectivity, **not** a loaded model, successful inference or AI evaluation. Future local client must bypass ambient HTTP proxy explicitly without broadening listener/network exposure.
 
+## Recent verified experiments (November 23–24; reconstructed session record)
+
+See the [learning and experiment reconciliation worklog](docs/worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md). WSL reruns of the CLI and 15 tests passed. Additional synthetic variations verified inclusive 120/121-second boundaries, sliding windows, separate source/account grouping, duplicate retention versus counting, invalid port quarantine and incomplete/empty inputs. The learner correctly predicted several changed cases after guidance; the AI executed the later tests remotely. No fresh SSH sensor collection.
+
+Local Gemma E2B inference succeeded in bounded experiments at the loopback API. A 256-token completion truncated; 512 permitted a complete answer. A first investigation returned Markdown-fenced JSON and failed strict parsing. A later schema-constrained trial passed mechanical checks but human adjudication found weak hypotheses and an insufficiently scoped next check. These are exploratory results, not integrated Stage C functionality or proof of usefulness. C1's experimental foundation is established; availability must be rechecked when used. Exact model/prompt/budgets and known limitations are recorded to the extent retained.
+
 ## Current capability and next execution
 
 1. **A — adopted:** v2 Charter and stage map govern the new route; old plans marked historical. Verify consistent links and worktree.
-2. **B — executable software verified, learner gate open:** lightweight stdlib Python CLI, bounded imported authentication envelopes, explicit source/record/event identities, raw line SHA-256, quarantine, one repeated-failure rule and positive/negative/boundary/missing tests. The final 15-test suite and synthetic positive/normal CLI demos ran successfully in WSL. Evidence is **synthetic**, not real retained sensor data; personally demonstrated changed-case diagnosis is still pending.
-3. **C — next after verified B:** optional local-model investigation against the identical evidence and a no-AI baseline; validate structured and semantic claims, reject unsupported IDs and measure fallback. Do not assume the local endpoint currently runs.
+2. **B — executable software verified, learner gate open:** lightweight stdlib Python CLI, bounded imported authentication envelopes, explicit source/record/event identities, raw line SHA-256, quarantine, one repeated-failure rule and positive/negative/boundary/missing tests. The final 15-test suite and synthetic positive/normal CLI demos ran successfully in WSL. Evidence is **synthetic**, not real retained sensor data; learner demonstrated changed-case reasoning with corrections, but personal modification/run/diagnosis and delayed recall remain pending.
+3. **C — active, C1 exploratory foundation demonstrated; C2 candidate design under evaluation:** use the [Stage C execution plan](docs/plans/STAGE-C-EXECUTION.md) (C1–C8). No integrated AI CLI yet. C2 defines advisory hypotheses and proposed evidence needs with explicit abstention and deterministic scope. The [two-case design probe](docs/worklogs/evidence/2026-11-24-stage-c2-probe.json) admitted 1/2 mechanically (empty case correct; positive case contradictory abstention rejected); useful investigation not established; C3–C8 implement, verify and evaluate these boundaries. Do not assume current endpoint/model readiness or semantic acceptance.
 4. **D–G:** fresh safe operation, read-only agent-policy tests, recovery, second scenario and credible comparative usefulness evidence.
 
 ## Learning and safety handoff
 
-Software completion and personal mastery are separate. Learner still needs to predict and change a case, inspect the resulting event/evidence chain, and diagnose one failure with reduced prompting. AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.
+Software completion and personal mastery are separate. Learner has predicted changed cases and evaluated model output; still needs to personally change/run a case, trace the event/evidence chain and diagnose one failure with reduced prompting. See [learning ledger](docs/learning/LEARNING_LEDGER.md). AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.
 
-**Next action:** verify and run the Stage B CLI/tests; then perform a learner-owned changed-case prediction and result interpretation. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md) and active [stage map](<docs/plans/AegisLab — Capability Execution Map v2.md>).
+**Next action:** review C2 output and the candidate contract, resolve open design choices before C3; close Stage B personal practical ownership when PC access permits. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).

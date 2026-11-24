@@ -37,6 +37,10 @@ AI may draft architecture, write routine source, tests and docs, and suggest deb
 
 For each meaningful capability, state a concrete operator question, predict behavior, run a small practical test, inspect evidence, challenge a negative or changed case and record what the learner personally did. Escalate explanation for novel trust boundaries and failures, not for every familiar command. Do not assess concepts before teaching them. Keep guided, prompted, stable recall and independent transfer distinct.
 
+## Active execution and learning records
+
+Use [Stage C execution](docs/plans/STAGE-C-EXECUTION.md) for the approved C1-C8 milestone checklist; update [Learning Ledger](docs/learning/LEARNING_LEDGER.md) at meaningful checkpoints alongside the current learning handoff. Keep exploratory probes, integrated software, semantic adjudication and learner ownership distinct.
+
 ## Worklogs, changes and verification
 
 - Create/index a concise [worklog](docs/worklogs/README.md) for substantial changes; preserve exact observed results and remaining uncertainty. No logs containing secrets, private keys, personal data or unbounded raw telemetry.

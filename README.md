@@ -1,6 +1,6 @@
 # AegisLab
 
-**Status (2026-11-22):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Stage B learner-owned changed-case assessment is not yet demonstrated. Local AI, fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
+**Status (2026-11-24):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Learner changed-case reasoning demonstrated with guidance; independent practical ownership open. Stage C local inference and contract probes are exploratory, not integrated into the CLI. Fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
 
 AegisLab is an evidence-centered network-defense and security-operations learning laboratory. Its first operator question: *Which SSH authentication decisions were observed, does a defined pattern warrant attention, which records support it, and what remains unknown?*
 
@@ -60,6 +60,7 @@ Before running it, predict: if the third failed-publickey record moves from 120 
 - [Project Definition v1.0](<docs/AegisLab — Project Definition v1.0.md>) — enduring mission and safety/truth invariants.
 - [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>) — accepted scope and completion boundaries.
 - [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>) — stages A–G and executable gates.
+- [Stage C execution plan](docs/plans/STAGE-C-EXECUTION.md) and [Learning Ledger](docs/learning/LEARNING_LEDGER.md) — active detail, learning depth and remaining work.
 - [Project State](PROJECT_STATE.md) — actual implementation/learning handoff.
 - [Evolution proposal](docs/proposals/2026-11-22-ai-first-aegislab-evolution-plan.md) — decision rationale.
 

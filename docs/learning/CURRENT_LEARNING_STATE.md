@@ -1,6 +1,6 @@
 # AegisLab Current Learning State
 
-**Updated:** 2026-11-22 | **Status:** v2 capability-led route; guided namespace SSH historical foundation; independent Stage B ownership not yet assessed.
+**Updated:** 2026-11-24 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
 **Authority:** Non-normative, evidence-aware learner handoff. See [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>).
 
 ## Established with guidance (July)
@@ -14,22 +14,19 @@
 
 Detailed historical evidence: [July SSH closure worklog](../worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md), [July M5 planning](../worklogs/2026-07-18-1640-m5-docker-planning.md), and versioned Git history of this file. Historical M5 playbook is **not** the active teaching gate.
 
-## Current learning target — first security finding
+## Current learning target — Stage B ownership and Stage C investigation
 
-AegisLab now connects Linux authentication observations to a bounded importer, normalized events and an evidence-linked deterministic incident. New concepts to demonstrate, not merely read about:
+November 23–24: learner personally ran WSL socket/process/journal inspection and inspected the synthetic fixture; AI ran later CLI and inference experiments remotely while learner reasoned about them. Correct changed-case predictions: sliding window 0/50/140/171 (no finding), composite grouping (three groups, no finding), distinct observations A/B/D with a duplicated record, and invalid port quarantine with a supported finding. Earlier fixed-window, decoder-versus-accepted-event and duplicate-count misconceptions were corrected. Learner recognized insufficient evidence for compromise, catalog versus inference, and suggested increased generation budget with efficiency trade-offs. First human review of actual AI output: semantic partial, additional value fail, hypotheses partial, investigation fail; precise next observation needs emphasized.
 
-1. Which layer owns the timestamp, raw record, parsed event and conclusion; how each identity is generated.
-2. Why three log lines do **not** automatically prove three separate client actions, compromise or a clock-synchronized event timeline.
-3. Why a negative result differs from an unassessable result when input is missing, malformed or partially quarantined.
-4. How a threshold/time-window detector behaves at a boundary and under duplicates/replay.
-5. How tests and one changed-case diagnosis challenge an AI-generated implementation.
+See the [learning ledger](LEARNING_LEDGER.md) for per-concept depth and recall queue and the [reconciliation worklog](../worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md) for experimental evidence.
 
-**Assessment status:** engineering output and any tests run by AI are software verification only; learner has not yet personally predicted, run, explained or independently modified Stage B. Do not mark independent mastery.
+**Assessment:** guided reasoning and some learner-owned predictions demonstrated. AI-executed software/inference tests do not establish learner practical independence. No stable recall, independent Stage B code modification/diagnosis, or independent Stage C integration mastery claimed.
 
 ## Teaching and contribution policy
 
 Follow [Learning Preferences](../../LEARNING-PREFERENCES.md) and [AI Collaboration Protocol](<../AegisLab — AI Collaboration Protocol.md>). Explain a compact problem/mechanism, ask for one predictive changed-case exercise, observe actual output, interpret support and uncertainty and reduce scaffolding over time. AI may implement routine code and tests, learner personally owns important reasoning and diagnosis. Keep `introduced`, `guided`, `independently diagnosed` and `stable recall` distinct.
 
-## Next learner-owned checkpoint
+## Next learner-owned checkpoints
 
-Before seeing the output for a changed synthetic case, predict whether a third failed-publickey **record** just inside versus just outside the rule window causes a finding. Then run it, identify the exact three evidence IDs/records and explain one conclusion the detector deliberately does **not** claim. No Docker or privileged host action is required.
+- C2: evaluate the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
+- B: when PC access permits, personally modify and run a copied fixture, trace supporting events to exact source lines and diagnose one changed or invalid case with reduced assistance. Delayed recall of July networking/SSH skills precedes D.

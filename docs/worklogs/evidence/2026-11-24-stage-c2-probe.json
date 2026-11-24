@@ -1,0 +1,160 @@
+{
+  "probe_version": "c2-0.1",
+  "cases": [
+    {
+      "source_id": "fixture:ssh-burst-v1",
+      "baseline_status": "finding_present",
+      "baseline_source": {
+        "id": "fixture:ssh-burst-v1",
+        "declared_kind": "synthetic",
+        "sha256": "96ae49d987ee1bb04dac126480488f8dbd948f81737317cb155a69f0f72f6985",
+        "line_count": 4,
+        "accepted_event_count": 4,
+        "quarantined_record_count": 0,
+        "duplicate_failure_observations_ignored": 0
+      },
+      "context": {
+        "source_kind": "synthetic",
+        "status": "finding_present",
+        "events": [
+          {
+            "event_id": "evt-92dd78ac94389f505d01",
+            "observed_at": "2026-11-22T10:00:00Z",
+            "outcome": "failed_publickey",
+            "source_ip": "10.10.0.1",
+            "username": "labuser",
+            "source_port": 51001,
+            "sshd_pid": 201
+          },
+          {
+            "event_id": "evt-9830f50593d9fc2c0306",
+            "observed_at": "2026-11-22T10:00:30Z",
+            "outcome": "failed_publickey",
+            "source_ip": "10.10.0.1",
+            "username": "labuser",
+            "source_port": 51002,
+            "sshd_pid": 204
+          },
+          {
+            "event_id": "evt-6b77aa30169c4e13c524",
+            "observed_at": "2026-11-22T10:01:20Z",
+            "outcome": "failed_publickey",
+            "source_ip": "10.10.0.1",
+            "username": "labuser",
+            "source_port": 51003,
+            "sshd_pid": 208
+          },
+          {
+            "event_id": "evt-f3b6b8bf97deab862f3e",
+            "observed_at": "2026-11-22T10:01:30Z",
+            "outcome": "accepted_publickey",
+            "source_ip": "10.10.0.1",
+            "username": "labuser",
+            "source_port": 51004,
+            "sshd_pid": 209
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "finding-bb327298c251bbf8b102",
+            "rule_id": "ssh.failed-publickey-burst.v1",
+            "subject": {
+              "username": "labuser",
+              "source_ip": "10.10.0.1"
+            },
+            "window_start": "2026-11-22T10:00:00Z",
+            "window_end": "2026-11-22T10:01:20Z",
+            "distinct_failed_observations": 3,
+            "evidence_event_ids": [
+              "evt-92dd78ac94389f505d01",
+              "evt-9830f50593d9fc2c0306",
+              "evt-6b77aa30169c4e13c524"
+            ],
+            "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+            "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+          }
+        ],
+        "limitations": [
+          "Source kind and source ID are operator declarations, not authenticated provenance.",
+          "UTC timestamps are supplied by the input envelope; clock accuracy and ordering are unverified.",
+          "A distinct log observation is not proof of a distinct client action or target effect.",
+          "No independent action/target truth or separate sensor correlation was supplied.",
+          "Only supported sshd public-key decision messages are parsed; other activity is not assessed.",
+          "No finding means this rule did not match the accepted records, not that activity was absent."
+        ],
+        "target_hostname": null
+      },
+      "model_requested": "gemma-4-e2b-it",
+      "max_tokens": 2048,
+      "temperature": 0,
+      "mechanical_status": "not_admitted",
+      "http_status": 200,
+      "model_reported": "gemma-4-e2b-it",
+      "usage": {
+        "prompt_tokens": 881,
+        "completion_tokens": 980,
+        "total_tokens": 1861,
+        "completion_tokens_details": {
+          "reasoning_tokens": 689
+        }
+      },
+      "finish_reason": "stop",
+      "content": "{\n  \"disposition\": \"insufficient_evidence\",\n  \"hypotheses\": [\n    {\n      \"explanation\": \"The sequence of failed public key attempts followed by a successful public key acceptance suggests a standard SSH key provisioning or testing workflow, where multiple incorrect keys were attempted before the correct one was presented.\",\n      \"basis_event_ids\": [\n        \"evt-92dd78ac94389f505d01\",\n        \"evt-9830f50593d9fc2c0306\",\n        \"evt-6b77aa30169c4e13c524\",\n        \"evt-f3b6b8bf97deab862f3e\"\n      ],\n      \"limitation\": \"This is a tentative explanation based purely on the observed sequence of SSH public key events, as no external context regarding system state or intent is available.\"\n    }\n  ],\n  \"next_check\": null,\n  \"uncertainty\": \"The provided data only shows SSH authentication attempts. Without access to the target system's authentication logs (successes/failures) or independent action/target truth records, definitive attribution of malicious activity cannot be established.\"\n}",
+      "error": "ValueError: abstention must be empty in this probe",
+      "elapsed_seconds": 8.48
+    },
+    {
+      "source_id": "lesson:c2-empty",
+      "baseline_status": "unassessable",
+      "baseline_source": {
+        "id": "lesson:c2-empty",
+        "declared_kind": "synthetic",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "line_count": 0,
+        "accepted_event_count": 0,
+        "quarantined_record_count": 0,
+        "duplicate_failure_observations_ignored": 0
+      },
+      "context": {
+        "source_kind": "synthetic",
+        "status": "unassessable",
+        "events": [],
+        "findings": [],
+        "limitations": [
+          "Source kind and source ID are operator declarations, not authenticated provenance.",
+          "UTC timestamps are supplied by the input envelope; clock accuracy and ordering are unverified.",
+          "A distinct log observation is not proof of a distinct client action or target effect.",
+          "No independent action/target truth or separate sensor correlation was supplied.",
+          "Only supported sshd public-key decision messages are parsed; other activity is not assessed.",
+          "No finding means this rule did not match the accepted records, not that activity was absent.",
+          "The input file was empty; no event assessment is possible."
+        ],
+        "target_hostname": null
+      },
+      "model_requested": "gemma-4-e2b-it",
+      "max_tokens": 2048,
+      "temperature": 0,
+      "mechanical_status": "admitted_unadjudicated",
+      "http_status": 200,
+      "model_reported": "gemma-4-e2b-it",
+      "usage": {
+        "prompt_tokens": 270,
+        "completion_tokens": 435,
+        "total_tokens": 705,
+        "completion_tokens_details": {
+          "reasoning_tokens": 378
+        }
+      },
+      "finish_reason": "stop",
+      "content": "{\n  \"disposition\": \"insufficient_evidence\",\n  \"hypotheses\": [],\n  \"next_check\": null,\n  \"uncertainty\": \"No events were supplied for assessment.\"\n}",
+      "derived_scope": null,
+      "parsed": {
+        "disposition": "insufficient_evidence",
+        "hypotheses": [],
+        "next_check": null,
+        "uncertainty": "No events were supplied for assessment."
+      },
+      "elapsed_seconds": 3.57
+    }
+  ]
+}
