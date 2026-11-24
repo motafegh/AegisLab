@@ -31,6 +31,10 @@ Local Gemma E2B inference succeeded in bounded experiments at the loopback API. 
 3. **C — active, C1 exploratory foundation demonstrated; C2 candidate design under evaluation:** use the [Stage C execution plan](docs/plans/STAGE-C-EXECUTION.md) (C1–C8). No integrated AI CLI yet. C2 defines advisory hypotheses and proposed evidence needs with explicit abstention and deterministic scope. The [two-case design probe](docs/worklogs/evidence/2026-11-24-stage-c2-probe.json) admitted 1/2 mechanically (empty case correct; positive case contradictory abstention rejected); useful investigation not established; C3–C8 implement, verify and evaluate these boundaries. Do not assume current endpoint/model readiness or semantic acceptance.
 4. **D–G:** fresh safe operation, read-only agent-policy tests, recovery, second scenario and credible comparative usefulness evidence.
 
+## Industry tooling and product direction
+
+The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: bounded Sigma comparison after C2 alongside C; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; no new tool installed or integration implemented. C2 remains the active next action.
+
 ## Learning and safety handoff
 
 Software completion and personal mastery are separate. Learner has predicted changed cases and evaluated model output; still needs to personally change/run a case, trace the event/evidence chain and diagnose one failure with reduced prompting. See [learning ledger](docs/learning/LEARNING_LEDGER.md). AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.

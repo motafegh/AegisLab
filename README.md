@@ -61,6 +61,7 @@ Before running it, predict: if the third failed-publickey record moves from 120 
 - [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>) — accepted scope and completion boundaries.
 - [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>) — stages A–G and executable gates.
 - [Stage C execution plan](docs/plans/STAGE-C-EXECUTION.md) and [Learning Ledger](docs/learning/LEARNING_LEDGER.md) — active detail, learning depth and remaining work.
+- [Industry tools and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) — stage-linked practical tool exposure, adoption decisions and usefulness comparisons.
 - [Project State](PROJECT_STATE.md) — actual implementation/learning handoff.
 - [Evolution proposal](docs/proposals/2026-11-22-ai-first-aegislab-evolution-plan.md) — decision rationale.
 

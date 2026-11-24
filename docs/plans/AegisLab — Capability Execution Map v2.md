@@ -48,6 +48,10 @@ Stages may be deliberately reordered if a verified prerequisite or flaw requires
 
 See [Stage C execution plan](STAGE-C-EXECUTION.md) for C1-C8 milestones and the current candidate contract. The [learning ledger](../learning/LEARNING_LEDGER.md) tracks depth and recall across stages; it does not replace these gates.
 
+## Industry competence and product relevance
+
+The [Industry Tools and Product Strategy](INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) is the stage-linked tool competency and adoption register. At stage planning and closure review its applicable Core checkpoints; record practical learner evidence, integration/exercise decision, or explicit justified deferral with a revisit trigger. Industry exposure is not permanent dependency adoption. Keep the Core gates and safety boundaries unchanged. Compare with existing tools and measure operator usefulness before broadening custom implementations.
+
 ## Per-stage checkpoint record
 
 1. **System works now:** exact command and source artifact / observable result.

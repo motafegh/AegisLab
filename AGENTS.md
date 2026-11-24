@@ -41,6 +41,8 @@ For each meaningful capability, state a concrete operator question, predict beha
 
 Use [Stage C execution](docs/plans/STAGE-C-EXECUTION.md) for the approved C1-C8 milestone checklist; update [Learning Ledger](docs/learning/LEARNING_LEDGER.md) at meaningful checkpoints alongside the current learning handoff. Keep exploratory probes, integrated software, semantic adjudication and learner ownership distinct.
 
+Review [Industry Tools and Product Strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) at milestone planning and closure. Track practical tool exposure separately from dependency adoption and learner conceptual depth; record explicit deferrals, alternatives and revisit triggers. Do not install or expose a service simply to satisfy a checklist.
+
 ## Worklogs, changes and verification
 
 - Create/index a concise [worklog](docs/worklogs/README.md) for substantial changes; preserve exact observed results and remaining uncertainty. No logs containing secrets, private keys, personal data or unbounded raw telemetry.

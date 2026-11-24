@@ -51,6 +51,10 @@ For `investigate`, require at least one hypothesis and a non-null next check. Fo
 
 C6 must freeze cases and evaluation rubric before comparing configurations. Include repeated-failure plus acceptance, normal/no finding, ambiguous multi-subject or duplicates, quarantined data, empty/invalid input, unavailable model, malformed/truncated response, unknown evidence reference and a valid-looking unsupported claim. Keep expected properties separate from model context. Count mechanical pass, supported/unsupported claims and operator-task usefulness separately; record case denominators and reviewer disagreements. No arbitrary numerical performance target until the evaluation task and cost envelope are defined. Safety gate: no fabricated evidence promoted to fact; no unauthorized execution; baseline remains available. If no measurable added value, stop/revise or retain AI OFF rather than claim success.
 
+## Industry-tool checkpoints
+
+Follow the [industry tooling register](INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md). C3/C5 compare and practically exercise a mature validator (Pydantic or JSON Schema); C6 review/exercise Promptfoo against the same fixed local cases and a simple reproducible baseline, after verifying local-only behavior. C7 review an alternative local runtime only if useful and resource-appropriate. Record evidence, learner depth and explicit adoption/deferral decisions; do not alter C2 or relax semantic and safety gates to adopt a library. Schedule the bounded Sigma comparison after C2 alongside C; Wazuh before or during D/F.
+
 ## Learning checkpoints
 
 C1: explain GET/POST, context versus generation budget, finish reason and warm/cold confounders. C2/C3: choose context scope, unknown-value representation, and assess evidence entailment. C4/C5: trace a request, deliberately fail a bounded case and explain fallback. C6/C7: evaluate a response blind to expected answer, compare fixed cases and interpret cost/quality trade-offs. C8: reproduce and diagnose an unfamiliar case personally when PC access permits. See ledger for depth and recall status.

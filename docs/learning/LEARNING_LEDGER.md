@@ -35,6 +35,10 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 | Applied security ML | Prior external ML experience does not establish AegisLab security ML competence | Later dedicated expansion: data leakage, splits, metrics, drift, justified baseline |
 | DFIR and threat hunting | Evidence preservation and hypotheses introduced; forensic/hunt practice not established | D/G/later: acquisition, timeline, scoping, competing hypotheses and negative evidence |
 
+## Industry-tool competence
+
+The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.
+
 ## Active recall and ownership queue
 
 - B practical closure when PC access permits: learner selects a copy of a fixture, predicts a changed case, modifies/runs it, traces output to source lines, deliberately diagnoses one invalid input or wrong rule assumption, and explains evidence limits. AI may review, not perform the learner's critical step.
