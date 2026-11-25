@@ -24,6 +24,8 @@ See the [learning ledger](LEARNING_LEDGER.md) for per-concept depth and recall q
 
 November 25: learner distinguished missing evidence from corrupted/wrong evidence and identified the unsupported inference from an unassessed network correlation state. Guided explanation distinguished acquisition observations from authenticated truth, deterministic policy from human judgment, and absence of evidence from bounded negative evidence. AI operated a 12-trial contract/context comparison; learner has not yet adjudicated its outputs. See [comparison worklog](../worklogs/2026-11-25-1511-c2-contract-context-comparison.md).
 
+Later November 25: learner proposed clearer investigative prompt direction and evidence references for each hypothesis/conclusion; discussed actual prompt, inference configuration and relevance versus entailment. AI ran nine controlled prompt/context trials; human adjudication remains pending. See [prompt ablation worklog](../worklogs/2026-11-25-1724-c2-prompt-ablation.md).
+
 ## Teaching and contribution policy
 
 Follow [Learning Preferences](../../LEARNING-PREFERENCES.md) and [AI Collaboration Protocol](<../AegisLab — AI Collaboration Protocol.md>). Explain a compact problem/mechanism, ask for one predictive changed-case exercise, observe actual output, interpret support and uncertainty and reduce scaffolding over time. AI may implement routine code and tests, learner personally owns important reasoning and diagnosis. Keep `introduced`, `guided`, `independently diagnosed` and `stable recall` distinct.

@@ -39,6 +39,8 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 
 Missing/invalid/conflicting evidence: learner correctly distinguished incomplete from corrupted or wrong evidence and identified unassessed network correlation as a problem; guided correction to distinguish unavailability from a verified negative observation. Target D/G: independently assess coverage, provenance and cross-source discrepancy. Ownership/trust boundary: learner reasoned about critical deterministic decisions and acquisition facts; guided refinement for human adjudication and unverified source observations. Target E: demonstrate external policy. C2 comparison: AI executed 12 trials; learner review pending. See [comparison worklog](../worklogs/2026-11-25-1511-c2-contract-context-comparison.md). No practical independence or stable recall claimed.
 
+Prompt/context engineering: learner proposed clearer investigation direction and evidence references and asked about actual prompt/configuration; AI demonstrated controlled prompt-only and recommendation-removal comparison, including semantic failures despite valid shape. See [prompt ablation](../worklogs/2026-11-25-1724-c2-prompt-ablation.md). Guided design reasoning only; learner-owned output adjudication and independent execution pending.
+
 ## Industry-tool competence
 
 The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.
