@@ -41,7 +41,9 @@ Missing/invalid/conflicting evidence: learner correctly distinguished incomplete
 
 Prompt/context engineering: learner proposed clearer investigation direction and evidence references and asked about actual prompt/configuration; AI demonstrated controlled prompt-only and recommendation-removal comparison, including semantic failures despite valid shape. See [prompt ablation](../worklogs/2026-11-25-1724-c2-prompt-ablation.md). Guided design reasoning only; learner-owned output adjudication and independent execution pending.
 
-Context preparation and eligibility: AI implemented deterministic scope, omission metadata, versioned interface, refusal on bounds, baseline isolation and CLI preview; 12 tests and real CLI verified. Learner quiz and personal execution pending; see [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md). No depth promotion yet.
+Context preparation and eligibility: AI implemented deterministic scope, omission metadata, versioned interface, refusal on bounds, baseline isolation and CLI preview; 12 tests and real CLI verified. Learner correctly predicted trigger records, explicit budget refusal and traceability; scope and omitted relevance required guidance. Personal execution pending; see [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md) and [later assessment](../worklogs/2026-11-25-2013-local-inference-and-validation.md).
+
+Local inference and output validation: AI implemented reusable direct loopback HTTP client, optional jsonschema 4.10.3 validator and explicit orchestration/fallback; 22 new tests and actual local CLI verified. Learner concept quiz and personal request/failure diagnosis pending; see [implementation worklog](../worklogs/2026-11-25-2013-local-inference-and-validation.md). No independent mastery claimed.
 
 ## Industry-tool competence
 

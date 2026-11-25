@@ -1,0 +1,44 @@
+{
+  "baseline": {
+    "events": [],
+    "findings": [],
+    "limitations": [
+      "Source kind and source ID are operator declarations, not authenticated provenance.",
+      "UTC timestamps are supplied by the input envelope; clock accuracy and ordering are unverified.",
+      "A distinct log observation is not proof of a distinct client action or target effect.",
+      "No independent action/target truth or separate sensor correlation was supplied.",
+      "Only supported sshd public-key decision messages are parsed; other activity is not assessed.",
+      "No finding means this rule did not match the accepted records, not that activity was absent.",
+      "The input file was empty; no event assessment is possible."
+    ],
+    "parser_version": "ssh-publickey-envelope.v1",
+    "quarantine": [],
+    "rule": {
+      "id": "ssh.failed-publickey-burst.v1",
+      "threshold": 3,
+      "window_seconds_inclusive": 120
+    },
+    "schema": "aegislab.ssh-incident-report.v1",
+    "source": {
+      "accepted_event_count": 0,
+      "declared_kind": "synthetic",
+      "duplicate_failure_observations_ignored": 0,
+      "id": "fixture:empty",
+      "line_count": 0,
+      "quarantined_record_count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status": "unassessable"
+  },
+  "investigation": {
+    "output_version": "aegislab.ssh-investigation.v0.2",
+    "reason": "no_accepted_observations",
+    "status": "not_invoked"
+  },
+  "preparation": {
+    "context": null,
+    "context_schema": "aegislab.ssh-investigator-context.v0.1",
+    "eligible": false,
+    "reason": "no_accepted_observations"
+  }
+}
