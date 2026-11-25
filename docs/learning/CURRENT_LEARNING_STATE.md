@@ -1,6 +1,6 @@
 # AegisLab Current Learning State
 
-**Updated:** 2026-11-24 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
+**Updated:** 2026-11-25 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
 **Authority:** Non-normative, evidence-aware learner handoff. See [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>).
 
 ## Established with guidance (July)
@@ -22,11 +22,13 @@ See the [learning ledger](LEARNING_LEDGER.md) for per-concept depth and recall q
 
 **Assessment:** guided reasoning and some learner-owned predictions demonstrated. AI-executed software/inference tests do not establish learner practical independence. No stable recall, independent Stage B code modification/diagnosis, or independent Stage C integration mastery claimed.
 
+November 25: learner distinguished missing evidence from corrupted/wrong evidence and identified the unsupported inference from an unassessed network correlation state. Guided explanation distinguished acquisition observations from authenticated truth, deterministic policy from human judgment, and absence of evidence from bounded negative evidence. AI operated a 12-trial contract/context comparison; learner has not yet adjudicated its outputs. See [comparison worklog](../worklogs/2026-11-25-1511-c2-contract-context-comparison.md).
+
 ## Teaching and contribution policy
 
 Follow [Learning Preferences](../../LEARNING-PREFERENCES.md) and [AI Collaboration Protocol](<../AegisLab — AI Collaboration Protocol.md>). Explain a compact problem/mechanism, ask for one predictive changed-case exercise, observe actual output, interpret support and uncertainty and reduce scaffolding over time. AI may implement routine code and tests, learner personally owns important reasoning and diagnosis. Keep `introduced`, `guided`, `independently diagnosed` and `stable recall` distinct.
 
 ## Next learner-owned checkpoints
 
-- C2: evaluate the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
+- C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
 - B: when PC access permits, personally modify and run a copied fixture, trace supporting events to exact source lines and diagnose one changed or invalid case with reduced assistance. Delayed recall of July networking/SSH skills precedes D.

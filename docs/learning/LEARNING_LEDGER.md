@@ -1,6 +1,6 @@
 # AegisLab — Learning ledger
 
-**Updated:** 2026-11-24. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
+**Updated:** 2026-11-25. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
 **Evidence:** July guided records and [November learning/experiment reconciliation](../worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md). Conversation-derived assessments are explicitly distinguished from retained runtime output and AI-executed work.
 
 ## How to use
@@ -34,6 +34,10 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 | Observability, deployment, distributed systems | Concepts introduced (duplicates, partial failure); operational competence not demonstrated | F/later: logs, recovery, queues, ordering, retries, backpressure, replay |
 | Applied security ML | Prior external ML experience does not establish AegisLab security ML competence | Later dedicated expansion: data leakage, splits, metrics, drift, justified baseline |
 | DFIR and threat hunting | Evidence preservation and hypotheses introduced; forensic/hunt practice not established | D/G/later: acquisition, timeline, scoping, competing hypotheses and negative evidence |
+
+## Additional November 25 learning evidence
+
+Missing/invalid/conflicting evidence: learner correctly distinguished incomplete from corrupted or wrong evidence and identified unassessed network correlation as a problem; guided correction to distinguish unavailability from a verified negative observation. Target D/G: independently assess coverage, provenance and cross-source discrepancy. Ownership/trust boundary: learner reasoned about critical deterministic decisions and acquisition facts; guided refinement for human adjudication and unverified source observations. Target E: demonstrate external policy. C2 comparison: AI executed 12 trials; learner review pending. See [comparison worklog](../worklogs/2026-11-25-1511-c2-contract-context-comparison.md). No practical independence or stable recall claimed.
 
 ## Industry-tool competence
 
