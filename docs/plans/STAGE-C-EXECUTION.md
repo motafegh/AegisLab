@@ -9,7 +9,7 @@
 |---|---|---|---|
 | C1 | Local inference foundation | Direct loopback catalog and completion; model ID, request and token budget, latency, truncated response and recovery documented; learner explains HTTP versus generation success | Exploratory foundation demonstrated; runtime readiness must be rechecked |
 | C2 | Investigator responsibility and output contract | Concrete operator task, responsibilities, non-responsibilities, missing-evidence behavior, candidate contract and critique on positive and insufficient evidence; baseline comparison, explicit open decisions | Active design/evaluation |
-| C3 | Context builder and versioned contract | Deterministic scoped context, supporting and related evidence, omissions/counts/source limitations, budgets and no truth leakage; malformed, missing and oversized context tests; schema and nullable/abstention semantics | Pending |
+| C3 | Context builder and versioned contract | Deterministic scoped context, supporting and related evidence, omissions/counts/source limitations, budgets and no truth leakage; malformed, missing and oversized context tests; schema and nullable/abstention semantics | Partial implementation: deterministic preview verified; contract/library exercise, token budget and acceptance pending |
 | C4 | Reusable local inference client | Explicit opt-in, configured local endpoint/model, proxy bypass, no redirect to external endpoint, bounded bytes/tokens/time, observable error categories, no tools; mocked transport and real bounded request | Pending |
 | C5 | Independent validation and fallback | Strict response parsing/schema, permitted IDs and scoped facts, reject incomplete generation, invalid references, unsupported request kinds; separate unadjudicated semantics; preserve unchanged baseline on errors, test failure paths | Pending |
 | C6 | Versioned evaluation harness | Fixed cases, separate truth/expected properties, same evidence baseline, claim-level adjudication and recorded disagreements; metrics and exact run configuration; positive/normal/ambiguous/gap/failure cases | Pending (initial human review only) |
@@ -50,6 +50,10 @@ For `investigate`, require at least one hypothesis and a non-null next check. Fo
 | Reliability | Log model ID, prompt/schema revision, input and generation budgets, usage, finish status, elapsed time and error; preserve baseline on failure. |
 
 C6 must freeze cases and evaluation rubric before comparing configurations. Include repeated-failure plus acceptance, normal/no finding, ambiguous multi-subject or duplicates, quarantined data, empty/invalid input, unavailable model, malformed/truncated response, unknown evidence reference and a valid-looking unsupported claim. Keep expected properties separate from model context. Count mechanical pass, supported/unsupported claims and operator-task usefulness separately; record case denominators and reviewer disagreements. No arbitrary numerical performance target until the evaluation task and cost envelope are defined. Safety gate: no fabricated evidence promoted to fact; no unauthorized execution; baseline remains available. If no measurable added value, stop/revise or retain AI OFF rather than claim success.
+
+## Provisional C3 slice (2026-11-25)
+
+See [implementation worklog](../worklogs/2026-11-25-1824-provisional-context-builder.md). The context module and --prepare-context CLI are implemented and tested; the in-process Stage B report remains the source of truth. Same-subject finding interval plus 120s padding, max 32 events/16,384 canonical bytes, explicit omissions/refusal, unknown quality metadata and unchanged baseline. These are provisional design choices, not final model token/HTTP bounds or general untrusted report validation. C2 remains open; no output contract freeze or inference integration.
 
 ## Industry-tool checkpoints
 

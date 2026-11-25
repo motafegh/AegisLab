@@ -79,6 +79,7 @@ Newest records appear first.
 
 | Started | Worklog | Status | Outcome |
 |---|---|---|---|
+| 2026-11-25 18:24 +03:30 | [Provisional context builder](2026-11-25-1824-provisional-context-builder.md) | completed (C2/C3 remain open) | 12 new tests, 27 total passed, verified context preview and unchanged baseline; accelerated session rhythm |
 | 2026-11-25 17:24 +03:30 | [C2 prompt/context ablation](2026-11-25-1724-c2-prompt-ablation.md) | completed (C2 remains open) | 9/9 mechanical admissions; quality handling and usefulness not established |
 | 2026-11-25 15:11 +03:30 | [C2 contract/context comparison](2026-11-25-1511-c2-contract-context-comparison.md) | completed (C2 remains open) | 12 synthetic trials, mechanical admission 9/12; quality-awareness/usefulness not established |
 | 2026-11-24 20:31 +03:30 | [Industry tooling and product strategy](2026-11-24-2031-industry-tooling-strategy.md) | completed | Recorded stage-linked tooling checkpoints and product hypothesis without changing Core gates or installing tools |

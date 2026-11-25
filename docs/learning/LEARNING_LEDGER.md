@@ -41,6 +41,8 @@ Missing/invalid/conflicting evidence: learner correctly distinguished incomplete
 
 Prompt/context engineering: learner proposed clearer investigation direction and evidence references and asked about actual prompt/configuration; AI demonstrated controlled prompt-only and recommendation-removal comparison, including semantic failures despite valid shape. See [prompt ablation](../worklogs/2026-11-25-1724-c2-prompt-ablation.md). Guided design reasoning only; learner-owned output adjudication and independent execution pending.
 
+Context preparation and eligibility: AI implemented deterministic scope, omission metadata, versioned interface, refusal on bounds, baseline isolation and CLI preview; 12 tests and real CLI verified. Learner quiz and personal execution pending; see [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md). No depth promotion yet.
+
 ## Industry-tool competence
 
 The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.

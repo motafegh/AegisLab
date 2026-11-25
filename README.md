@@ -1,6 +1,6 @@
 # AegisLab
 
-**Status (2026-11-24):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Learner changed-case reasoning demonstrated with guidance; independent practical ownership open. Stage C local inference and contract probes are exploratory, not integrated into the CLI. Fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
+**Status (2026-11-25):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Learner changed-case reasoning demonstrated with guidance; independent practical ownership open. Stage C local inference and contract probes remain exploratory; deterministic context preview is implemented in the CLI, but model invocation is not integrated. Fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
 
 AegisLab is an evidence-centered network-defense and security-operations learning laboratory. Its first operator question: *Which SSH authentication decisions were observed, does a defined pattern warrant attention, which records support it, and what remains unknown?*
 
@@ -20,6 +20,8 @@ From the repository root:
     PYTHONPATH=src python3 -m aegislab analyze \
       --input examples/fixtures/ssh-auth-burst.synthetic.jsonl \
       --source-id fixture:ssh-burst-v1 --json
+
+    PYTHONPATH=src python3 -m aegislab analyze --input examples/fixtures/ssh-auth-burst.synthetic.jsonl --source-id fixture:ssh-burst-v1 --prepare-context
 
     PYTHONPATH=src python3 -m unittest discover -s tests -v
 
@@ -46,6 +48,10 @@ The versioned rule groups failed public-key decisions by source IP and username,
 Report states: **finding_present** means matching accepted records; **finding_present_with_gaps** means a supported finding with quarantined data; **no_finding_observed** means no match, not proof of benign activity; **incomplete_evidence** means accepted data without a finding plus quarantine; **unassessable** means zero accepted events.
 
 A finding means observed failure records, **not** unique human attempts, a verified attacker, independent truth, successful compromise or live detection effectiveness. Even a corresponding accepted public-key record must not be interpreted as malicious without independent context.
+
+## Provisional investigator context preview
+
+The optional --prepare-context flag emits the complete unchanged baseline and a separate bounded context or explicit refusal. It selects a single finding and related same-subject observations in the finding interval plus 120 seconds on each side, or a small no-finding source review; multiple findings require --finding-id. Limits are provisional 32 events / 16,384 canonical JSON bytes. Omitted events and limitations are explicit; no selected context means no claim of absent activity. No LLM request, permissions or tool execution. See [implementation worklog](docs/worklogs/2026-11-25-1824-provisional-context-builder.md).
 
 ## Source authenticity and historical boundary
 

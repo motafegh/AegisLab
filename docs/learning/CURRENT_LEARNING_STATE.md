@@ -30,6 +30,10 @@ Later November 25: learner proposed clearer investigative prompt direction and e
 
 Follow [Learning Preferences](../../LEARNING-PREFERENCES.md) and [AI Collaboration Protocol](<../AegisLab — AI Collaboration Protocol.md>). Explain a compact problem/mechanism, ask for one predictive changed-case exercise, observe actual output, interpret support and uncertainty and reduce scaffolding over time. AI may implement routine code and tests, learner personally owns important reasoning and diagnosis. Keep `introduced`, `guided`, `independently diagnosed` and `stable recall` distinct.
 
+## Session rhythm adjustment (2026-11-25)
+
+Learner requested faster progress and more connected concepts/quizzes alongside visible implementation. Batch multiple related checkpoints at meaningful milestones instead of stopping after each small question; preserve prediction, actual verification, dependency-driven depth and independent ownership gates. AI implemented and verified a provisional context builder; learner assessment pending. See [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md).
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
