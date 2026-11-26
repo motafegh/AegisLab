@@ -116,7 +116,7 @@ Learning records should use explicit depth states such as:
 7. **Transferred to a new context** — the knowledge can be applied in a different situation.
 8. **Studied in technical depth** — mechanisms, important edge cases, limitations, and trade-offs can be explained.
 
-A topic must not be marked as fully covered merely because it appeared during one module.
+A topic must not be marked as fully covered merely because it appeared during one module. Historical demonstration depth and present available competence are separate; when a learner reports forgotten material, mark the current prerequisite unavailable until re-established without erasing historical evidence. The active learning ledger and [foundations rebuild](../learning/FOUNDATION-REBUILD.md) record the current baseline.
 
 Each important learning record should state:
 

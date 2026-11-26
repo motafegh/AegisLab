@@ -15,7 +15,7 @@
 
 Build an isolated, evidence-centered network-defense lab and a useful local security investigation path. The current ordered capabilities are A (adopt/source), B (deterministic SSH finding), C (evaluated optional local AI), D (fresh isolated SSH operation), E (scoped audited read-only agent tools and adversarial tests), F (operability and recovery), G (generality and honest utility comparison). Stage gates and stop conditions belong to the active map, not this index.
 
-- Prior July namespace/SSH guided demonstrations remain valid *historical* evidence; formal M4 repeated-failure scenario work was deferred, not passed. No Docker SSH adapter/Compose implementation was demonstrated. Do not interpret an old M5 handoff as current instruction.
+- Prior July namespace/SSH guided demonstrations remain valid *historical* engineering evidence only; no pre-2026-11-22 learning may be assumed available. Follow the owner-approved [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md) and current ledger for prerequisites; formal M4 repeated-failure scenario work was deferred, not passed. No Docker SSH adapter/Compose implementation was demonstrated. Do not interpret an old M5 handoff as current instruction.
 - Docker and VM comparison remain important deliberate learning opportunities, **not prerequisites** to the first detector or model investigator.
 - Keep one coherent Python/CLI evidence path before introducing a platform, database, bus, framework or cloud API. Keep AI OFF useful.
 - Never present synthetic log fixtures as real target telemetry. Do not reconstruct July source log lines from historical summaries and call them retained raw observations.
@@ -36,6 +36,8 @@ Build an isolated, evidence-centered network-defense lab and a useful local secu
 AI may draft architecture, write routine source, tests and docs, and suggest debugging. Learner owns engineering intent, important constraints, observable behavior, security reasoning and eventual changed-case diagnosis. A passing AI-written suite does **not** establish learner mastery.
 
 For each meaningful capability, state a concrete operator question, predict behavior, run a small practical test, inspect evidence, challenge a negative or changed case and record what the learner personally did. Escalate explanation for novel trust boundaries and failures, not for every familiar command. Do not assess concepts before teaching them. Keep guided, prompted, stable recall and independent transfer distinct.
+
+Batch connected security/systems, AI/software and industry-tool learning within the same project. Do not trade away foundational understanding for code throughput. Assess through open-ended predictions, diagnosis, code reading and practical transfer; multiple choice is supplementary.
 
 ## Active execution and learning records
 

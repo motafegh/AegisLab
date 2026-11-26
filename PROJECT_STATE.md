@@ -8,9 +8,13 @@
 
 Owner authorized the [2026-11-22 AI-first evolution](docs/proposals/2026-11-22-ai-first-aegislab-evolution-plan.md): retain AegisLab's evidence-centered network-defense mission; build a working SSH incident workflow before mandatory Docker/VM parity; introduce useful, evaluated local AI and later safe agent authorization; preserve human control and independent truth.
 
+## Owner-approved learning reset and roadmap refinement (2026-11-26)
+
+Treat every skill or concept learned/practiced before the November 22 return as unavailable for prerequisites until personally re-established. Preserve historical engineering evidence and software; retain post-return learner demonstrations at their actual depth only. The [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md) schedules connected security/systems, AI/software and industry-tool tracks: native Sigma first, then first-principles SSH/Linux/networking/cryptography, focused C2–C5, C6–C8 evaluation, and D operational lab. Elasticsearch/Kibana in F, Elastic Security/OpenSearch and bounded Splunk/SPL exposure in G, deeper Elasticsearch post-Core. No prior guided lab completion counts as current competence; no change to A–G capability acceptance or authorization boundaries.
+
 ## Historical evidence and actual runtime
 
-- July: namespace networking, authorized-key SSH success, unauthorized-key rejection, process/socket/log/packet observation and teardown **demonstrated with guidance**, not independently mastered. See [SSH closure worklog](docs/worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md) and [reconstruction runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md).
+- July: namespace networking, authorized-key SSH success, unauthorized-key rejection, process/socket/log/packet observation and teardown **demonstrated with guidance historically**, not current learner competence (reset). See [SSH closure worklog](docs/worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md) and [reconstruction runbook](docs/runbooks/namespace-ssh-lab-reconstruction.md).
 - Formal old M4 repeated-failure scenario contract: **deferred**, not passed.
 - Old M5: planning and Docker object inventory only. No Docker SSH adapter, Compose implementation, VM parity or pipeline proof.
 - Initial 2026-11-22 local WSL worktree was clean at `b5f0234`; remote `main` had one proposal commit `939225a`. Local was safely fast-forwarded to that commit.
@@ -41,11 +45,11 @@ The [prompt ablation worklog](docs/worklogs/2026-11-25-1724-c2-prompt-ablation.m
 
 ## Provisional C3 implementation (2026-11-25)
 
-[Context builder increment](docs/worklogs/2026-11-25-1824-provisional-context-builder.md): reusable deterministic context selection, eligibility, omissions/limitations, explicit bounds, baseline preservation and CLI --prepare-context now implemented. All 27 tests pass (12 new); burst, empty, unknown-finding and flag behavior verified. No inference integrated. C2 decision remains open; C3 is partially implemented, not accepted. Learner requested batched teaching/quiz and more building progress.
+[Context builder increment](docs/worklogs/2026-11-25-1824-provisional-context-builder.md): reusable deterministic context selection, eligibility, omissions/limitations, explicit bounds, baseline preservation and CLI --prepare-context now implemented. All 27 tests pass (12 new); burst, empty, unknown-finding and flag behavior verified. At that increment no inference was integrated. C2 decision remains open; C3 is partially implemented, not accepted. Learner requested batched teaching/quiz and more building progress.
 
 ## Provisional C4/C5 integration (2026-11-25)
 
-[Local inference and validation increment](docs/worklogs/2026-11-25-2013-local-inference-and-validation.md): direct loopback HTTP client, optional jsonschema validator, dynamic context reference checks, deterministic eligibility and unchanged baseline integrated under --probe-investigator. 49/49 tests pass (22 new); actual local inference completed and admitted as unadjudicated; model confused source IP with target, so semantic usefulness not established. Empty input did not invoke model. C2/C3/C4/C5 remain open; whole-request deadline, final contract, token budgeting and evaluation pending.
+[Local inference and validation increment](docs/worklogs/2026-11-25-2013-local-inference-and-validation.md): direct loopback HTTP client, optional jsonschema validator, dynamic context reference checks, deterministic eligibility and unchanged baseline integrated under --probe-investigator. 49/49 tests pass (22 new); actual local inference completed and admitted as unadjudicated; model confused source IP with target, so semantic usefulness not established. Empty input did not invoke model. C2/C3/C4/C5 remain open; At that increment whole-request deadline, final contract, token budgeting and evaluation remained pending; caller supervision was added subsequently.
 
 ## Sigma semantics and inference supervision (2026-11-26)
 
@@ -59,4 +63,4 @@ The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUC
 
 Software completion and personal mastery are separate. Learner has predicted changed cases and evaluated model output; still needs to personally change/run a case, trace the event/evidence chain and diagnose one failure with reduced prompting. See [learning ledger](docs/learning/LEARNING_LEDGER.md). AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.
 
-**Next action:** batch open-ended learner checkpoints on rule semantics and deadline diagnosis, then bounded task-specific C2 decision, evidence representation and token policy, native Sigma exercise and C6/C7 evaluation (no final schema or usefulness claim yet); close Stage B personal practical ownership when PC access permits. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).
+**Next action:** R1 native Sigma practical session with prerequisite repair (fixed vs sliding windows and platform roles); R2 first-principles security/systems rebuild; R3 focused C2–C5 and R4 C6–C8 evaluation. Follow the [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md); if native tooling is blocked, record reason and revisit, then proceed R2. Close Stage B personal practical ownership when PC access permits; do not rely on pre-return competence. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).

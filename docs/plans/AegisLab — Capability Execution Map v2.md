@@ -7,9 +7,9 @@
 
 | Previous work | Actual supported state | Treatment |
 | --- | --- | --- |
-| M0–M3 namespace networking, SSH authentication and process/socket/log/packet observation | Completed **with guidance** in July; no independent reconstruction claim | Retain reference scenario and learning artifacts |
+| M0–M3 namespace networking, SSH authentication and process/socket/log/packet observation | Completed **with guidance** in July; no independent reconstruction claim | Retain historical reference scenario and learning artifacts; present learner competence reset |
 | M4 repeated-failure/formal independent scenario contract | Explicitly deferred; not passed | Reintroduce only parts required by B/D evaluation |
-| M5 Docker Phase 0 and plan | Previous active route; initial object inventory and planning only; no Docker adapter/Compose proof | Historical, optional later D/F infrastructure learning |
+| M5 Docker Phase 0 and plan | Previous active route; initial object inventory and planning only; no Docker adapter/Compose proof | Historical only; container learning starts from first principles at D/F as justified |
 | M6–M17 | Unbuilt | Replace obsolete order with capabilities A–G; later parity remains optional deliberate depth |
 
 ## Active route
@@ -17,7 +17,7 @@
 ```text
 A  Adopt v2 + verify source limitations
        ↓
-B  CLI: authentic log envelopes → normalized observations → deterministic finding
+B  CLI: bounded source-declared log envelopes → normalized observations → deterministic finding
        ↓
 C  local optional AI investigation vs identical-evidence baseline
        ↓
@@ -31,6 +31,14 @@ G  transfer to different authorized context → compare → portfolio
 ```
 
 Stages may be deliberately reordered if a verified prerequisite or flaw requires it. In particular, move a small D exercise before C when needed to validate live evidence assumptions. Never make Docker or VM parity a blocking prerequisite for B/C. Do not declare a stage finished solely because AI wrote it.
+
+## Learning reset and three-track execution (owner-approved 2026-11-26)
+
+Assume all pre-return (before 2026-11-22) learning/practice unavailable until re-established. Historical engineering evidence and current software survive; post-return learner evidence is retained only at its demonstrated depth. Follow the [foundations rebuild](../learning/FOUNDATION-REBUILD.md) for the ordered R1–R5 sessions and F1–F6 learning units. The three tracks are security/systems, AI/software engineering and industry tooling, connected through the same evidence and engineering problems.
+
+Immediate sequence: native Sigma exercise (with prerequisite repair) → first-principles Linux/networking/cryptography/SSH rebuild → focused C2–C5 contract and reliability increment → C6–C8 evaluation → fresh authorized Stage D lab. B personal ownership stays open and may proceed in parallel. If native tooling is blocked, explicitly retain its checkpoint and advance foundations; do not skip it silently. Stage D requires newly demonstrated foundations, not July recall. The existing A–G product acceptance and safety gates are unchanged.
+
+F/G adds practical search/indexing and security-platform exercises: Elasticsearch/Kibana foundation in F, Elastic Security/OpenSearch comparison and bounded Splunk/SPL exercise in G, with explicit blocker/deferral rules and deeper distributed search after Core. See the [industry register](INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) for detailed outcomes. No simultaneous platform deployments or blanket package/service authorization.
 
 ## Executable gates and exact stop lines
 

@@ -1,11 +1,13 @@
 # AegisLab — Learning ledger
 
-**Updated:** 2026-11-25. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
-**Evidence:** July guided records and [November learning/experiment reconciliation](../worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md). Conversation-derived assessments are explicitly distinguished from retained runtime output and AI-executed work.
+**Updated:** 2026-11-26. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
+**Evidence:** July guided records are historical only; active learning evidence begins at the November 22 return, including [November learning/experiment reconciliation](../worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md). Conversation-derived assessments are explicitly distinguished from retained runtime output and AI-executed work.
 
 ## How to use
 
 Depth labels follow the normative strategy: not encountered, introduced, explained with guidance, practiced with guidance, applied independently, diagnosed independently, transferred, technical depth. Record the strongest *specific* demonstrated behavior, help level and remaining gap; a correct prediction is not independent execution. Recall state is separate (recent, needs revisit, or not assessed); recent does not mean stable recall. When access is unavailable, AI may run tests while learner predicts/interprets; practical independence remains open. Review at meaningful milestones, not every message.
+
+**Owner reset (2026-11-26):** all pre-2026-11-22 learning and practice unavailable as prerequisites until re-established. Keep historical facts, not historical depth credit. Current rows reflect only post-return demonstrations; reset-only topics are marked unavailable, not never encountered. Follow the [foundations rebuild](FOUNDATION-REBUILD.md).
 
 ## Current demonstrated learning
 
@@ -13,10 +15,10 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 |---|---|---|
 | TCP/IP, sockets, ports, loopback | Practiced with guidance: learner ran ss -ltn, ss -tn; correctly distinguished ESTAB and authentication | D/F: personally trace a connection and diagnose missing listener; refresh routing/DNS |
 | Linux processes, PID, FD, services | Practiced with guidance: learner ran ss -ltnp and ps; correctly identified absent socket owner evidence | D/F: directly establish ownership, diagnose service failure |
-| SSH authentication, host/user keys, logging | July guided practice; November refreshed with journalctl and synthetic message; learner initially reported weak recall | D: reconstruct safe isolated case, distinguish TCP, key authentication and session; recall check |
-| Namespaces, veth, IPv4 routes, ICMP, packet capture | July practiced with guidance; independent reconstruction not established | D: revisit only needed network/isolation mechanics and capture limits |
-| Linux file ownership/permissions | July guided key setup; recall not assessed | D/E: diagnose permissions without weakening controls |
-| Docker/VM | Docker object inventory/planning only; VM parity not built | D/F: justified container operation and isolation, not mandatory prior to AI |
+| SSH authentication, host/user keys, logging | Post-return: introductory SSH/authentication distinction and journalctl/synthetic message inspection; learner explicitly reports insufficient SSH knowledge; deeper prerequisites unavailable | R2/D: learn cryptography, SSH phases and trust from first principles, reconstruct safe isolated case and diagnose |
+| Namespaces, veth, IPv4 routes, ICMP, packet capture | Unavailable after reset; no post-return practical reconstruction | R2/D: rebuild network/isolation mechanics from first principles, inspect capture limits and personally configure |
+| Linux file ownership/permissions | Unavailable after reset; no post-return permissions demonstration established | D/E: diagnose permissions without weakening controls |
+| Docker/VM | Unavailable after reset; historical inventory only, no current practical competence | D/F: justified container operation and isolation, not mandatory prior to AI |
 | JSONL and parsing/validation | Explained with guidance; learner recognized invalid port and correct finding, initially conflated decode and event acceptance | B/C3: independently change invalid record and trace quarantine; distinguish syntax, shape, values, truth |
 | Event/record/source IDs, SHA-256, lineage | Introduced and examined in actual reports (AI ran CLI) | B/D: trace finding to source bytes; explain why a hash is not authentication |
 | Sliding windows | Applied concept to changed case: initial fixed-window error corrected; predicted 0/50/140/171 no finding and 51s cutoff correctly | B: personally modify/run case, inspect events and explain exact boundary; delayed recall |
@@ -28,7 +30,7 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 | Model inference, context vs generation budget | Explained with guidance; learner proposed increasing max_tokens and raised efficiency; AI ran comparison | C4/C7: predict and diagnose truncation; distinguish context capacity, actual tokens, latency confounds |
 | Context engineering | Guided design: learner favored bounded relevant context and deterministic core; related non-trigger event importance taught | C2/C3: choose scope and explain omission trade-off in new case |
 | Structured output and schema | Explained with guidance; actual JSON fence failure and schema request demonstrated by AI | C3/C5: independently validate type/shape and unknown values, test invalid reference |
-| Semantic grounding and uncertainty | Transferred reasoning from prior dependency-review work: rejected unsupported attacker/compromise claim, asked for precise references | C5/C6: adjudicate valid-looking unsupported claim; separate factual statement from hypothesis |
+| Semantic grounding and uncertainty | Post-return reasoning: rejected unsupported attacker/compromise claim and asked for precise references; no assumed prior-project competence | C5/C6: adjudicate valid-looking unsupported claim; separate factual statement from hypothesis |
 | AI evaluation and usefulness | First guided human review: semantic partial, additional value fail, hypotheses partial, investigation fail; identified vague next check | C6/C7: apply fixed rubric to new case, compare same-evidence baseline and record disagreement |
 | Agent authorization / tool security | Introduced conceptually; no agent or tool implementation | E: independently explain and test allow/deny, injection, least authority |
 | Observability, deployment, distributed systems | Concepts introduced (duplicates, partial failure); operational competence not demonstrated | F/later: logs, recovery, queues, ordering, retries, backpressure, replay |
@@ -47,6 +49,10 @@ Local inference and output validation: AI implemented reusable direct loopback H
 
 November 26: Sigma detection intent, logsource/field mapping, correlation versus backend execution and fixed versus sliding window introduced by AI-operated offline comparison. Inference process supervision, caller deadline versus socket timeout and server cancellation boundaries demonstrated in controlled test. Changed-case explanation and independent execution pending. Learner requested more open-ended assessments; do not equate recognition with transfer. [Worklog](../worklogs/2026-11-26-1539-sigma-and-inference-deadline.md).
 
+November 26 later assessment: correct composite key and sliding-window trigger; fixed-bucket misunderstanding persists and was corrected, so re-assess changed bucket alignment in R1. Initial platform delegation and explicit entity representation ideas needed refinement; correct preservation of conflicting evidence and general deadline reasoning. SSH depth explicitly insufficient. Pre-return learning reset applies globally; see [foundations rebuild](FOUNDATION-REBUILD.md).
+
+New rebuild topics: cryptography/trust (hash vs encryption/signature/key exchange), SSH transport/authentication/channel lifecycle, Linux permissions, networking layers/isolation, search/indexing and security platform operations. Current credit only where post-return evidence above supports it; all other prerequisites unavailable. Target R2/D foundations, F/G search and platform competence.
+
 ## Industry-tool competence
 
 The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.
@@ -56,7 +62,7 @@ The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md
 - B practical closure when PC access permits: learner selects a copy of a fixture, predicts a changed case, modifies/runs it, traces output to source lines, deliberately diagnoses one invalid input or wrong rule assumption, and explains evidence limits. AI may review, not perform the learner's critical step.
 - C2 next: represent unknown target identity without hallucination, derive scope from existing references and evaluate a proposal against evidence. Revisit distinction among valid JSON, valid types, reference existence, entailment, usefulness and permission.
 - C4/C5: personally run one local request and reproduce a bounded failure/fallback when possible.
-- D: refresh July namespace/routing/SSH mechanics immediately before the authorized reconstruction; do not equate historical guided work with current independent competence.
+- R1/R2: native Sigma practice and first-principles foundations rebuild; D: newly demonstrate namespace/routing/SSH mechanics before relying on them. No July competence credit.
 - At next meaningful handoff, review two older concepts through delayed recall or transfer (e.g. socket ownership in inference and duplicate delivery in collection), not rote repetition.
 
 Do not mark stable recall or independent practical mastery until supported by a later learner-owned demonstration. Keep the state summary short; update this ledger and link dated worklogs rather than recreating a competing curriculum.

@@ -43,4 +43,6 @@ One coherent Python CLI/evidence path first; storage simple, no speculative fram
 
 ## Learning and evaluation contract
 
+Owner-approved learning reset (2026-11-26): historical engineering records survive, but no competence acquired before the November 22 return is assumed available. Follow the [foundations rebuild](../learning/FOUNDATION-REBUILD.md) and current learning ledger for prerequisites; retain recent evidence at its demonstrated depth. This does not change the A–G capability acceptance gates.
+
 At each material gate: state the operator question and predict a meaningful behavior; run and inspect actual evidence; challenge a negative/changed case; capture what was AI-built versus learner-tested; revisit an unfamiliar failure with reduced prompting. Do not equate generated code, passing tests, or guided success with independent learner mastery. Prefer new system mechanisms and demonstrated utility over redundant documentation.

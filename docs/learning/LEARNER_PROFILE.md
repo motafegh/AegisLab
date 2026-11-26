@@ -1,10 +1,12 @@
 # AegisLab Learner Profile
 
-**Status:** Active supporting learning record  
+**Status:** Historical July 2026 learner snapshot — superseded for current competence on 2026-11-26
 **Baseline imported:** 2026-07-13 from the completed introductory networking/Linux foundation labs  
 **Authority:** Evidence-aware and non-normative; observed performance and canonical project documents override this profile
 
-## Maintenance contract
+**Read as historical testimony, not a current assessment.** The learner reports forgetting all pre-November 22 learning and practice. The first-person statements, depth scores and old roadmap below describe the July snapshot only. Do not use them to waive prerequisites. Current evidence is in [Current Learning State](CURRENT_LEARNING_STATE.md) and [Learning Ledger](LEARNING_LEDGER.md); follow the [foundations rebuild](FOUNDATION-REBUILD.md). Preserve this snapshot rather than updating old scores in place.
+
+## Historical maintenance contract (superseded)
 
 - Update this profile after meaningful demonstrated learning, a corrected misconception, a changed assistance level, or a newly identified gap.
 - Record what was demonstrated, the context, the assistance used, and whether the knowledge transferred to a new situation.
@@ -508,7 +510,7 @@ I believe I have enough foundation to begin an introductory Web/API security lab
 
 ## AegisLab continuation
 
-The imported immediate next steps describe the source repository's roadmap at the time of transfer. Within AegisLab, the active sequence is controlled by the [Initial Journey Plan](<../plans/AegisLab — Initial Journey Plan.md>) and begins with the namespace-led SSH Core experiment.
+The imported immediate next steps describe the source repository's roadmap at the time of transfer. The [Initial Journey Plan](<../plans/AegisLab — Initial Journey Plan.md>) controlled the July route; it is historical. The active route is now the [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>) and the [foundations rebuild](FOUNDATION-REBUILD.md).
 
-Future updates should integrate new evidence into the relevant sections above rather than append a session diary. When a topic materially advances, record the date and evidence source in concise wording and retain unresolved gaps.
+Do not append current assessments to this historical snapshot. Record new evidence in the active learning ledger and worklogs.
 

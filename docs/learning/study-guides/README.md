@@ -9,9 +9,9 @@ This directory contains two complementary forms of learning material:
 
 The full editions are intentionally preserved unchanged. They remain valuable evidence and reference material, but they should not be read linearly by default.
 
-## Primary study path
+## Reference study path for foundations rebuild
 
-Study these in dependency order:
+Owner reset (2026-11-26): no pre-return knowledge is presumed retained. The [foundations rebuild](../FOUNDATION-REBUILD.md) controls current lesson order and prerequisite depth; these July editions are reference aids, not evidence of current competence. Teach missing basics before using an edition, verify runtime anew, and only run safe approved exercises. The reference editions are useful in this dependency order when the active unit needs them:
 
 1. [Networking and Namespace Foundations — Layered Study Edition](study-editions/01-networking-and-namespace-foundations.md)
 2. [SSH Identities and Linux Permissions — Layered Study Edition](study-editions/02-ssh-identities-and-permissions.md)
@@ -88,4 +88,4 @@ Historical values in the full guides are evidence from earlier sessions. They ar
 
 ## Current gap
 
-The three layered editions cover the completed networking and SSH control-path foundations. A separate SSH observability edition should be created after the remaining server-log correlation work closes the active M3 milestone.
+The three editions cover historical networking and SSH control-path material; current learner competence must be re-established. Reuse or extend guides as needed for R2 and Stage D, including fresh SSH observability, source custody, sensor coverage and independent truth. M3 is historical, not an active milestone.

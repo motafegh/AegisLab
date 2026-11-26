@@ -4,6 +4,8 @@
 
 AegisLab is an evidence-centered network-defense and security-operations learning laboratory. Its first operator question: *Which SSH authentication decisions were observed, does a defined pattern warrant attention, which records support it, and what remains unknown?*
 
+**Learning baseline:** pre-November 22 learning is treated as unavailable until re-established. Historical engineering records remain intact. The [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md) and [industry-tool strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) schedule native Sigma, SSH/Linux/network/cryptography foundations, AI evaluation and later Elasticsearch/Kibana, Elastic Security/OpenSearch and Splunk practical work; no implied installations or present mastery.
+
 ## Quick demonstration (Python 3.10+; standard library only)
 
 From the repository root:

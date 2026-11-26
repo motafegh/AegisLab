@@ -54,6 +54,8 @@ For a substantial session:
 
 If the scope changes materially, update the live snapshot and record the reason rather than allowing the original objective to disappear.
 
+At session opening consult the [foundations rebuild](learning/FOUNDATION-REBUILD.md) and current learning ledger: pre-return competence is unavailable for prerequisites, regardless of historical guided success. Re-establish needed foundations before asking the learner to design or diagnose unfamiliar mechanisms. Batch related exercises with meaningful implementation and use open-ended reasoning rather than relying on recognition quizzes.
+
 ## 5. Guided-discovery loop
 
 Use the smallest loop that preserves meaningful learner ownership:

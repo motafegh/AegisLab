@@ -79,6 +79,7 @@ Newest records appear first.
 
 | Started | Worklog | Status | Outcome |
 |---|---|---|---|
+| 2026-11-26 19:56 +03:30 | [Learning reset and roadmap refinement](2026-11-26-1956-learning-reset-and-roadmap-refinement.md) | completed (planning) | pre-return competence reset, practical rebuild and expanded tool sequence; history preserved |
 | 2026-11-26 15:39 +03:30 | [Sigma and inference deadline](2026-11-26-1539-sigma-and-inference-deadline.md) | completed increment (gates open) | offline seven-case comparison, supervised caller deadline, 55 tests, actual local probe |
 | 2026-11-25 20:13 +03:30 | [Local inference and validation](2026-11-25-2013-local-inference-and-validation.md) | completed (C2–C5 remain open) | 49 tests, actual local probe and empty refusal; semantic error retained |
 | 2026-11-25 18:24 +03:30 | [Provisional context builder](2026-11-25-1824-provisional-context-builder.md) | completed (C2/C3 remain open) | 12 new tests, 27 total passed, verified context preview and unchanged baseline; accelerated session rhythm |

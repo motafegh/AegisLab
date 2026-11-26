@@ -1,18 +1,13 @@
 # AegisLab Current Learning State
 
-**Updated:** 2026-11-26 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
+**Updated:** 2026-11-26 | **Status:** pre-return learning reset by owner; post-return Stage B guided reasoning retained, practical ownership open; Stage C and foundations rebuild active.
 **Authority:** Non-normative, evidence-aware learner handoff. See [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>).
 
-## Established with guidance (July)
+## Current prerequisite baseline — owner reset 2026-11-26
 
-- Created/rebuilt two Linux network namespaces, veth interfaces, IPv4 routes and ICMP path; diagnosed one network-address omission with help.
-- Practiced Linux file ownership/modes and separate OpenSSH server host identity, client key authorization and known-host trust.
-- Demonstrated authorized public-key SSH authentication, valid unauthorized-key failure, log/packet/socket/process correlation, encrypted-packet visibility limits and clean connection teardown.
-- Interpreted the observed SSH execution lifecycle substantially **with assistance**; independent reconstruction, delayed recall and changed-case diagnosis remain unproven.
-- Inspected Docker Desktop/engine inventory and networks during former M5 planning. Container lifecycle and adapter operation were **not** demonstrated.
-- Formal old M4 repeated-failure contract, fixed threshold/window, independent truth and boundary experiments were deferred rather than passed.
+The learner reports no retained learning or practice from before the November 22 return. Treat all such knowledge as unavailable for teaching and design prerequisites, including historical namespace networking, routing, SSH, cryptography, Linux permissions, packet capture, Docker inventory and other prior study. Do not assume recall or practical mastery. Use the [foundations rebuild](FOUNDATION-REBUILD.md) to re-establish it from first principles through actual exercises. Preserve post-return evidence below at its demonstrated depth.
 
-Detailed historical evidence: [July SSH closure worklog](../worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md), [July M5 planning](../worklogs/2026-07-18-1640-m5-docker-planning.md), and versioned Git history of this file. Historical M5 playbook is **not** the active teaching gate.
+Historical records remain intact: [July SSH closure worklog](../worklogs/2026-07-18-namespace-ssh-auth-lifecycle-closure.md) and [July M5 planning](../worklogs/2026-07-18-1640-m5-docker-planning.md). They are reference materials, not evidence of present competence or a basis for skipping lessons. No historical software/engineering records have been erased; old M4/M5 remain deferred/unbuilt as recorded.
 
 ## Current learning target — Stage B ownership and Stage C investigation
 
@@ -32,7 +27,7 @@ Follow [Learning Preferences](../../LEARNING-PREFERENCES.md) and [AI Collaborati
 
 ## Session rhythm adjustment (2026-11-25)
 
-Learner requested faster progress and more connected concepts/quizzes alongside visible implementation. Batch multiple related checkpoints at meaningful milestones instead of stopping after each small question; preserve prediction, actual verification, dependency-driven depth and independent ownership gates. AI implemented and verified a provisional context builder; learner assessment pending. See [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md).
+Learner requested faster progress and more connected concepts/quizzes alongside visible implementation. Batch multiple related checkpoints at meaningful milestones instead of stopping after each small question; preserve prediction, actual verification, dependency-driven depth and independent ownership gates. AI implemented and verified a provisional context builder; subsequent learner assessment is recorded below. See [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md).
 
 ## Later November 25 assessment and implementation
 
@@ -42,7 +37,13 @@ Learner correctly reasoned that authentication count alone cannot establish inte
 
 Learner correctly explained source/target identity and preserving the baseline on LM Studio failure; seven multiple-choice recognition answers correct. Requested more diverse, harder assessments. Prefer open-ended recall, prediction, debugging, code reading, implementation, design and transfer, with selective MCQ. AI performed offline Sigma semantics exercise and deadline supervision implementation; 55 tests and local probe verified. Learner's changed-case reasoning and personal execution remain pending; see [worklog](../worklogs/2026-11-26-1539-sigma-and-inference-deadline.md).
 
+## Later November 26 assessment and owner decision
+
+Learner correctly selected A/B/D for the sliding-window finding, but incorrectly applied a moving boundary to a fixed bucket; corrected with explicit fixed intervals. Confused D/E in broader relevance; explained cross-account and cross-IP observations. Proposed delegating acquisition to external platform and preserving investigation; required clarification of Sigma specification vs collector/backend. Recognized worker termination after deadline, frozen configuration, distinct timing limits and need to investigate external alert discrepancy; source/target representation direction correct but concrete design needed. Learner reported SSH and platform knowledge insufficient and then explicitly reset all pre-return learning. Adopted three connected tracks and ordered [rebuild plan](FOUNDATION-REBUILD.md). No new practical mastery claimed.
+
+Next sequence: native Sigma practice (minimum prerequisites), foundation rebuild before security-dependent C work, focused C2–C5, C6–C8, then D. No pre-return prerequisites assumed.
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
-- B: when PC access permits, personally modify and run a copied fixture, trace supporting events to exact source lines and diagnose one changed or invalid case with reduced assistance. Delayed recall of July networking/SSH skills precedes D.
+- B: when PC access permits, personally modify and run a copied fixture, trace supporting events to exact source lines and diagnose one changed or invalid case with reduced assistance. First-principles networking/SSH/cryptography rebuild precedes D; personal operation and diagnosis in D.
