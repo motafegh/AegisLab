@@ -1,6 +1,6 @@
 # AegisLab Current Learning State
 
-**Updated:** 2026-11-25 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
+**Updated:** 2026-11-26 | **Status:** Stage B changed-case reasoning demonstrated with guidance; practical ownership open; Stage C exploratory learning active.
 **Authority:** Non-normative, evidence-aware learner handoff. See [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>).
 
 ## Established with guidance (July)
@@ -37,6 +37,10 @@ Learner requested faster progress and more connected concepts/quizzes alongside 
 ## Later November 25 assessment and implementation
 
 Learner correctly reasoned that authentication count alone cannot establish intent, suggested historical/source evidence, correctly identified trigger records, quarantine uncertainty, reference existence, explicit budget refusal, traceability and bytes versus tokens. Context scope and omitted relevance required explanation; no independent execution claimed. AI implemented the provisional client, JSON Schema validator and fallback; 49 tests and actual local probe verified, semantic source/target error observed. See [implementation worklog](../worklogs/2026-11-25-2013-local-inference-and-validation.md).
+
+## November 26 assessment and new increment
+
+Learner correctly explained source/target identity and preserving the baseline on LM Studio failure; seven multiple-choice recognition answers correct. Requested more diverse, harder assessments. Prefer open-ended recall, prediction, debugging, code reading, implementation, design and transfer, with selective MCQ. AI performed offline Sigma semantics exercise and deadline supervision implementation; 55 tests and local probe verified. Learner's changed-case reasoning and personal execution remain pending; see [worklog](../worklogs/2026-11-26-1539-sigma-and-inference-deadline.md).
 
 ## Next learner-owned checkpoints
 

@@ -30,15 +30,19 @@ def main() -> int:
     scan.add_argument("--finding-id", help="Select a finding for context or probe")
     scan.add_argument("--model", help="Local model ID for experimental probe")
     scan.add_argument("--local-port", type=int, help="Loopback API port for experimental probe")
+    scan.add_argument("--deadline", type=float, help="Overall inference worker wait budget in seconds")
+    scan.add_argument("--socket-timeout", type=float, help="Individual socket I/O timeout in seconds")
     args = parser.parse_args()
     if args.finding_id is not None and not (args.prepare_context or args.probe_investigator):
         parser.error("--finding-id requires context preview or investigator probe")
-    if not args.probe_investigator and (args.model is not None or args.local_port is not None):
-        parser.error("--model and --local-port require --probe-investigator")
+    if not args.probe_investigator and any(v is not None for v in (args.model, args.local_port, args.deadline, args.socket_timeout)):
+        parser.error("Local inference options require --probe-investigator")
     if args.probe_investigator:
         try:
             config = LocalConfig(model=args.model if args.model is not None else LocalConfig.model,
-                                 port=args.local_port if args.local_port is not None else LocalConfig.port)
+                                 port=args.local_port if args.local_port is not None else LocalConfig.port,
+                                 timeout=args.socket_timeout if args.socket_timeout is not None else LocalConfig.timeout,
+                                 deadline=args.deadline if args.deadline is not None else LocalConfig.deadline)
         except ValueError as exc:
             parser.error(str(exc))
     try:

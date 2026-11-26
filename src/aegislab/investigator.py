@@ -5,11 +5,12 @@ from typing import Any
 
 from .investigator_context import prepare_context
 from .investigator_contract import ContractError, validate_output, OUTPUT_VERSION
-from .local_inference import LocalConfig, infer
+from .local_inference import LocalConfig
+from .inference_deadline import infer_bounded
 
 
 def investigate(report: dict[str, Any], config: LocalConfig, *,
-                finding_id: str | None = None, inference=infer) -> dict[str, Any]:
+                finding_id: str | None = None, inference=infer_bounded) -> dict[str, Any]:
     """Preserve baseline; never promote generated text to established findings."""
     preparation = prepare_context(report, finding_id=finding_id)
     result = {"baseline": report, "preparation": preparation,

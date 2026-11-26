@@ -1,6 +1,6 @@
 # AegisLab
 
-**Status (2026-11-25):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Learner changed-case reasoning demonstrated with guidance; independent practical ownership open. Stage C local inference and contract probes remain exploratory; deterministic context preview and explicit experimental local inference are implemented; outputs are mechanically checked, not semantically accepted. Fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
+**Status (2026-11-26):** Core v2 adopted; Stage B deterministic SSH finding CLI runs on explicitly synthetic evidence. Learner changed-case reasoning demonstrated with guidance; independent practical ownership open. Stage C local inference and contract probes remain exploratory; deterministic context preview and explicit experimental local inference are implemented; outputs are mechanically checked, not semantically accepted. Fresh telemetry, Docker/VM parity, agent tools and production use are **not implemented**.
 
 AegisLab is an evidence-centered network-defense and security-operations learning laboratory. Its first operator question: *Which SSH authentication decisions were observed, does a defined pattern warrant attention, which records support it, and what remains unknown?*
 
@@ -31,7 +31,7 @@ The baseline and context preview require no virtual environment, server, network
 
     PYTHONPATH=src python3 -m aegislab analyze --input examples/fixtures/ssh-auth-burst.synthetic.jsonl --source-id fixture:ssh-burst-v1 --probe-investigator
 
-Default model gemma-4-e2b-it, direct 127.0.0.1:18080; --model and --local-port can select an explicitly intended local model endpoint. The report preserves the baseline and labels any mechanically valid generated output admitted_unadjudicated. No automatic actions, no model authority, no production readiness. Missing validator or ineligible input skips inference; transport or validation errors retain baseline. See [implementation worklog](docs/worklogs/2026-11-25-2013-local-inference-and-validation.md).
+Default model gemma-4-e2b-it, direct 127.0.0.1:18080; --model and --local-port can select an explicitly intended local model endpoint. The caller supervises a fixed worker with --deadline (default 60s) and --socket-timeout (default 45s); caller timeout does not guarantee server-side cancellation. The report preserves the baseline and labels any mechanically valid generated output admitted_unadjudicated. No automatic actions, no model authority, no production readiness. Missing validator or ineligible input skips inference; transport or validation errors retain baseline. See [implementation worklog](docs/worklogs/2026-11-25-2013-local-inference-and-validation.md).
 
 ## Data contract and architecture
 

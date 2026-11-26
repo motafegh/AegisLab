@@ -43,7 +43,9 @@ Prompt/context engineering: learner proposed clearer investigation direction and
 
 Context preparation and eligibility: AI implemented deterministic scope, omission metadata, versioned interface, refusal on bounds, baseline isolation and CLI preview; 12 tests and real CLI verified. Learner correctly predicted trigger records, explicit budget refusal and traceability; scope and omitted relevance required guidance. Personal execution pending; see [context increment](../worklogs/2026-11-25-1824-provisional-context-builder.md) and [later assessment](../worklogs/2026-11-25-2013-local-inference-and-validation.md).
 
-Local inference and output validation: AI implemented reusable direct loopback HTTP client, optional jsonschema 4.10.3 validator and explicit orchestration/fallback; 22 new tests and actual local CLI verified. Learner concept quiz and personal request/failure diagnosis pending; see [implementation worklog](../worklogs/2026-11-25-2013-local-inference-and-validation.md). No independent mastery claimed.
+Local inference and output validation: AI implemented reusable direct loopback HTTP client, optional jsonschema 4.10.3 validator and explicit orchestration/fallback; 22 new tests and actual local CLI verified. Learner correctly explained source/target and baseline fallback and answered seven recognition questions; personal request/failure diagnosis pending; see [implementation worklog](../worklogs/2026-11-25-2013-local-inference-and-validation.md). No independent mastery claimed.
+
+November 26: Sigma detection intent, logsource/field mapping, correlation versus backend execution and fixed versus sliding window introduced by AI-operated offline comparison. Inference process supervision, caller deadline versus socket timeout and server cancellation boundaries demonstrated in controlled test. Changed-case explanation and independent execution pending. Learner requested more open-ended assessments; do not equate recognition with transfer. [Worklog](../worklogs/2026-11-26-1539-sigma-and-inference-deadline.md).
 
 ## Industry-tool competence
 

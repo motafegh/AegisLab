@@ -1,6 +1,6 @@
 # AegisLab Project State
 
-**Updated:** 2026-11-25 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
+**Updated:** 2026-11-26 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
 **Active authority:** [Project Definition](<docs/AegisLab — Project Definition v1.0.md>), [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>), [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>).
 **Prior route:** [Charter v1](<docs/plans/AegisLab — Core Charter v1.0.md>), [M0–M17 Map](<docs/plans/AegisLab — Core Execution Map.md>) and [M5 Docker planning](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) are preserved history, **not active next steps**.
 
@@ -47,12 +47,16 @@ The [prompt ablation worklog](docs/worklogs/2026-11-25-1724-c2-prompt-ablation.m
 
 [Local inference and validation increment](docs/worklogs/2026-11-25-2013-local-inference-and-validation.md): direct loopback HTTP client, optional jsonschema validator, dynamic context reference checks, deterministic eligibility and unchanged baseline integrated under --probe-investigator. 49/49 tests pass (22 new); actual local inference completed and admitted as unadjudicated; model confused source IP with target, so semantic usefulness not established. Empty input did not invoke model. C2/C3/C4/C5 remain open; whole-request deadline, final contract, token budgeting and evaluation pending.
 
+## Sigma semantics and inference supervision (2026-11-26)
+
+[Increment and evidence](docs/worklogs/2026-11-26-1539-sigma-and-inference-deadline.md): candidate Sigma YAML and seven-case offline handwritten SQL semantics comparison (not native conversion); three fixed-bucket/raw-count mismatches, seven sliding/distinct subject matches. pySigma unavailable; native exercise remains open. Integrated inference supervisor with caller deadline, controlled slow loopback and fallback tests; 55/55 tests passed, real local probe admitted unadjudicated, baseline unchanged, prior source/target error remains. Caller worker termination does not guarantee server cancellation; token budgeting and C2–C5 acceptance remain open.
+
 ## Industry tooling and product direction
 
-The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: bounded Sigma comparison after C2 alongside C; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; no new tool installed or integration implemented. C2 remains open while reversible C3 context work progresses.
+The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: complete native Sigma exercise after offline semantics comparison; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; no new tool installed or integration implemented. C2 remains open while reversible C3 context work progresses.
 
 ## Learning and safety handoff
 
 Software completion and personal mastery are separate. Learner has predicted changed cases and evaluated model output; still needs to personally change/run a case, trace the event/evidence chain and diagnose one failure with reduced prompting. See [learning ledger](docs/learning/LEARNING_LEDGER.md). AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.
 
-**Next action:** batch learner checkpoints on HTTP/validation/fallback and actual generated advice, then bounded C2 task-specific refinement/decision, Sigma exercise and C3–C5 hardening; C6/C7 evaluation follow (no final schema or usefulness claim yet); close Stage B personal practical ownership when PC access permits. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).
+**Next action:** batch open-ended learner checkpoints on rule semantics and deadline diagnosis, then bounded task-specific C2 decision, evidence representation and token policy, native Sigma exercise and C6/C7 evaluation (no final schema or usefulness claim yet); close Stage B personal practical ownership when PC access permits. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).

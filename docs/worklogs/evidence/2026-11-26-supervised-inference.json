@@ -1,0 +1,283 @@
+{
+  "baseline": {
+    "events": [
+      {
+        "event_id": "evt-92dd78ac94389f505d01",
+        "observed_at": "2026-11-22T10:00:00Z",
+        "outcome": "failed_publickey",
+        "raw_record_sha256": "5375064e2bb2ddc1abebe7a4bbc2b6f1ab695f9cf229f4ff717203bb56de4d15",
+        "record_id": "rec-ac840582cc1703036bd7",
+        "source_id": "fixture:ssh-burst-v1",
+        "source_ip": "10.10.0.1",
+        "source_line": 1,
+        "source_port": 51001,
+        "sshd_pid": 201,
+        "username": "labuser"
+      },
+      {
+        "event_id": "evt-9830f50593d9fc2c0306",
+        "observed_at": "2026-11-22T10:00:30Z",
+        "outcome": "failed_publickey",
+        "raw_record_sha256": "64b348b9bcd582ed5a4fef7f0ed726aaee0fc46ff46cc9ba6fe68a5894bf3397",
+        "record_id": "rec-9aa248c57d4478111b53",
+        "source_id": "fixture:ssh-burst-v1",
+        "source_ip": "10.10.0.1",
+        "source_line": 2,
+        "source_port": 51002,
+        "sshd_pid": 204,
+        "username": "labuser"
+      },
+      {
+        "event_id": "evt-6b77aa30169c4e13c524",
+        "observed_at": "2026-11-22T10:01:20Z",
+        "outcome": "failed_publickey",
+        "raw_record_sha256": "ea96ef12e1424b8d2edf43809779ec72d3f5eed1933faceb68fd285eefdf2bdf",
+        "record_id": "rec-b389215d833591167074",
+        "source_id": "fixture:ssh-burst-v1",
+        "source_ip": "10.10.0.1",
+        "source_line": 3,
+        "source_port": 51003,
+        "sshd_pid": 208,
+        "username": "labuser"
+      },
+      {
+        "event_id": "evt-f3b6b8bf97deab862f3e",
+        "observed_at": "2026-11-22T10:01:30Z",
+        "outcome": "accepted_publickey",
+        "raw_record_sha256": "19ca586a196a4c6c0ccd0ffabc3f3de9a65661adf0443191f0ff5c81f6832719",
+        "record_id": "rec-1379918c7195295b8d7e",
+        "source_id": "fixture:ssh-burst-v1",
+        "source_ip": "10.10.0.1",
+        "source_line": 4,
+        "source_port": 51004,
+        "sshd_pid": 209,
+        "username": "labuser"
+      }
+    ],
+    "findings": [
+      {
+        "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+        "distinct_failed_observations": 3,
+        "evidence_event_ids": [
+          "evt-92dd78ac94389f505d01",
+          "evt-9830f50593d9fc2c0306",
+          "evt-6b77aa30169c4e13c524"
+        ],
+        "finding_id": "finding-bb327298c251bbf8b102",
+        "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record.",
+        "rule_id": "ssh.failed-publickey-burst.v1",
+        "subject": {
+          "source_ip": "10.10.0.1",
+          "username": "labuser"
+        },
+        "window_end": "2026-11-22T10:01:20Z",
+        "window_start": "2026-11-22T10:00:00Z"
+      }
+    ],
+    "limitations": [
+      "Source kind and source ID are operator declarations, not authenticated provenance.",
+      "UTC timestamps are supplied by the input envelope; clock accuracy and ordering are unverified.",
+      "A distinct log observation is not proof of a distinct client action or target effect.",
+      "No independent action/target truth or separate sensor correlation was supplied.",
+      "Only supported sshd public-key decision messages are parsed; other activity is not assessed.",
+      "No finding means this rule did not match the accepted records, not that activity was absent."
+    ],
+    "parser_version": "ssh-publickey-envelope.v1",
+    "quarantine": [],
+    "rule": {
+      "id": "ssh.failed-publickey-burst.v1",
+      "threshold": 3,
+      "window_seconds_inclusive": 120
+    },
+    "schema": "aegislab.ssh-incident-report.v1",
+    "source": {
+      "accepted_event_count": 4,
+      "declared_kind": "synthetic",
+      "duplicate_failure_observations_ignored": 0,
+      "id": "fixture:ssh-burst-v1",
+      "line_count": 4,
+      "quarantined_record_count": 0,
+      "sha256": "96ae49d987ee1bb04dac126480488f8dbd948f81737317cb155a69f0f72f6985"
+    },
+    "status": "finding_present"
+  },
+  "investigation": {
+    "derived_scope": {
+      "coverage": "not_established",
+      "event_ids": [
+        "evt-92dd78ac94389f505d01",
+        "evt-9830f50593d9fc2c0306",
+        "evt-6b77aa30169c4e13c524"
+      ],
+      "observed_at_max": "2026-11-22T10:01:20Z",
+      "observed_at_min": "2026-11-22T10:00:00Z",
+      "source_ips": [
+        "10.10.0.1"
+      ],
+      "target_hostname": null,
+      "usernames": [
+        "labuser"
+      ]
+    },
+    "output": {
+      "hypotheses": [
+        {
+          "basis_event_ids": [
+            "evt-92dd78ac94389f505d01",
+            "evt-9830f50593d9fc2c0306",
+            "evt-6b77aa30169c4e13c524"
+          ],
+          "explanation": "No hypotheses are supported by relevant supplied event IDs to warrant explicit statement.",
+          "limitation": "N/A"
+        }
+      ],
+      "next_check": {
+        "basis_event_ids": [
+          "evt-92dd78ac94389f505d01",
+          "evt-9830f50593d9fc2c0306",
+          "evt-6b77aa30169c4e13c524"
+        ],
+        "if_present": "If system authentication logs show corresponding connection attempts or session establishment failures/successes correlated with the source IP 10.10.0.1, it would reduce uncertainty by confirming whether these SSHD events correspond to actual network activity and target access attempts rather than just client-side negotiation.",
+        "if_unavailable": "If system logs are unavailable, the uncertainty remains high as there is no independent verification of the context surrounding the SSH daemon events.",
+        "objective": "Network flow data or system audit logs for the target host (10.10.0.1) covering the time window.",
+        "required_evidence": "Read-only access to system audit logs (e.g., `/var/log/auth.log` or equivalent) on the host 10.10.0.1 for the time window 2026-11-22T10:00:00Z to 2026-11-22T10:01:30Z."
+      },
+      "uncertainty": "The uncertainty regarding whether these failed public-key attempts represent a legitimate user interaction or an attempted brute-force/enumeration attack against the host 10.10.0.1 remains high because there is no supplied correlation linking these SSHD events to external network activity or target system responses."
+    },
+    "output_version": "aegislab.ssh-investigation.v0.2",
+    "status": "admitted_unadjudicated"
+  },
+  "preparation": {
+    "context": {
+      "events": [
+        {
+          "event_id": "evt-92dd78ac94389f505d01",
+          "observed_at": "2026-11-22T10:00:00Z",
+          "outcome": "failed_publickey",
+          "record_id": "rec-ac840582cc1703036bd7",
+          "source_ip": "10.10.0.1",
+          "source_line": 1,
+          "source_port": 51001,
+          "sshd_pid": 201,
+          "username": "labuser"
+        },
+        {
+          "event_id": "evt-9830f50593d9fc2c0306",
+          "observed_at": "2026-11-22T10:00:30Z",
+          "outcome": "failed_publickey",
+          "record_id": "rec-9aa248c57d4478111b53",
+          "source_ip": "10.10.0.1",
+          "source_line": 2,
+          "source_port": 51002,
+          "sshd_pid": 204,
+          "username": "labuser"
+        },
+        {
+          "event_id": "evt-6b77aa30169c4e13c524",
+          "observed_at": "2026-11-22T10:01:20Z",
+          "outcome": "failed_publickey",
+          "record_id": "rec-b389215d833591167074",
+          "source_ip": "10.10.0.1",
+          "source_line": 3,
+          "source_port": 51003,
+          "sshd_pid": 208,
+          "username": "labuser"
+        },
+        {
+          "event_id": "evt-f3b6b8bf97deab862f3e",
+          "observed_at": "2026-11-22T10:01:30Z",
+          "outcome": "accepted_publickey",
+          "record_id": "rec-1379918c7195295b8d7e",
+          "source_ip": "10.10.0.1",
+          "source_line": 4,
+          "source_port": 51004,
+          "sshd_pid": 209,
+          "username": "labuser"
+        }
+      ],
+      "evidence_quality": {
+        "clock_accuracy": "not_established",
+        "duplicate_failure_observations_ignored": 0,
+        "network_correlation": "not_supplied",
+        "quarantined_record_count": 0,
+        "source_authenticity": "not_established",
+        "target_hostname": null
+      },
+      "finding": {
+        "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+        "distinct_failed_observations": 3,
+        "evidence_event_ids": [
+          "evt-92dd78ac94389f505d01",
+          "evt-9830f50593d9fc2c0306",
+          "evt-6b77aa30169c4e13c524"
+        ],
+        "finding_id": "finding-bb327298c251bbf8b102",
+        "rule_id": "ssh.failed-publickey-burst.v1",
+        "subject": {
+          "source_ip": "10.10.0.1",
+          "username": "labuser"
+        },
+        "window_end": "2026-11-22T10:01:20Z",
+        "window_start": "2026-11-22T10:00:00Z"
+      },
+      "limitations": [
+        "Source kind and source ID are operator declarations, not authenticated provenance.",
+        "UTC timestamps are supplied by the input envelope; clock accuracy and ordering are unverified.",
+        "A distinct log observation is not proof of a distinct client action or target effect.",
+        "No independent action/target truth or separate sensor correlation was supplied.",
+        "Only supported sshd public-key decision messages are parsed; other activity is not assessed.",
+        "No finding means this rule did not match the accepted records, not that activity was absent."
+      ],
+      "schema": "aegislab.ssh-investigator-context.v0.1",
+      "selection": {
+        "accepted_total": 4,
+        "complete_source_coverage": "not_established",
+        "included": 4,
+        "omitted": 0,
+        "other_findings_omitted": 0,
+        "policy": "same_subject_window_plus_120s",
+        "supporting_event_ids": [
+          "evt-6b77aa30169c4e13c524",
+          "evt-92dd78ac94389f505d01",
+          "evt-9830f50593d9fc2c0306"
+        ]
+      },
+      "source": {
+        "declared_kind": "synthetic",
+        "id": "fixture:ssh-burst-v1",
+        "sha256": "96ae49d987ee1bb04dac126480488f8dbd948f81737317cb155a69f0f72f6985"
+      },
+      "status": "finding_present",
+      "task": {
+        "kind": "finding_review",
+        "question": "What additional authorized observation would reduce uncertainty about the selected SSH finding?"
+      }
+    },
+    "context_bytes": 2918,
+    "context_schema": "aegislab.ssh-investigator-context.v0.1",
+    "eligible": true,
+    "reason": "context_prepared"
+  },
+  "transport": {
+    "deadline_seconds": 60.0,
+    "elapsed_seconds": 18.943,
+    "finish_reason": "stop",
+    "http_status": 200,
+    "max_tokens": 2048,
+    "model_reported": "gemma-4-e2b-it",
+    "model_requested": "gemma-4-e2b-it",
+    "prompt_version": "ssh-investigation-task.v0.1",
+    "reason": null,
+    "request_bytes": 5628,
+    "response_bytes": 4868,
+    "socket_timeout_seconds": 45.0,
+    "status": "completed_unvalidated",
+    "usage": {
+      "completion_tokens": 1127,
+      "prompt_tokens": 1315,
+      "reasoning_tokens": 585,
+      "total_tokens": 2442
+    },
+    "worker_elapsed_seconds": 18.896
+  }
+}

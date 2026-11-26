@@ -39,6 +39,7 @@ class LocalConfig:
     port: int = 18080
     max_tokens: int = 2048
     timeout: float = 45.0
+    deadline: float = 60.0
 
     def __post_init__(self):
         if not isinstance(self.model, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._:/-]{0,127}", self.model):
@@ -49,6 +50,8 @@ class LocalConfig:
             raise ValueError("invalid_generation_budget")
         if type(self.timeout) not in (int, float) or not 0 < self.timeout <= 60:
             raise ValueError("invalid_socket_timeout")
+        if type(self.deadline) not in (int, float) or not 0 < self.deadline <= 120:
+            raise ValueError("invalid_operation_deadline")
 
 
 def request_body(context: dict[str, Any], config: LocalConfig) -> bytes:

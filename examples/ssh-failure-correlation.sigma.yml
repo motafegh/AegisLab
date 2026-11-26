@@ -1,0 +1,29 @@
+title: AegisLab Normalized SSH Failed Public Key Observation
+name: aegislab_failed_publickey
+status: experimental
+description: Matches a normalized AegisLab public-key failure record, not a verified attack.
+logsource:
+  product: linux
+  service: sshd
+  definition: Requires AegisLab normalized SSH observation fields, not raw syslog.
+detection:
+  selection:
+    outcome: failed_publickey
+  condition: selection
+level: informational
+---
+title: AegisLab Repeated SSH Public Key Failure Observations
+name: aegislab_failed_publickey_burst
+status: experimental
+description: Candidate portable count rule; backend window and deduplication semantics require verification.
+correlation:
+  type: event_count
+  rules:
+    - aegislab_failed_publickey
+  group-by:
+    - source_ip
+    - username
+  timespan: 120s
+  condition:
+    gte: 3
+level: medium

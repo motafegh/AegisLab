@@ -1,0 +1,123 @@
+{
+  "method": "handwritten_sql_not_sigma_conversion",
+  "cases": {
+    "ordinary": {
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "fixed_bucket_raw_count_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "sliding_distinct_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted": 4,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "finding_present"
+    },
+    "cross_bucket": {
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "fixed_bucket_raw_count_subjects": [],
+      "sliding_distinct_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted": 3,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "finding_present"
+    },
+    "exact_boundary": {
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "fixed_bucket_raw_count_subjects": [],
+      "sliding_distinct_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted": 3,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "finding_present"
+    },
+    "outside_boundary": {
+      "reference_subjects": [],
+      "fixed_bucket_raw_count_subjects": [],
+      "sliding_distinct_subjects": [],
+      "accepted": 3,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "no_finding_observed"
+    },
+    "duplicates": {
+      "reference_subjects": [],
+      "fixed_bucket_raw_count_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "sliding_distinct_subjects": [],
+      "accepted": 3,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 1,
+      "reference_status": "no_finding_observed"
+    },
+    "different_accounts": {
+      "reference_subjects": [],
+      "fixed_bucket_raw_count_subjects": [],
+      "sliding_distinct_subjects": [],
+      "accepted": 3,
+      "quarantined": 0,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "no_finding_observed"
+    },
+    "quarantine_gap": {
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "fixed_bucket_raw_count_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "sliding_distinct_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted": 3,
+      "quarantined": 1,
+      "duplicate_failures_ignored": 0,
+      "reference_status": "finding_present_with_gaps"
+    }
+  }
+}
