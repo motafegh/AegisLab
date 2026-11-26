@@ -1,5 +1,6 @@
 title: AegisLab Normalized SSH Failed Public Key Observation
 name: aegislab_failed_publickey
+id: 0cf02892-afce-412e-a04b-2db8bdfee1c6
 status: experimental
 description: Matches a normalized AegisLab public-key failure record, not a verified attack.
 logsource:
@@ -14,6 +15,7 @@ level: informational
 ---
 title: AegisLab Repeated SSH Public Key Failure Observations
 name: aegislab_failed_publickey_burst
+id: d42a3e91-2755-4421-98f4-8a460bafcc74
 status: experimental
 description: Candidate portable count rule; backend window and deduplication semantics require verification.
 correlation:

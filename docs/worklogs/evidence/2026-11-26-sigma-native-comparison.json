@@ -1,0 +1,754 @@
+{
+  "versions": {
+    "sigma-cli": "4.0.1",
+    "pysigma": "2.1.2",
+    "pysigma-backend-sqlite": "2.2.0"
+  },
+  "sqlite": "3.45.1",
+  "mapping": {
+    "table": "logs",
+    "timestamp_field": "observed_at",
+    "event_id_field": "event_id"
+  },
+  "base_query": "SELECT * FROM logs WHERE outcome LIKE 'failed\\_publickey' ESCAPE '\\'",
+  "correlation_query": "WITH sigma_e573171c0533_raw0 AS (SELECT CAST(`event_id` AS TEXT) AS rid, '0:' || CASE WHEN instr(CAST(`event_id` AS TEXT), char(0)) OR instr(CAST(`event_id` AS TEXT), char(1)) THEN json_extract(replace(replace(replace(json_quote(CAST(`event_id` AS TEXT)), '\\\\', '\\u005c'), '\\u0001', '\\u00011'), '\\u0000', '\\u00010'), '$') ELSE CAST(`event_id` AS TEXT) END AS eid, ROUND((julianday(observed_at) - 2440587.5) * 86400000) / 1000.0 AS ts, CASE WHEN typeof(`source_ip`)='real' AND abs(`source_ip`) >= 1e999 THEN NULL ELSE `source_ip` END AS f0, CASE WHEN typeof(`username`)='real' AND abs(`username`) >= 1e999 THEN NULL ELSE `username` END AS f1, COALESCE(((outcome LIKE 'failed\\_publickey' ESCAPE '\\')), 0) AS b0 FROM logs), sigma_e573171c0533_horizon AS (SELECT (SELECT MAX(ts) FROM (SELECT ts FROM sigma_e573171c0533_raw0)) AS ts), sigma_e573171c0533_n0_input AS (SELECT s.eid, s.ts, s.evidence, s.children, 0 AS slot, CASE WHEN typeof(s.f0)='text' THEN lower(s.f0) ELSE s.f0 END AS g0, CASE WHEN typeof(s.f1)='text' THEN lower(s.f1) ELSE s.f1 END AS g1, NULL AS v FROM (SELECT 'e:' || eid AS eid, ts, json_array(eid) AS evidence, '[]' AS children, f0, f1 FROM sigma_e573171c0533_raw0 WHERE b0) s), sigma_e573171c0533_n0_matches AS (SELECT DISTINCT * FROM sigma_e573171c0533_n0_input WHERE ts IS NOT NULL AND eid IS NOT NULL AND g0 IS NOT NULL AND g1 IS NOT NULL), sigma_e573171c0533_n0_events AS (SELECT DISTINCT eid, ts, g0, g1, v FROM sigma_e573171c0533_n0_matches), sigma_e573171c0533_n0_unique_events AS (SELECT DISTINCT eid, ts, g0, g1 FROM sigma_e573171c0533_n0_events), sigma_e573171c0533_n0_metrics AS (SELECT DISTINCT ts AS end, g0, g1, COUNT(*) OVER (PARTITION BY g0, g1 ORDER BY ts RANGE BETWEEN 120 PRECEDING AND CURRENT ROW) AS metric FROM sigma_e573171c0533_n0_unique_events), sigma_e573171c0533_n0_t0_anchors AS (SELECT DISTINCT ts - 120 AS start, ts AS end, g0, g1 FROM sigma_e573171c0533_n0_matches), sigma_e573171c0533_n0_t0_measured AS (SELECT a.*, (SELECT m.metric FROM sigma_e573171c0533_n0_metrics m WHERE m.g0 = a.g0 AND m.g1 = a.g1 AND m.end=a.end) AS metric FROM sigma_e573171c0533_n0_t0_anchors a WHERE 1), sigma_e573171c0533_n0_t0_qualified AS (SELECT * FROM sigma_e573171c0533_n0_t0_measured WHERE metric >= 3), sigma_e573171c0533_n0_combined AS (SELECT a.start, a.end, g0, g1, a.metric, (SELECT json_group_array(DISTINCT e.value) FROM sigma_e573171c0533_n0_matches m, json_each(m.evidence) e WHERE e.type='text' AND m.g0 = a.g0 AND m.g1 = a.g1 AND m.ts BETWEEN a.start AND a.end) AS evidence, (SELECT json_group_array(DISTINCT c.value) FROM sigma_e573171c0533_n0_matches m, json_each(m.children) c WHERE c.type='text' AND m.g0 = a.g0 AND m.g1 = a.g1 AND m.ts BETWEEN a.start AND a.end) AS children FROM sigma_e573171c0533_n0_t0_qualified a), sigma_e573171c0533_n0_grouped AS (SELECT start, end, g0, g1, MAX(metric) AS metric, json_group_array(json(evidence)) AS evidence, json_group_array(json(children)) AS children FROM sigma_e573171c0533_n0_combined GROUP BY start, end, g0, g1), sigma_e573171c0533_n0_merged AS (SELECT start, end, g0, g1, metric, (SELECT json_group_array(value) FROM (SELECT DISTINCT e.value FROM json_each(w.evidence) a, json_each(a.value) e ORDER BY e.value)) AS evidence, (SELECT json_group_array(value) FROM (SELECT DISTINCT e.value FROM json_each(w.children) a, json_each(a.value) e ORDER BY e.value)) AS children FROM sigma_e573171c0533_n0_grouped w), sigma_e573171c0533_n0_alerts AS (SELECT 'sigma_alert_e573171c05336dad:' || ROW_NUMBER() OVER (ORDER BY g0, g1, end, start, metric, evidence) AS alert_id, start, end, json_object('source_ip', `g0`, 'username', `g1`) AS group_keys, metric, evidence, children, g0, g1 FROM sigma_e573171c0533_n0_merged) SELECT alert_id, group_keys, end AS occurrence_time, start AS window_start, end AS window_end, 'event_count' AS metric_name, metric AS metric_value, json_array_length(evidence) AS event_count, CASE WHEN instr(evidence, '\\u0001') THEN replace(replace(replace(evidence, '\\\\', '\\u005c'), '\\u00010', '\\u0000'), '\\u00011', '\\u0001') ELSE evidence END AS event_ids, CASE WHEN instr(children, '\\u0001') THEN replace(replace(replace(children, '\\\\', '\\u005c'), '\\u00010', '\\u0000'), '\\u00011', '\\u0001') ELSE children END AS child_alert_ids FROM sigma_e573171c0533_n0_alerts ORDER BY occurrence_time, alert_id",
+  "cases": {
+    "ordinary": {
+      "reference_status": "finding_present",
+      "reference_findings": [
+        {
+          "finding_id": "finding-64eb97e6d773882aa32f",
+          "rule_id": "ssh.failed-publickey-burst.v1",
+          "subject": {
+            "username": "labuser",
+            "source_ip": "10.10.0.1"
+          },
+          "window_start": "2026-11-22T10:00:00Z",
+          "window_end": "2026-11-22T10:01:20Z",
+          "distinct_failed_observations": 3,
+          "evidence_event_ids": [
+            "evt-d4180f2dc535b514707d",
+            "evt-212dafbe46421a7da9dd",
+            "evt-a15984913feefbec8940"
+          ],
+          "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+          "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+        }
+      ],
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted_event_ids": [
+        "evt-d4180f2dc535b514707d",
+        "evt-212dafbe46421a7da9dd",
+        "evt-a15984913feefbec8940",
+        "evt-faaf4feb2ee50d540ad4"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-212dafbe46421a7da9dd",
+              "0:evt-a15984913feefbec8940",
+              "0:evt-d4180f2dc535b514707d"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-212dafbe46421a7da9dd",
+              "0:evt-a15984913feefbec8940",
+              "0:evt-d4180f2dc535b514707d"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "cross_bucket": {
+      "reference_status": "finding_present",
+      "reference_findings": [
+        {
+          "finding_id": "finding-d18779285d797c0da931",
+          "rule_id": "ssh.failed-publickey-burst.v1",
+          "subject": {
+            "username": "labuser",
+            "source_ip": "10.10.0.1"
+          },
+          "window_start": "2026-11-22T10:01:50Z",
+          "window_end": "2026-11-22T10:02:00Z",
+          "distinct_failed_observations": 3,
+          "evidence_event_ids": [
+            "evt-17b9fa1de0dc5dd0ec6b",
+            "evt-f875d3aa82e0471f823c",
+            "evt-3e0db95f729553072e44"
+          ],
+          "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+          "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+        }
+      ],
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted_event_ids": [
+        "evt-17b9fa1de0dc5dd0ec6b",
+        "evt-f875d3aa82e0471f823c",
+        "evt-3e0db95f729553072e44"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341720.0,
+            "window_start": 1795341600.0,
+            "window_end": 1795341720.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-17b9fa1de0dc5dd0ec6b",
+              "0:evt-3e0db95f729553072e44",
+              "0:evt-f875d3aa82e0471f823c"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341720.0,
+            "window_start": 1795341600.0,
+            "window_end": 1795341720.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-17b9fa1de0dc5dd0ec6b",
+              "0:evt-3e0db95f729553072e44",
+              "0:evt-f875d3aa82e0471f823c"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "exact_boundary": {
+      "reference_status": "finding_present",
+      "reference_findings": [
+        {
+          "finding_id": "finding-072533365aced156c4b6",
+          "rule_id": "ssh.failed-publickey-burst.v1",
+          "subject": {
+            "username": "labuser",
+            "source_ip": "10.10.0.1"
+          },
+          "window_start": "2026-11-22T10:00:00Z",
+          "window_end": "2026-11-22T10:02:00Z",
+          "distinct_failed_observations": 3,
+          "evidence_event_ids": [
+            "evt-9f1546de3bcd190c2da1",
+            "evt-e2c74672233d8dbac923",
+            "evt-02f4e81497cf8fa8a4ce"
+          ],
+          "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+          "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+        }
+      ],
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted_event_ids": [
+        "evt-9f1546de3bcd190c2da1",
+        "evt-e2c74672233d8dbac923",
+        "evt-02f4e81497cf8fa8a4ce"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341720.0,
+            "window_start": 1795341600.0,
+            "window_end": 1795341720.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-02f4e81497cf8fa8a4ce",
+              "0:evt-9f1546de3bcd190c2da1",
+              "0:evt-e2c74672233d8dbac923"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341720.0,
+            "window_start": 1795341600.0,
+            "window_end": 1795341720.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-02f4e81497cf8fa8a4ce",
+              "0:evt-9f1546de3bcd190c2da1",
+              "0:evt-e2c74672233d8dbac923"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "outside_boundary": {
+      "reference_status": "no_finding_observed",
+      "reference_findings": [],
+      "reference_subjects": [],
+      "accepted_event_ids": [
+        "evt-9cce3067bef41927000a",
+        "evt-4a125a9c8d978631b152",
+        "evt-add5d78f1f189c19910f"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [],
+        "subjects": []
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [],
+        "subjects": []
+      }
+    },
+    "duplicates": {
+      "reference_status": "no_finding_observed",
+      "reference_findings": [],
+      "reference_subjects": [],
+      "accepted_event_ids": [
+        "evt-f2537243c8ad641c5a08",
+        "evt-892e890d93ac1ae03cac",
+        "evt-8b3e76a1f0508128b112"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341640.0,
+            "window_start": 1795341520.0,
+            "window_end": 1795341640.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-892e890d93ac1ae03cac",
+              "0:evt-8b3e76a1f0508128b112",
+              "0:evt-f2537243c8ad641c5a08"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 2,
+        "alerts": [],
+        "subjects": []
+      }
+    },
+    "different_accounts": {
+      "reference_status": "no_finding_observed",
+      "reference_findings": [],
+      "reference_subjects": [],
+      "accepted_event_ids": [
+        "evt-09923bf3ae6126962d18",
+        "evt-b0da8fcbcd3455d76e28",
+        "evt-bb448d86a589341db2c3"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [],
+        "subjects": []
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [],
+        "subjects": []
+      }
+    },
+    "quarantine_gap": {
+      "reference_status": "finding_present_with_gaps",
+      "reference_findings": [
+        {
+          "finding_id": "finding-d27fa40c6da5a2f76c46",
+          "rule_id": "ssh.failed-publickey-burst.v1",
+          "subject": {
+            "username": "labuser",
+            "source_ip": "10.10.0.1"
+          },
+          "window_start": "2026-11-22T10:00:00Z",
+          "window_end": "2026-11-22T10:01:20Z",
+          "distinct_failed_observations": 3,
+          "evidence_event_ids": [
+            "evt-fe2efec66237c82ad5ad",
+            "evt-d522070db0f681cb94db",
+            "evt-3aa246190f200ffdb173"
+          ],
+          "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+          "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+        }
+      ],
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted_event_ids": [
+        "evt-fe2efec66237c82ad5ad",
+        "evt-d522070db0f681cb94db",
+        "evt-3aa246190f200ffdb173"
+      ],
+      "quarantined": 1,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-3aa246190f200ffdb173",
+              "0:evt-d522070db0f681cb94db",
+              "0:evt-fe2efec66237c82ad5ad"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-3aa246190f200ffdb173",
+              "0:evt-d522070db0f681cb94db",
+              "0:evt-fe2efec66237c82ad5ad"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "case_sensitive_accounts": {
+      "reference_status": "no_finding_observed",
+      "reference_findings": [],
+      "reference_subjects": [],
+      "accepted_event_ids": [
+        "evt-00bcca208420118a577e",
+        "evt-fad0aacc05a5c77565c2",
+        "evt-b0f5c4539354728f063c"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-00bcca208420118a577e",
+              "0:evt-b0f5c4539354728f063c",
+              "0:evt-fad0aacc05a5c77565c2"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 3,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341680.0,
+            "window_start": 1795341560.0,
+            "window_end": 1795341680.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-00bcca208420118a577e",
+              "0:evt-b0f5c4539354728f063c",
+              "0:evt-fad0aacc05a5c77565c2"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "four_failures": {
+      "reference_status": "finding_present",
+      "reference_findings": [
+        {
+          "finding_id": "finding-deefdea238e28fc6f90b",
+          "rule_id": "ssh.failed-publickey-burst.v1",
+          "subject": {
+            "username": "labuser",
+            "source_ip": "10.10.0.1"
+          },
+          "window_start": "2026-11-22T10:00:00Z",
+          "window_end": "2026-11-22T10:00:40Z",
+          "distinct_failed_observations": 3,
+          "evidence_event_ids": [
+            "evt-0dbb81cc72db06b68b7b",
+            "evt-5f0e5c67b1d051bafa8c",
+            "evt-7f1acb083bbaf22d96dc"
+          ],
+          "assessment": "Repeated failed public-key decision records observed; this does not establish distinct client actions, an intrusion, or a compromise.",
+          "next_permitted_observation": "Under authorization, inspect target authentication successes and the independent action/target truth record."
+        }
+      ],
+      "reference_subjects": [
+        [
+          "10.10.0.1",
+          "labuser"
+        ]
+      ],
+      "accepted_event_ids": [
+        "evt-0dbb81cc72db06b68b7b",
+        "evt-5f0e5c67b1d051bafa8c",
+        "evt-7f1acb083bbaf22d96dc",
+        "evt-d772034551e6996c94f8"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 4,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341640.0,
+            "window_start": 1795341520.0,
+            "window_end": 1795341640.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-0dbb81cc72db06b68b7b",
+              "0:evt-5f0e5c67b1d051bafa8c",
+              "0:evt-7f1acb083bbaf22d96dc"
+            ],
+            "child_alert_ids": []
+          },
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:2",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341660.0,
+            "window_start": 1795341540.0,
+            "window_end": 1795341660.0,
+            "metric_name": "event_count",
+            "metric_value": 4,
+            "event_count": 4,
+            "event_ids": [
+              "0:evt-0dbb81cc72db06b68b7b",
+              "0:evt-5f0e5c67b1d051bafa8c",
+              "0:evt-7f1acb083bbaf22d96dc",
+              "0:evt-d772034551e6996c94f8"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      },
+      "native_reference_dedup": {
+        "base_matches": 4,
+        "alerts": [
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:1",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341640.0,
+            "window_start": 1795341520.0,
+            "window_end": 1795341640.0,
+            "metric_name": "event_count",
+            "metric_value": 3,
+            "event_count": 3,
+            "event_ids": [
+              "0:evt-0dbb81cc72db06b68b7b",
+              "0:evt-5f0e5c67b1d051bafa8c",
+              "0:evt-7f1acb083bbaf22d96dc"
+            ],
+            "child_alert_ids": []
+          },
+          {
+            "alert_id": "sigma_alert_e573171c05336dad:2",
+            "group_keys": {
+              "source_ip": "10.10.0.1",
+              "username": "labuser"
+            },
+            "occurrence_time": 1795341660.0,
+            "window_start": 1795341540.0,
+            "window_end": 1795341660.0,
+            "metric_name": "event_count",
+            "metric_value": 4,
+            "event_count": 4,
+            "event_ids": [
+              "0:evt-0dbb81cc72db06b68b7b",
+              "0:evt-5f0e5c67b1d051bafa8c",
+              "0:evt-7f1acb083bbaf22d96dc",
+              "0:evt-d772034551e6996c94f8"
+            ],
+            "child_alert_ids": []
+          }
+        ],
+        "subjects": [
+          [
+            "10.10.0.1",
+            "labuser"
+          ]
+        ]
+      }
+    },
+    "normal": {
+      "reference_status": "no_finding_observed",
+      "reference_findings": [],
+      "reference_subjects": [],
+      "accepted_event_ids": [
+        "evt-6991d1c164765100f475",
+        "evt-0ce9e1510f2a06c759bd"
+      ],
+      "quarantined": 0,
+      "native_raw": {
+        "base_matches": 1,
+        "alerts": [],
+        "subjects": []
+      },
+      "native_reference_dedup": {
+        "base_matches": 1,
+        "alerts": [],
+        "subjects": []
+      }
+    }
+  },
+  "cli_check": {
+    "before": {
+      "exit_code": 1,
+      "stdout": "=== Issues ===\nissue=IdentifierExistenceIssue severity=medium description=Rule has no identifier (UUID) rule=/home/motafeq/projects/AegisLab/examples/ssh-failure-correlation.sigma.yml \nissue=IdentifierExistenceIssue severity=medium description=Rule has no identifier (UUID) rule=/home/motafeq/projects/AegisLab/examples/ssh-failure-correlation.sigma.yml \n\n=== Summary ===\nFound 0 errors, 0 condition errors and 2 issues.\nNo rule errors found.\nNo condition errors found.\n\nValidation issue summary:\n+-------+--------------------------+----------+-------------------------------+\n| Count | Issue                    | Severity | Description                   |\n+-------+--------------------------+----------+-------------------------------+\n| 2     | IdentifierExistenceIssue | MEDIUM   | Rule has no identifier (UUID) |\n+-------+--------------------------+----------+-------------------------------+\nCheck failure\n",
+      "stderr": "Parsing Sigma rules\nChecking Sigma rules\n"
+    },
+    "after": {
+      "exit_code": 0,
+      "stdout": "\n=== Summary ===\nFound 0 errors, 0 condition errors and 0 issues.\nNo rule errors found.\nNo condition errors found.\nNo validation issues found.\n",
+      "stderr": "Parsing Sigma rules\nChecking Sigma rules\n"
+    }
+  },
+  "cli_conversion_matches_api": true,
+  "package_versions": [
+    "certifi==2026.11.20",
+    "charset-normalizer==3.5.3",
+    "click==8.5.1",
+    "colorama==0.4.6",
+    "diskcache-community==5.8.5",
+    "google-re2==1.1.20251105",
+    "idna==3.20",
+    "Jinja2==3.1.6",
+    "jq==1.13.0",
+    "MarkupSafe==3.0.4",
+    "packaging==26.4",
+    "prettytable==3.19.0",
+    "pyparsing==3.3.3",
+    "pySigma==2.1.2",
+    "pySigma-backend-sqlite==2.2.0",
+    "PyYAML==6.0.4",
+    "requests==2.34.2",
+    "sigma-cli==4.0.1",
+    "types-PyYAML==6.0.12.20261122",
+    "urllib3==2.8.0",
+    "wcwidth==0.9.5"
+  ],
+  "licenses": {
+    "sigma-cli": "LGPL-2.1-or-later",
+    "pysigma": "LGPL-2.1-only",
+    "pysigma-backend-sqlite": "LGPL-3.0-only"
+  }
+}

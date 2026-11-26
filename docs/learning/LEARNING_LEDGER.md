@@ -53,6 +53,8 @@ November 26 later assessment: correct composite key and sliding-window trigger; 
 
 New rebuild topics: cryptography/trust (hash vs encryption/signature/key exchange), SSH transport/authentication/channel lifecycle, Linux permissions, networking layers/isolation, search/indexing and security platform operations. Current credit only where post-return evidence above supports it; all other prerequisites unavailable. Target R2/D foundations, F/G search and platform competence.
 
+R1 native Sigma: AI executed CLI/API conversion and native SQL, diagnosed missing UUID metadata, mapped timestamps/event IDs, compared ten cases. Learner open-ended prediction, diagnosis and actual tool operation pending; do not assume competence from AI execution. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md).
+
 ## Industry-tool competence
 
 The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.
@@ -62,7 +64,7 @@ The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md
 - B practical closure when PC access permits: learner selects a copy of a fixture, predicts a changed case, modifies/runs it, traces output to source lines, deliberately diagnoses one invalid input or wrong rule assumption, and explains evidence limits. AI may review, not perform the learner's critical step.
 - C2 next: represent unknown target identity without hallucination, derive scope from existing references and evaluate a proposal against evidence. Revisit distinction among valid JSON, valid types, reference existence, entailment, usefulness and permission.
 - C4/C5: personally run one local request and reproduce a bounded failure/fallback when possible.
-- R1/R2: native Sigma practice and first-principles foundations rebuild; D: newly demonstrate namespace/routing/SSH mechanics before relying on them. No July competence credit.
+- R1/R2: learner native Sigma practice (AI-operated native exercise verified) and first-principles foundations rebuild; D: newly demonstrate namespace/routing/SSH mechanics before relying on them. No July competence credit.
 - At next meaningful handoff, review two older concepts through delayed recall or transfer (e.g. socket ownership in inference and duplicate delivery in collection), not rote repetition.
 
 Do not mark stable recall or independent practical mastery until supported by a later learner-owned demonstration. Keep the state summary short; update this ledger and link dated worklogs rather than recreating a competing curriculum.

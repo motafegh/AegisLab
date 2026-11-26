@@ -43,6 +43,10 @@ Learner correctly selected A/B/D for the sliding-window finding, but incorrectly
 
 Next sequence: native Sigma practice (minimum prerequisites), foundation rebuild before security-dependent C work, focused C2–C5, C6–C8, then D. No pre-return prerequisites assumed.
 
+## R1 native Sigma (November 26, later)
+
+AI operated native CLI and pySigma conversion, strict rule validation with UUID correction, and ten-case SQLite execution. Case-sensitive account grouping, duplicates and alert cardinality showed differences from reference. Learner assessment/personal execution pending; no depth promotion yet. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md). R2 foundations next after combined assessment.
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.
