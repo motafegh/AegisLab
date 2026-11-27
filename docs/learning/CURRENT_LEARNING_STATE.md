@@ -59,6 +59,10 @@ Learner correctly reasoned about program/process, PID/PPID, per-process descript
 
 AI operated read-only route/neighbor inspection and controlled loopback TCP/UDP example. Bind without listen refused; established TCP application exchange and UDP datagram delivery observed. Capture permission denied, no packet trace. WSL virtual topology differs from ordinary lo-only route, Windows readiness partly blocked; no VM deployment. Learner reasoning and practical ownership pending; F3 cryptography next. [Worklog](../worklogs/2026-11-27-1751-network-foundations.md).
 
+## R2.2 learner assessment and host readiness (November 27, later)
+
+Learner correctly explained subnet membership (/24 vs /16), next-hop ARP, missing listener diagnosis, UDP without TCP handshake, transport versus authentication evidence, process-local FDs and Sigma conversion versus execution. Interface/socket/address/port reasoning broadly correct; refine endpoint identity versus unique process identity. Correctly computed sliding [130,250] with two observations and fixed buckets 1/2/1; earlier endpoint 170 qualifies A/B/C, so distinguish endpoint assessment from full-stream first qualifying finding. No independent execution claimed. Windows connector restored; Hyper-V management service running and host query succeeded, F: has 1160.6 GiB free. Hyper-V preferred candidate, isolated two-guest Ubuntu lab proposed, deployment approval and detailed scope pending. See [readiness worklog](../worklogs/2026-11-27-2056-host-readiness-and-network-assessment.md). R2.3 cryptography next.
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.

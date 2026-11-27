@@ -1,0 +1,7 @@
+# November 27 — Networking assessment and Windows readiness
+
+Read-only inspection after owner restored Windows connector. Starting local and remote revision 5581b8c. No installation, VM creation, network or security settings change.
+
+Windows CIM: Windows 11 Pro, HypervisorPresent true, 63.7 GiB RAM (44.5 free), 20 logical CPUs, Hyper-V module available. Firmware virtualization flag false while hypervisor present; do not interpret alone as disabled virtualization. vmms running/automatic, Get-VMHost succeeded, default VM and VHD paths on C:, two Internal switches observed; existing switches' purpose unverified. VirtualBox executable absent at standard path only. Logical volume free/total GiB: C 25.7/302.6, D 64.1/788.9, E 42.5/769.9, F 1160.6/1907.7. F candidate, verify filesystem and permissions before use. Prefer existing Hyper-V, proposed isolated two Linux guests; no bridged/public exposure, no changes to existing switches, WSL or LM Studio. Detailed resource allocation, installation image provenance, network isolation, access and cleanup require scoped approval.
+
+Learner R2.2 conceptual assessment correct with endpoint identity refinement. Delayed Sigma and window recall improved; specified endpoint 250 has C,D, fixed buckets 1/2/1; full-stream earlier endpoint 170 has A,B,C and qualifies. No personal operation or capture credit. Continue cryptography, then SSH, with spaced recall. Documentation only; no new regression run.

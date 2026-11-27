@@ -65,6 +65,8 @@ R2.1 learner assessment: correct program/process and kernel-level responsibility
 
 R2.2 F2: AI demonstrated IP prefix membership, route lookup and next hop, loopback TCP refusal and success, UDP datagrams, and capture permission limitation. Actual packet capture and independent learner diagnosis remain open. Mixed assessment includes old PID/FD, evidence absence and Sigma responsibility/window recall. [Worklog](../worklogs/2026-11-27-1751-network-foundations.md).
 
+R2.2 assessment: correct subnet and next-hop reasoning, listener diagnosis, UDP/TCP distinction, unavailable authentication evidence, FD ownership, Sigma conversion boundary, and delayed sliding/fixed-window membership. Endpoint identity needs refinement; distinguish earlier qualifying windows from specified endpoint. Continue spaced recall through cryptography and SSH; personal operation and capture remain open. Windows host access restored; readiness evidence is infrastructure observation, not learner competence.
+
 ## Active recall and ownership queue
 
 - B practical closure when PC access permits: learner selects a copy of a fixture, predicts a changed case, modifies/runs it, traces output to source lines, deliberately diagnoses one invalid input or wrong rule assumption, and explains evidence limits. AI may review, not perform the learner's critical step.

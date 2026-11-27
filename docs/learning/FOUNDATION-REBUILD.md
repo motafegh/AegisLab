@@ -24,6 +24,8 @@ Embed short delayed recall and transfer across R2–R5 and later stages; maintai
 
 Owner raised a preference for more realistic separate client/server systems. Proposed progression: use loopback for minimal unit demonstrations, then separate network endpoints via authorized namespaces, and compare separate Linux guest VMs on an isolated virtual network for operational SSH/telemetry work. Review host readiness and hypervisor options (Hyper-V or Oracle VirtualBox) during R2.2; propose a bounded two-guest lab for D or an earlier approved foundation exercise if justified. Keep WSL development and local inference intact. Separate VM kernels and service identities are valuable, but do not require VM parity to finish B/C. No cloud deployment, bridged/public lab exposure, hypervisor installation, firewall changes or reboot authorized by this planning note. Any deployment requires explicit scope, isolation verification, resource and compatibility checks, cleanup and applicable owner approval. A dedicated monitoring guest may be added later when sensor visibility and resource needs justify it; do not assume a VM sees other guests' unicast traffic without a suitable observation point.
 
+Windows host assessment update (November 27): Hyper-V management is available and functioning, with substantial free space on F:. Prefer existing Hyper-V for a dedicated isolated two-guest lab, subject to virtual disk filesystem suitability, exact topology and explicit deployment scope. No new hypervisor installation needed on current evidence. See [readiness worklog](../worklogs/2026-11-27-2056-host-readiness-and-network-assessment.md).
+
 ## Near-term ordered sequence
 
 | ID | Session or increment | Concrete outcome / boundary | Status |
