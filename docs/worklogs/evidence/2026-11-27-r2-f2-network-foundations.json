@@ -1,0 +1,52 @@
+{
+  "route_loopback": {
+    "destination": "127.0.0.1",
+    "interface": "loopback0",
+    "gateway_present": true,
+    "source_is_loopback": true,
+    "table": "127",
+    "type": null
+  },
+  "route_documentation_address": {
+    "destination": "192.0.2.20",
+    "interface": "eth8",
+    "gateway_present": true,
+    "source_is_loopback": false,
+    "table": null,
+    "type": null
+  },
+  "subnet_exercise": {
+    "network": "10.20.0.0/24",
+    "same_subnet": true,
+    "different_subnet": true
+  },
+  "tcp_before_listen": {
+    "error": "ConnectionRefusedError",
+    "errno": 111
+  },
+  "tcp_listen": {
+    "exit_code": 0,
+    "stdout": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      1          127.0.0.1:42998      0.0.0.0:*",
+    "stderr": ""
+  },
+  "capture_probe": {
+    "exit_code": 1,
+    "permission_denied": true,
+    "packets_retained": 0
+  },
+  "tcp_endpoints": {
+    "exit_code": 0,
+    "stdout": "State Recv-Q Send-Q Local Address:Port  Peer Address:Port Process\nESTAB 0      0          127.0.0.1:43149    127.0.0.1:42998       \nESTAB 0      0          127.0.0.1:42998    127.0.0.1:43149",
+    "stderr": ""
+  },
+  "tcp_payload": "hello",
+  "udp_bound": {
+    "exit_code": 0,
+    "stdout": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nUNCONN 0      0          127.0.0.1:44031      0.0.0.0:*",
+    "stderr": ""
+  },
+  "udp_datagrams": [
+    "one",
+    "two"
+  ]
+}

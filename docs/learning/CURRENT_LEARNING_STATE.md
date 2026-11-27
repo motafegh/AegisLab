@@ -55,6 +55,10 @@ Learner correctly reasoned about changed grouping, representation/field mapping 
 
 Learner correctly reasoned about program/process, PID/PPID, per-process descriptors and mode 640. Sleeping versus runnable, listening versus connected sockets, and unavailable evidence versus failed activity required refinement. Correct delayed sliding-window interval and event membership; fixed buckets and no-finding versus no-observations remain recall targets. Learner requested ongoing spaced recall, re-explanation and mixed questions. Also raised separate-system lab realism: evaluate VM readiness during R2.2, with proposed isolated guests for D or earlier authorized exercises; no deployment decision yet. See [foundations rebuild](FOUNDATION-REBUILD.md).
 
+## R2.2 networking foundations (November 27)
+
+AI operated read-only route/neighbor inspection and controlled loopback TCP/UDP example. Bind without listen refused; established TCP application exchange and UDP datagram delivery observed. Capture permission denied, no packet trace. WSL virtual topology differs from ordinary lo-only route, Windows readiness partly blocked; no VM deployment. Learner reasoning and practical ownership pending; F3 cryptography next. [Worklog](../worklogs/2026-11-27-1751-network-foundations.md).
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.

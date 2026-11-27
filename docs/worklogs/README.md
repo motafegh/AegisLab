@@ -79,6 +79,7 @@ Newest records appear first.
 
 | Started | Worklog | Status | Outcome |
 |---|---|---|---|
+| 2026-11-27 17:51 +03:30 | [R2.2 networking foundations](2026-11-27-1751-network-foundations.md) | completed AI demonstration (learner gate open) | TCP/UDP and route observations; capture blocked; VM readiness partial |
 | 2026-11-27 16:27 +03:30 | [R2.1 Linux process foundations](2026-11-27-1627-linux-process-foundations.md) | completed AI demonstration (learner gate open) | actual process/FD/socket/permission observations, cleanup, 55 tests |
 | 2026-11-26 20:23 +03:30 | [Native Sigma practice](2026-11-26-2023-native-sigma-practice.md) | completed AI increment (learner gate open) | native CLI/API conversion, ten synthetic cases, 55 tests; reference divergences retained |
 | 2026-11-26 19:56 +03:30 | [Learning reset and roadmap refinement](2026-11-26-1956-learning-reset-and-roadmap-refinement.md) | completed (planning) | pre-return competence reset, practical rebuild and expanded tool sequence; history preserved |
