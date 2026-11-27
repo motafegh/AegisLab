@@ -1,0 +1,32 @@
+{
+  "encoding": {
+    "base64": "aGVsbG8=",
+    "roundtrip": true
+  },
+  "hash": {
+    "original": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824",
+    "changed": "185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969",
+    "same_input_same_digest": true,
+    "changed_input_different_digest": true
+  },
+  "symmetric": {
+    "roundtrip": true,
+    "tamper_rejected": true,
+    "wrong_key_rejected": true
+  },
+  "asymmetric_encryption": {
+    "roundtrip": true
+  },
+  "signature": {
+    "original_verified": true,
+    "changed_message_rejected": true,
+    "other_public_key_rejected": true,
+    "fingerprints_differ": true
+  },
+  "key_agreement": {
+    "derived_keys_match": true,
+    "different_peer_key_differs": true,
+    "derived_key_bytes": 32,
+    "peer_identity_authenticated": false
+  }
+}
