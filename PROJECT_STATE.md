@@ -4,6 +4,17 @@
 **Active authority:** [Project Definition](<docs/AegisLab — Project Definition v1.0.md>), [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>), [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>).
 **Prior route:** [Charter v1](<docs/plans/AegisLab — Core Charter v1.0.md>), [M0–M17 Map](<docs/plans/AegisLab — Core Execution Map.md>) and [M5 Docker planning](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) are preserved history, **not active next steps**.
 
+## New-conversation handoff — 2026-11-27
+
+Resume from **R2.3 cryptography and trust**, not the historical July route or a new project plan. Read AGENTS.md, LEARNING-PREFERENCES.md, this state, the [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md), [current learning state](docs/learning/CURRENT_LEARNING_STATE.md) and [ledger](docs/learning/LEARNING_LEDGER.md); consult the active Charter/map, Stage C plan and industry register for scope. Review relevant source/evidence before teaching or editing. Latest R2.2 learner assessment and Windows host findings: [readiness worklog](docs/worklogs/2026-11-27-2056-host-readiness-and-network-assessment.md).
+
+- Current developer environment: WSL repository /home/motafeq/projects/AegisLab, local-first LM Studio API previously verified at 127.0.0.1:18080. Remote Desktop Commander has separate Windows and WSL devices; rediscover availability and verify the intended OS before commands. Work on main; inspect status and remote before changes. Do not assume earlier connectivity/model availability persists.
+- Teach F3 from first principles: encoding, hashing, symmetric/asymmetric encryption, signatures, fingerprints, key exchange and trust; actual disposable-data experiments; then F4 SSH. Use brief relevant delayed recall, batched open-ended assessments, meaningful practical progress and no unearned mastery. All pre-November 22 learning unavailable for prerequisites. F1/F2 recent conceptual assessments recorded; personal execution, B and R1 gates still open.
+- Hyper-V is preferred based on read-only host evidence, not an approved deployment. F: candidate storage, exact topology and disk suitability pending; preserve existing WSL/LM Studio/switches. No privilege escalation, host configuration changes, external targeting or VM deployment without applicable approval.
+- After F3/F4, proceed R3 focused investigator work and R4 evaluation per active map; no semantic usefulness acceptance yet. Last regression run 55/55 passed in R2.2; no new runtime test claimed for documentation-only edits.
+
+This handoff indexes the governing records, not a second roadmap or transcript.
+
 ## Decision
 
 Owner authorized the [2026-11-22 AI-first evolution](docs/proposals/2026-11-22-ai-first-aegislab-evolution-plan.md): retain AegisLab's evidence-centered network-defense mission; build a working SSH incident workflow before mandatory Docker/VM parity; introduce useful, evaluated local AI and later safe agent authorization; preserve human control and independent truth.
@@ -53,7 +64,7 @@ The [prompt ablation worklog](docs/worklogs/2026-11-25-1724-c2-prompt-ablation.m
 
 ## Sigma semantics and inference supervision (2026-11-26)
 
-[Increment and evidence](docs/worklogs/2026-11-26-1539-sigma-and-inference-deadline.md): candidate Sigma YAML and seven-case offline handwritten SQL semantics comparison (not native conversion); three fixed-bucket/raw-count mismatches, seven sliding/distinct subject matches. pySigma unavailable; native exercise remains open. Integrated inference supervisor with caller deadline, controlled slow loopback and fallback tests; 55/55 tests passed, real local probe admitted unadjudicated, baseline unchanged, prior source/target error remains. Caller worker termination does not guarantee server cancellation; token budgeting and C2–C5 acceptance remain open.
+[Increment and evidence](docs/worklogs/2026-11-26-1539-sigma-and-inference-deadline.md): candidate Sigma YAML and seven-case offline handwritten SQL semantics comparison (not native conversion); three fixed-bucket/raw-count mismatches, seven sliding/distinct subject matches. pySigma was unavailable at that increment; native execution subsequently verified in R1 below; learner practical gate remains open. Integrated inference supervisor with caller deadline, controlled slow loopback and fallback tests; 55/55 tests passed, real local probe admitted unadjudicated, baseline unchanged, prior source/target error remains. Caller worker termination does not guarantee server cancellation; token budgeting and C2–C5 acceptance remain open.
 
 ## R1 native Sigma exercise (2026-11-26)
 
@@ -61,15 +72,15 @@ The [prompt ablation worklog](docs/worklogs/2026-11-25-1724-c2-prompt-ablation.m
 
 ## R2.1 Linux process foundations (2026-11-27)
 
-[Worklog](docs/worklogs/2026-11-27-1627-linux-process-foundations.md): AI executed a disposable nonprivileged loopback client/server and permissions experiment; process/FD ownership, two established endpoints, application exchange, permission denial, cleanup and scoped journal query observed; 55/55 existing tests passed. No product source changes. F1 learner assessment and personal operation open; R1 personal Sigma operation deferred due to reported PC access limit. R2 continues to networking, then cryptography and SSH.
+[Worklog](docs/worklogs/2026-11-27-1627-linux-process-foundations.md): AI executed a disposable nonprivileged loopback client/server and permissions experiment; process/FD ownership, two established endpoints, application exchange, permission denial, cleanup and scoped journal query observed; 55/55 existing tests passed. No product source changes. F1 conceptual assessment subsequently recorded; personal operation open; R1 personal Sigma operation deferred due to reported PC access limit. R2 continues to networking, then cryptography and SSH.
 
 ## R2.2 networking foundations (2026-11-27)
 
-[Worklog](docs/worklogs/2026-11-27-1751-network-foundations.md): route lookups, subnet exercise, TCP refusal/listen/established exchange and UDP datagrams verified; tcpdump permission denied, no packets retained. Windows readiness partial (WSL reports adequate guest memory but C: only 28 GiB free; Windows connector offline, PowerShell query blocked). No VM deployment or network configuration change. F2 learner assessment open; F3 cryptography next.
+[Worklog](docs/worklogs/2026-11-27-1751-network-foundations.md): route lookups, subnet exercise, TCP refusal/listen/established exchange and UDP datagrams verified; tcpdump permission denied, no packets retained. Windows readiness was initially partial; subsequent Windows connector inspection confirmed functioning Hyper-V and F: storage candidate (see readiness worklog above). No VM deployment or network configuration change. F2 conceptual assessment subsequently recorded; personal operation and packet capture open; F3 cryptography next.
 
 ## Industry tooling and product direction
 
-The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: complete learner native Sigma practice after AI-operated comparison; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; no new tool installed or integration implemented. C2 remains open while reversible C3 context work progresses.
+The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: complete learner native Sigma practice after AI-operated comparison; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; native Sigma tools installed only in a temporary exercise environment, not adopted into product runtime. C2 remains open while reversible C3 context work progresses.
 
 ## Learning and safety handoff
 

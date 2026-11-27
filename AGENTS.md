@@ -9,7 +9,7 @@
 3. For current implementation use Core Charter v2 and Capability Execution Map v2; use old [v1 Charter](<docs/plans/AegisLab — Core Charter v1.0.md>), [M0–M17 Map](<docs/plans/AegisLab — Core Execution Map.md>) and [M5 Docker plan](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) **only for historical learning and later opt-in comparison**.
 4. Read [AI Collaboration Protocol](<docs/AegisLab — AI Collaboration Protocol.md>), [Learning Preferences](LEARNING-PREFERENCES.md), [Current Learning State](docs/learning/CURRENT_LEARNING_STATE.md) and relevant recent [worklogs](docs/worklogs/README.md) when substantial work or teaching warrants it.
 5. Begin by inspecting `git status --short --branch`, refs and local state. Preserve all existing user work. Inspect relevant sources before asking repeat questions.
-6. Use only the smallest relevant prior worklogs and plans; do not treat remembered snapshots as current runtime proof.
+6. Use only the smallest relevant prior worklogs and plans; do not treat remembered snapshots as current runtime proof. On a new conversation, resume from the current next-action/handoff in PROJECT_STATE.md and the active learning ledger; avoid restarting the curriculum or relying on chat memory.
 
 ## Active mission and workflow
 

@@ -21,7 +21,7 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 | Docker/VM | Unavailable after reset; historical inventory only, no current practical competence | D/F: justified container operation and isolation, not mandatory prior to AI |
 | JSONL and parsing/validation | Explained with guidance; learner recognized invalid port and correct finding, initially conflated decode and event acceptance | B/C3: independently change invalid record and trace quarantine; distinguish syntax, shape, values, truth |
 | Event/record/source IDs, SHA-256, lineage | Introduced and examined in actual reports (AI ran CLI) | B/D: trace finding to source bytes; explain why a hash is not authentication |
-| Sliding windows | Applied concept to changed case: initial fixed-window error corrected; predicted 0/50/140/171 no finding and 51s cutoff correctly | B: personally modify/run case, inspect events and explain exact boundary; delayed recall |
+| Sliding windows | Applied reasoning with corrections; latest delayed recall correctly calculated [130,250], C/D and fixed bucket 1/2/1; full-stream earlier trigger refined | B/D: personally modify/run case and distinguish specified endpoint from first qualifying finding; spaced transfer |
 | Composite keys and detection coverage | Applied reasoning: three groups, no threshold; identified coverage limitation of grouping | G: evaluate complementary rule against benign/ambiguous cases and independent truth |
 | Deduplication and set membership | Guided reasoning: A/B/D count, four accepted vs three corrected; no separate-action proof explained | B/F: reproduce duplicates, explain identity and idempotency limitations |
 | Assessment states and missing evidence | Explained with guidance; correctly predicted valid finding plus invalid input not fully valid | B/D: diagnose empty/partial/quarantined cases and source loss |
@@ -55,7 +55,7 @@ New rebuild topics: cryptography/trust (hash vs encryption/signature/key exchang
 
 R1 native Sigma: AI executed CLI/API conversion and native SQL, diagnosed missing UUID metadata, mapped timestamps/event IDs, compared ten cases. Learner later correctly reasoned about grouping, mapping and case policy; specification/conversion/execution and fixed/sliding windows required correction; tool operation deferred because PC unavailable; do not assume competence from AI execution. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md).
 
-R2.1 Linux foundations: AI demonstrated program/process lifecycle, PID/PPID, sleeping state, per-process FDs, stdin/stdout/stderr pipes, listening/connected sockets, temporary permission denial and scoped no-entry journal query; learner assessment pending. Earlier November guided socket/process inspection retained at actual depth, no July credit. [Worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md).
+R2.1 Linux foundations: AI demonstrated program/process lifecycle, PID/PPID, sleeping state, per-process FDs, stdin/stdout/stderr pipes, listening/connected sockets, temporary permission denial and scoped no-entry journal query; learner assessment subsequently recorded below. Earlier November guided socket/process inspection retained at actual depth, no July credit. [Worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md).
 
 ## Industry-tool competence
 

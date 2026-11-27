@@ -45,11 +45,11 @@ Next sequence: native Sigma practice (minimum prerequisites), foundation rebuild
 
 ## R1 native Sigma (November 26, later)
 
-AI operated native CLI and pySigma conversion, strict rule validation with UUID correction, and ten-case SQLite execution. Case-sensitive account grouping, duplicates and alert cardinality showed differences from reference. Learner assessment now recorded below; personal execution pending. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md). R2 foundations next after combined assessment.
+AI operated native CLI and pySigma conversion, strict rule validation with UUID correction, and ten-case SQLite execution. Case-sensitive account grouping, duplicates and alert cardinality showed differences from reference. Learner assessment now recorded below; personal execution pending. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md). R2 foundations subsequently began; see entries below.
 
 ## R1 assessment and R2.1 foundations (November 27)
 
-Learner correctly reasoned about changed grouping, representation/field mapping and source-specific case sensitivity. Sigma description/translation/execution responsibilities and fixed/sliding endpoint assignment required correction; named A/B/C and C/D/E but conflated intervals. Personal native exercise deferred because learner reported no PC access. AI executed new bounded Linux process/FD/socket/file-permission experiment; actual output and cleanup verified, 55 regression tests passed. F1 assessment not yet answered; no competence promotion. See [R2.1 worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md). Next R2.2 networking, then cryptography and SSH.
+Learner correctly reasoned about changed grouping, representation/field mapping and source-specific case sensitivity. Sigma description/translation/execution responsibilities and fixed/sliding endpoint assignment required correction; named A/B/C and C/D/E but conflated intervals. Personal native exercise deferred because learner reported no PC access. AI executed new bounded Linux process/FD/socket/file-permission experiment; actual output and cleanup verified, 55 regression tests passed. F1 assessment subsequently recorded below; no independent practical competence promotion. See [R2.1 worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md). Next R2.2 networking, then cryptography and SSH.
 
 ## R2.1 assessment and learning preference (November 27, later)
 
@@ -57,7 +57,7 @@ Learner correctly reasoned about program/process, PID/PPID, per-process descript
 
 ## R2.2 networking foundations (November 27)
 
-AI operated read-only route/neighbor inspection and controlled loopback TCP/UDP example. Bind without listen refused; established TCP application exchange and UDP datagram delivery observed. Capture permission denied, no packet trace. WSL virtual topology differs from ordinary lo-only route, Windows readiness partly blocked; no VM deployment. Learner reasoning and practical ownership pending; F3 cryptography next. [Worklog](../worklogs/2026-11-27-1751-network-foundations.md).
+AI operated read-only route/neighbor inspection and controlled loopback TCP/UDP example. Bind without listen refused; established TCP application exchange and UDP datagram delivery observed. Capture permission denied, no packet trace. WSL virtual topology differs from ordinary lo-only route, Windows readiness partly blocked; no VM deployment. Learner reasoning subsequently recorded below; practical ownership pending; F3 cryptography next. [Worklog](../worklogs/2026-11-27-1751-network-foundations.md).
 
 ## R2.2 learner assessment and host readiness (November 27, later)
 
