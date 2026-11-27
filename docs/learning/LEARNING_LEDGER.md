@@ -1,6 +1,6 @@
 # AegisLab — Learning ledger
 
-**Updated:** 2026-11-26. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
+**Updated:** 2026-11-27. **Status:** living, non-normative learning coverage and recall tracker; not a second roadmap. Governed by [Learning Preferences](../../LEARNING-PREFERENCES.md), [Learning and Technology Strategy](../definition/learning-and-technology-strategy.md), [current learning handoff](CURRENT_LEARNING_STATE.md) and [Stage C execution](../plans/STAGE-C-EXECUTION.md).
 **Evidence:** July guided records are historical only; active learning evidence begins at the November 22 return, including [November learning/experiment reconciliation](../worklogs/2026-11-24-1953-learning-reconciliation-and-stage-c2.md). Conversation-derived assessments are explicitly distinguished from retained runtime output and AI-executed work.
 
 ## How to use
@@ -17,7 +17,7 @@ Depth labels follow the normative strategy: not encountered, introduced, explain
 | Linux processes, PID, FD, services | Practiced with guidance: learner ran ss -ltnp and ps; correctly identified absent socket owner evidence | D/F: directly establish ownership, diagnose service failure |
 | SSH authentication, host/user keys, logging | Post-return: introductory SSH/authentication distinction and journalctl/synthetic message inspection; learner explicitly reports insufficient SSH knowledge; deeper prerequisites unavailable | R2/D: learn cryptography, SSH phases and trust from first principles, reconstruct safe isolated case and diagnose |
 | Namespaces, veth, IPv4 routes, ICMP, packet capture | Unavailable after reset; no post-return practical reconstruction | R2/D: rebuild network/isolation mechanics from first principles, inspect capture limits and personally configure |
-| Linux file ownership/permissions | Unavailable after reset; no post-return permissions demonstration established | D/E: diagnose permissions without weakening controls |
+| Linux file ownership/permissions | R2.1 AI-operated mode 0600/0000 controlled denial demonstrated; learner explanation and personal operation not yet assessed | R2/D/E: explain owner/group/other and diagnose permission failure without weakening controls |
 | Docker/VM | Unavailable after reset; historical inventory only, no current practical competence | D/F: justified container operation and isolation, not mandatory prior to AI |
 | JSONL and parsing/validation | Explained with guidance; learner recognized invalid port and correct finding, initially conflated decode and event acceptance | B/C3: independently change invalid record and trace quarantine; distinguish syntax, shape, values, truth |
 | Event/record/source IDs, SHA-256, lineage | Introduced and examined in actual reports (AI ran CLI) | B/D: trace finding to source bytes; explain why a hash is not authentication |
@@ -53,7 +53,9 @@ November 26 later assessment: correct composite key and sliding-window trigger; 
 
 New rebuild topics: cryptography/trust (hash vs encryption/signature/key exchange), SSH transport/authentication/channel lifecycle, Linux permissions, networking layers/isolation, search/indexing and security platform operations. Current credit only where post-return evidence above supports it; all other prerequisites unavailable. Target R2/D foundations, F/G search and platform competence.
 
-R1 native Sigma: AI executed CLI/API conversion and native SQL, diagnosed missing UUID metadata, mapped timestamps/event IDs, compared ten cases. Learner open-ended prediction, diagnosis and actual tool operation pending; do not assume competence from AI execution. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md).
+R1 native Sigma: AI executed CLI/API conversion and native SQL, diagnosed missing UUID metadata, mapped timestamps/event IDs, compared ten cases. Learner later correctly reasoned about grouping, mapping and case policy; specification/conversion/execution and fixed/sliding windows required correction; tool operation deferred because PC unavailable; do not assume competence from AI execution. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md).
+
+R2.1 Linux foundations: AI demonstrated program/process lifecycle, PID/PPID, sleeping state, per-process FDs, stdin/stdout/stderr pipes, listening/connected sockets, temporary permission denial and scoped no-entry journal query; learner assessment pending. Earlier November guided socket/process inspection retained at actual depth, no July credit. [Worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md).
 
 ## Industry-tool competence
 

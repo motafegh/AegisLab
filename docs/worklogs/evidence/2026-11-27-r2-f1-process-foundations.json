@@ -1,0 +1,118 @@
+{
+  "file": {
+    "mode": "0o600",
+    "owned_by_effective_user": true,
+    "read_at_0600": "disposable teaching data",
+    "read_at_0000": "PermissionError",
+    "mode_restored": "0o600"
+  },
+  "ready": {
+    "pid": 10979,
+    "ppid": 10978,
+    "port": 44116,
+    "listener_fd": 3
+  },
+  "process": {
+    "command": [
+      "ps",
+      "-p",
+      "10979",
+      "-o",
+      "pid,ppid,stat,comm"
+    ],
+    "exit_code": 0,
+    "stdout": "PID    PPID STAT COMMAND\n  10979   10978 S+   python3",
+    "stderr": ""
+  },
+  "listener": {
+    "command": [
+      "ss",
+      "-ltnp",
+      "sport",
+      "=",
+      ":44116"
+    ],
+    "exit_code": 0,
+    "stdout": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      1          127.0.0.1:44116      0.0.0.0:*    users:((\"python3\",pid=10979,fd=3))",
+    "stderr": ""
+  },
+  "fds_listening": {
+    "0": "/dev/null",
+    "1": "pipe:[127062]",
+    "2": "pipe:[127063]",
+    "3": "socket:[85838]"
+  },
+  "accepted": {
+    "accepted_fd": 4
+  },
+  "connection": {
+    "client_port": 43591,
+    "server_port": 44116,
+    "ss": {
+      "command": [
+        "ss",
+        "-tnp",
+        "(",
+        "sport",
+        "=",
+        ":44116",
+        "or",
+        "dport",
+        "=",
+        ":44116",
+        ")"
+      ],
+      "exit_code": 0,
+      "stdout": "State Recv-Q Send-Q Local Address:Port  Peer Address:Port Process                            \nESTAB 0      0          127.0.0.1:44116    127.0.0.1:43591 users:((\"python3\",pid=10979,fd=4))\nESTAB 0      0          127.0.0.1:43591    127.0.0.1:44116 users:((\"python3\",pid=10978,fd=3))",
+      "stderr": ""
+    }
+  },
+  "fds_connected": {
+    "3": "socket:[85838]",
+    "4": "socket:[85839]"
+  },
+  "application_reply": "y",
+  "child_exit": {
+    "returncode": 0,
+    "remaining_stdout": "",
+    "stderr": "completed controlled exchange"
+  },
+  "process_after_exit": {
+    "command": [
+      "ps",
+      "-p",
+      "10979",
+      "-o",
+      "pid,ppid,stat,comm"
+    ],
+    "exit_code": 1,
+    "stdout": "PID    PPID STAT COMMAND",
+    "stderr": ""
+  },
+  "listener_after_exit": {
+    "command": [
+      "ss",
+      "-ltnp",
+      "sport",
+      "=",
+      ":44116"
+    ],
+    "exit_code": 0,
+    "stdout": "State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess",
+    "stderr": ""
+  },
+  "temporary_directory_removed": true,
+  "journal_tag_query": {
+    "command": [
+      "journalctl",
+      "--no-pager",
+      "-n",
+      "2",
+      "-t",
+      "aegislab-r2-f1-no-emitter"
+    ],
+    "exit_code": 0,
+    "stdout": "-- No entries --",
+    "stderr": ""
+  }
+}

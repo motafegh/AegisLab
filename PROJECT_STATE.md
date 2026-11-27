@@ -1,6 +1,6 @@
 # AegisLab Project State
 
-**Updated:** 2026-11-26 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
+**Updated:** 2026-11-27 | **Authority:** non-normative handoff; current Git/runtime and active normative documents control.
 **Active authority:** [Project Definition](<docs/AegisLab — Project Definition v1.0.md>), [Core Charter v2](<docs/plans/AegisLab — Core Charter v2.0.md>), [Capability Execution Map v2](<docs/plans/AegisLab — Capability Execution Map v2.md>).
 **Prior route:** [Charter v1](<docs/plans/AegisLab — Core Charter v1.0.md>), [M0–M17 Map](<docs/plans/AegisLab — Core Execution Map.md>) and [M5 Docker planning](<docs/plans/AegisLab — M5 Docker Learning and Execution Plan.md>) are preserved history, **not active next steps**.
 
@@ -59,6 +59,10 @@ The [prompt ablation worklog](docs/worklogs/2026-11-25-1724-c2-prompt-ablation.m
 
 [Native worklog](docs/worklogs/2026-11-26-2023-native-sigma-practice.md): isolated temporary venv, strict native rule validation 0 issues after UUID additions, CLI/API query equality, 10 synthetic SQLite cases. Raw subject agreement 8/10, reference-style dedup 9/10; case normalization and multiple alert windows differ. 55/55 regression tests passed. No permanent application dependency; R1 learner practical gate remains open; R2 foundational sequence next.
 
+## R2.1 Linux process foundations (2026-11-27)
+
+[Worklog](docs/worklogs/2026-11-27-1627-linux-process-foundations.md): AI executed a disposable nonprivileged loopback client/server and permissions experiment; process/FD ownership, two established endpoints, application exchange, permission denial, cleanup and scoped journal query observed; 55/55 existing tests passed. No product source changes. F1 learner assessment and personal operation open; R1 personal Sigma operation deferred due to reported PC access limit. R2 continues to networking, then cryptography and SSH.
+
 ## Industry tooling and product direction
 
 The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) records stage-linked practical exercises, build/integrate/exercise decisions and ecosystem/usefulness comparisons. Near-term: complete learner native Sigma practice after AI-operated comparison; validator and evaluation-runner review in C3/C5/C6; Wazuh comparison before or during D/F. Product positioning remains a hypothesis; no new tool installed or integration implemented. C2 remains open while reversible C3 context work progresses.
@@ -67,4 +71,4 @@ The [industry tooling and product strategy](docs/plans/INDUSTRY-TOOLS-AND-PRODUC
 
 Software completion and personal mastery are separate. Learner has predicted changed cases and evaluated model output; still needs to personally change/run a case, trace the event/evidence chain and diagnose one failure with reduced prompting. See [learning ledger](docs/learning/LEARNING_LEDGER.md). AI may author the code, but this does not prove transfer. No unapproved sudo, ordinary SSH configuration change, exposure of lab ports, unrelated Docker modification, or external targeting.
 
-**Next action:** R1 combined learner assessment and native practical ownership; R2 first-principles security/systems rebuild; R3 focused C2–C5 and R4 C6–C8 evaluation. Follow the [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md); if native tooling is blocked, record reason and revisit, then proceed R2. Close Stage B personal practical ownership when PC access permits; do not rely on pre-return competence. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).
+**Next action:** R2.1 combined learner assessment, then R2.2 networking foundations; R1 native personal practice and delayed responsibility/window recall remain open; R3 focused C2–C5 and R4 C6–C8 evaluation. Follow the [foundations rebuild](docs/learning/FOUNDATION-REBUILD.md); if native tooling is blocked, record reason and revisit, then proceed R2. Close Stage B personal practical ownership when PC access permits; do not rely on pre-return competence. Consult the [current learning state](docs/learning/CURRENT_LEARNING_STATE.md), [learning ledger](docs/learning/LEARNING_LEDGER.md), and [Stage C plan](docs/plans/STAGE-C-EXECUTION.md).

@@ -1,6 +1,6 @@
 # AegisLab Current Learning State
 
-**Updated:** 2026-11-26 | **Status:** pre-return learning reset by owner; post-return Stage B guided reasoning retained, practical ownership open; Stage C and foundations rebuild active.
+**Updated:** 2026-11-27 | **Status:** pre-return learning reset by owner; post-return Stage B guided reasoning retained, practical ownership open; Stage C and foundations rebuild active.
 **Authority:** Non-normative, evidence-aware learner handoff. See [Core Charter v2](<../plans/AegisLab — Core Charter v2.0.md>) and [Capability Execution Map v2](<../plans/AegisLab — Capability Execution Map v2.md>).
 
 ## Current prerequisite baseline — owner reset 2026-11-26
@@ -45,7 +45,11 @@ Next sequence: native Sigma practice (minimum prerequisites), foundation rebuild
 
 ## R1 native Sigma (November 26, later)
 
-AI operated native CLI and pySigma conversion, strict rule validation with UUID correction, and ten-case SQLite execution. Case-sensitive account grouping, duplicates and alert cardinality showed differences from reference. Learner assessment/personal execution pending; no depth promotion yet. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md). R2 foundations next after combined assessment.
+AI operated native CLI and pySigma conversion, strict rule validation with UUID correction, and ten-case SQLite execution. Case-sensitive account grouping, duplicates and alert cardinality showed differences from reference. Learner assessment now recorded below; personal execution pending. See [native worklog](../worklogs/2026-11-26-2023-native-sigma-practice.md). R2 foundations next after combined assessment.
+
+## R1 assessment and R2.1 foundations (November 27)
+
+Learner correctly reasoned about changed grouping, representation/field mapping and source-specific case sensitivity. Sigma description/translation/execution responsibilities and fixed/sliding endpoint assignment required correction; named A/B/C and C/D/E but conflated intervals. Personal native exercise deferred because learner reported no PC access. AI executed new bounded Linux process/FD/socket/file-permission experiment; actual output and cleanup verified, 55 regression tests passed. F1 assessment not yet answered; no competence promotion. See [R2.1 worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md). Next R2.2 networking, then cryptography and SSH.
 
 ## Next learner-owned checkpoints
 
