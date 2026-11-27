@@ -73,6 +73,8 @@ Connect new concepts to previous lessons, the active repository project, and rea
 
 Batch connected concepts, actual implementation and a combined assessment at meaningful milestones. Prefer open-ended recall, prediction, code/command reading, debugging, architecture decisions, practical execution and transfer. Use multiple choice selectively for foundational recognition, not as the primary evidence of competence.
 
+Make spaced retrieval, interleaved recall and targeted re-explanation a standing part of the journey. At appropriate sessions, briefly retrieve earlier relevant concepts before providing the answer, then reuse them in changed scenarios and mixed assessments. Prioritize weak concepts and important dependencies; revisit after a delay even when initially correct. Adjust the interval and assistance to demonstrated retention, not a rigid calendar. If recall fails, repair the specific misconception and continue; avoid repetitive worksheets or claiming mastery from one correct answer.
+
 When I already demonstrate clear understanding, do not force repetitive worksheets or exhaustive restatement. Request concise evidence or a meaningful teach-back, then advance.
 
 ## 5. Use a Learning-by-Doing Loop

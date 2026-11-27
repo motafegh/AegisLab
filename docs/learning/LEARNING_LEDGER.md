@@ -61,6 +61,8 @@ R2.1 Linux foundations: AI demonstrated program/process lifecycle, PID/PPID, sle
 
 The [industry competency matrix](../plans/INDUSTRY-TOOLS-AND-PRODUCT-STRATEGY.md) tracks practical tool operation, configuration, integration and diagnosis separately from conceptual learning. Review applicable rows at each milestone; AI-only execution does not establish personal competence.
 
+R2.1 learner assessment: correct program/process and kernel-level responsibility, per-process FD identity, mode 640 and ordinary access denial; PID/PPID correct, sleeping vs runnable needed clarification; bind/listen/accept broadly understood, listener vs connected socket refined. TCP ESTAB not authentication correctly identified but unavailable application response was conflated with nonexecution; revisit evidence absence in networking/SSH. Delayed recall correctly selected interval [30,150] and observations 90,130,150; included unnecessary [0,120] and conflated no finding with no observations. Fixed-bucket distinction still a revisit priority. No personal operation promoted. Learner explicitly values recurring recall/re-explanation and mixed older/new assessments; adapt repetition to weak topics and transfer.
+
 ## Active recall and ownership queue
 
 - B practical closure when PC access permits: learner selects a copy of a fixture, predicts a changed case, modifies/runs it, traces output to source lines, deliberately diagnoses one invalid input or wrong rule assumption, and explains evidence limits. AI may review, not perform the learner's critical step.

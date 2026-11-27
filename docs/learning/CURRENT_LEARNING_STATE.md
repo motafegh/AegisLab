@@ -51,6 +51,10 @@ AI operated native CLI and pySigma conversion, strict rule validation with UUID 
 
 Learner correctly reasoned about changed grouping, representation/field mapping and source-specific case sensitivity. Sigma description/translation/execution responsibilities and fixed/sliding endpoint assignment required correction; named A/B/C and C/D/E but conflated intervals. Personal native exercise deferred because learner reported no PC access. AI executed new bounded Linux process/FD/socket/file-permission experiment; actual output and cleanup verified, 55 regression tests passed. F1 assessment not yet answered; no competence promotion. See [R2.1 worklog](../worklogs/2026-11-27-1627-linux-process-foundations.md). Next R2.2 networking, then cryptography and SSH.
 
+## R2.1 assessment and learning preference (November 27, later)
+
+Learner correctly reasoned about program/process, PID/PPID, per-process descriptors and mode 640. Sleeping versus runnable, listening versus connected sockets, and unavailable evidence versus failed activity required refinement. Correct delayed sliding-window interval and event membership; fixed buckets and no-finding versus no-observations remain recall targets. Learner requested ongoing spaced recall, re-explanation and mixed questions. Also raised separate-system lab realism: evaluate VM readiness during R2.2, with proposed isolated guests for D or earlier authorized exercises; no deployment decision yet. See [foundations rebuild](FOUNDATION-REBUILD.md).
+
 ## Next learner-owned checkpoints
 
 - C2: evaluate an actual output from the paired comparison and the candidate output contract in the [Stage C execution plan](../plans/STAGE-C-EXECUTION.md); explain how missing target identity is represented, scope derived from existing event IDs, and syntactic validity distinguished from semantic support and usefulness.

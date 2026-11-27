@@ -18,6 +18,12 @@ Retain post-return evidence at its specific demonstrated depth; recheck it when 
 
 Use one project and the same evidence across tracks. Batch connected concepts and meaningful implementation increments, not a fixed daily or weekly allocation. Include security or system foundations regularly; do not let repeated AI tuning crowd out security learning. A tool introduction or AI-operated demo alone cannot close the personal practical checkpoint.
 
+## Retention and increasing lab realism (2026-11-27)
+
+Embed short delayed recall and transfer across R2–R5 and later stages; maintain weak-topic revisit priorities in the ledger, especially evidence absence, fixed/sliding windows and specification/conversion/execution roles. Correct only the missing prerequisite and keep momentum.
+
+Owner raised a preference for more realistic separate client/server systems. Proposed progression: use loopback for minimal unit demonstrations, then separate network endpoints via authorized namespaces, and compare separate Linux guest VMs on an isolated virtual network for operational SSH/telemetry work. Review host readiness and hypervisor options (Hyper-V or Oracle VirtualBox) during R2.2; propose a bounded two-guest lab for D or an earlier approved foundation exercise if justified. Keep WSL development and local inference intact. Separate VM kernels and service identities are valuable, but do not require VM parity to finish B/C. No cloud deployment, bridged/public lab exposure, hypervisor installation, firewall changes or reboot authorized by this planning note. Any deployment requires explicit scope, isolation verification, resource and compatibility checks, cleanup and applicable owner approval. A dedicated monitoring guest may be added later when sensor visibility and resource needs justify it; do not assume a VM sees other guests' unicast traffic without a suitable observation point.
+
 ## Near-term ordered sequence
 
 | ID | Session or increment | Concrete outcome / boundary | Status |
